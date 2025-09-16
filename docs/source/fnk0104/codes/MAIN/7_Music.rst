@@ -71,7 +71,7 @@ Sketch_07.1_Music
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
     :dedent:
@@ -81,7 +81,7 @@ Code Explanation
 
 Include necessary header files.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
     :lines: 1-9
@@ -89,7 +89,7 @@ Include necessary header files.
 
 Define the pins.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
     :lines: 11-28
@@ -97,7 +97,7 @@ Define the pins.
 
 Declare an I2S object
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
     :lines: 30-31
@@ -105,7 +105,7 @@ Declare an I2S object
 
 Set the baud rate to 115200
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
     :lines: 46-46
@@ -113,7 +113,7 @@ Set the baud rate to 115200
 
 SD card init
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
     :lines: 48-62
@@ -121,7 +121,7 @@ SD card init
 
 Read audio data and play it.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
     :lines: 63-68
@@ -129,7 +129,7 @@ Read audio data and play it.
 
 play music
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
     :lines: 71-71
@@ -220,7 +220,7 @@ Sketch_07.2_Echo
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
     :linenos:
     :language: C
     :dedent:
@@ -230,7 +230,7 @@ Code Explanation
 
 Include necessary header files.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
     :linenos:
     :language: C
     :lines: 1-8
@@ -238,7 +238,7 @@ Include necessary header files.
 
 Define the pins.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
     :linenos:
     :language: C
     :lines: 1-8
@@ -246,7 +246,7 @@ Define the pins.
 
 Declare an I2S object
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
     :linenos:
     :language: C
     :lines: 29-29
@@ -254,7 +254,7 @@ Declare an I2S object
 
 Set the baud rate to 115200
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
     :linenos:
     :language: C
     :lines: 45-45
@@ -262,7 +262,7 @@ Set the baud rate to 115200
 
 Initialize the audio device.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
     :linenos:
     :language: C
     :lines: 50-55
@@ -270,7 +270,7 @@ Initialize the audio device.
 
 Implement audio recording and playback functionality
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
     :linenos:
     :language: C
     :lines: 60-75

@@ -42,7 +42,7 @@ Sketch_12.1_TFT_Touch_Draw
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_12.1_TFT_Touch_Draw_2.8_Inch/Sketch_12.1_TFT_Touch_Draw_2.8_Inch.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_12.1_TFT_Touch_Draw_2.8_Inch/Sketch_12.1_TFT_Touch_Draw_2.8_Inch.ino
     :linenos:
     :language: C
     :dedent:
@@ -52,7 +52,7 @@ Code Explanation
 
 Include the necessary header files.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_12.1_TFT_Touch_Draw_2.8_Inch/Sketch_12.1_TFT_Touch_Draw_2.8_Inch.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_12.1_TFT_Touch_Draw_2.8_Inch/Sketch_12.1_TFT_Touch_Draw_2.8_Inch.ino
     :linenos:
     :language: C
     :lines: 10-11
@@ -60,7 +60,7 @@ Include the necessary header files.
 
 Create TFT object instance.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_12.1_TFT_Touch_Draw_2.8_Inch/Sketch_12.1_TFT_Touch_Draw_2.8_Inch.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_12.1_TFT_Touch_Draw_2.8_Inch/Sketch_12.1_TFT_Touch_Draw_2.8_Inch.ino
     :linenos:
     :language: C
     :lines: 13-14
@@ -68,7 +68,7 @@ Create TFT object instance.
 
 Define screen resolution.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_12.1_TFT_Touch_Draw_2.8_Inch/Sketch_12.1_TFT_Touch_Draw_2.8_Inch.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_12.1_TFT_Touch_Draw_2.8_Inch/Sketch_12.1_TFT_Touch_Draw_2.8_Inch.ino
     :linenos:
     :language: C
     :lines: 16-26
@@ -76,7 +76,7 @@ Define screen resolution.
 
 Draw color palette.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_12.1_TFT_Touch_Draw_2.8_Inch/Sketch_12.1_TFT_Touch_Draw_2.8_Inch.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_12.1_TFT_Touch_Draw_2.8_Inch/Sketch_12.1_TFT_Touch_Draw_2.8_Inch.ino
     :linenos:
     :language: C
     :lines: 40-42
@@ -84,7 +84,7 @@ Draw color palette.
 
 Detect whether the screen is pressed.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_12.1_TFT_Touch_Draw_2.8_Inch/Sketch_12.1_TFT_Touch_Draw_2.8_Inch.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_12.1_TFT_Touch_Draw_2.8_Inch/Sketch_12.1_TFT_Touch_Draw_2.8_Inch.ino
     :linenos:
     :language: C
     :lines: 81-81
@@ -92,7 +92,7 @@ Detect whether the screen is pressed.
 
 Store the x and y coordinates of the touch point in variables.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_12.1_TFT_Touch_Draw_2.8_Inch/Sketch_12.1_TFT_Touch_Draw_2.8_Inch.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_12.1_TFT_Touch_Draw_2.8_Inch/Sketch_12.1_TFT_Touch_Draw_2.8_Inch.ino
     :linenos:
     :language: C
     :lines: 85-86
@@ -100,7 +100,7 @@ Store the x and y coordinates of the touch point in variables.
 
 When the Clear button is pressed, fill the screen with the current color.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_12.1_TFT_Touch_Draw_2.8_Inch/Sketch_12.1_TFT_Touch_Draw_2.8_Inch.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_12.1_TFT_Touch_Draw_2.8_Inch/Sketch_12.1_TFT_Touch_Draw_2.8_Inch.ino
     :linenos:
     :language: C
     :lines: 99-102
@@ -108,7 +108,7 @@ When the Clear button is pressed, fill the screen with the current color.
 
 Calculate the selected color based on the coordinates of the touch point
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_12.1_TFT_Touch_Draw_2.8_Inch/Sketch_12.1_TFT_Touch_Draw_2.8_Inch.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_12.1_TFT_Touch_Draw_2.8_Inch/Sketch_12.1_TFT_Touch_Draw_2.8_Inch.ino
     :linenos:
     :language: C
     :lines: 104-110
@@ -116,7 +116,7 @@ Calculate the selected color based on the coordinates of the touch point
 
 Draw a line based on coordinates
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_12.1_TFT_Touch_Draw_2.8_Inch/Sketch_12.1_TFT_Touch_Draw_2.8_Inch.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_12.1_TFT_Touch_Draw_2.8_Inch/Sketch_12.1_TFT_Touch_Draw_2.8_Inch.ino
     :linenos:
     :language: C
     :lines: 117-129

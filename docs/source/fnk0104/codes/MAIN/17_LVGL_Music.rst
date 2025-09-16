@@ -54,7 +54,7 @@ Sketch_17.1_Lvgl_Music
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
     :linenos:
     :language: C
     :dedent:
@@ -64,7 +64,7 @@ Code Explanation
 
 Include the header files.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
     :linenos:
     :language: C
     :lines: 7-13
@@ -72,7 +72,7 @@ Include the header files.
 
 Define the pins.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
     :linenos:
     :language: C
     :lines: 7-13
@@ -80,7 +80,7 @@ Define the pins.
 
 Set the baud rate to 115200
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
     :linenos:
     :language: C
     :lines: 50-50
@@ -88,7 +88,7 @@ Set the baud rate to 115200
 
 Initialize configuration.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
     :linenos:
     :language: C
     :lines: 53-59
@@ -96,7 +96,7 @@ Initialize configuration.
 
 Create and load the interface.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
     :linenos:
     :language: C
     :lines: 66-67
@@ -104,7 +104,7 @@ Create and load the interface.
 
 LVGL task processor.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
     :linenos:
     :language: C
     :lines: 73-73

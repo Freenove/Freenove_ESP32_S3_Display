@@ -34,3 +34,5 @@ This product provides the following online documents.
    :caption: FNK0104
 
    fnk0104/codes/MAIN.rst
+   fnk0104/codes/MAIN_NonTouch.rst
+   fnk0104/codes/xiaozhi.rst

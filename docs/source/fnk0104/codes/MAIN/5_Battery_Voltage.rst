@@ -77,7 +77,7 @@ Sketch_05.1_Battery_Voltage
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
     :linenos:
     :language: C
     :dedent:
@@ -87,7 +87,7 @@ Code Explanation
 
 Define the pins for the button and RGB LED.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
     :linenos:
     :language: C
     :lines: 7-7
@@ -95,7 +95,7 @@ Define the pins for the button and RGB LED.
 
 Set the battery voltage detecting pin to input mode.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
     :linenos:
     :language: C
     :lines: 10-10
@@ -103,7 +103,7 @@ Set the battery voltage detecting pin to input mode.
 
 Set the battery voltage detecting pin to input mode.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
     :linenos:
     :language: C
     :lines: 11-11
@@ -111,7 +111,7 @@ Set the battery voltage detecting pin to input mode.
 
 Measure the battery voltage every 300ms and outputs the reading to the serial monitor.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
     :linenos:
     :language: C
     :lines: 14-19

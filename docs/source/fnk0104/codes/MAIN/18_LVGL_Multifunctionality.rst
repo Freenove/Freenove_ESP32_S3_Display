@@ -50,7 +50,7 @@ Sketch_18.1_Lvgl_Multifunctionality
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_18.1_Lvgl_Multifunctionality/Sketch_18.1_Lvgl_Multifunctionality.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_18.1_Lvgl_Multifunctionality/Sketch_18.1_Lvgl_Multifunctionality.ino
     :linenos:
     :language: C
     :dedent:

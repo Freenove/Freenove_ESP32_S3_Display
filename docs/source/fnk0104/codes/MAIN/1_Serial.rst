@@ -56,7 +56,7 @@ Open **“Sketch_01.1_SerialRW”** folder under **“Freenove_ESP32_S3_Display\
 Sketch_01.1_SerialRW
 -------------------------------------
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_01.1_SerialRW/Sketch_01.1_SerialRW.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_01.1_SerialRW/Sketch_01.1_SerialRW.ino
     :linenos:
     :language: C
     :dedent:
@@ -66,7 +66,7 @@ Code Explanation
 
 Set the baud rate to 115200.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_01.1_SerialRW/Sketch_01.1_SerialRW.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_01.1_SerialRW/Sketch_01.1_SerialRW.ino
     :linenos:
     :language: C
     :lines: 11-11
@@ -74,7 +74,7 @@ Set the baud rate to 115200.
 
 Determine whether there is data in the serial port buffer.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_01.1_SerialRW/Sketch_01.1_SerialRW.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_01.1_SerialRW/Sketch_01.1_SerialRW.ino
     :linenos:
     :language: C
     :lines: 14-14
@@ -82,7 +82,7 @@ Determine whether there is data in the serial port buffer.
 
 Receive serial port data and save it in the inputString string.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_01.1_SerialRW/Sketch_01.1_SerialRW.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_01.1_SerialRW/Sketch_01.1_SerialRW.ino
     :linenos:
     :language: C
     :lines: 20-21

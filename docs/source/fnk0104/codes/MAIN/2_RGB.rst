@@ -63,7 +63,7 @@ Sketch_02.1_LedPixel
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_02.1_LedPixel/Sketch_02.1_LedPixel.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_02.1_LedPixel/Sketch_02.1_LedPixel.ino
     :linenos:
     :language: C
     :dedent:
@@ -73,7 +73,7 @@ Code Explanation
 
 Define the pins for the RGB LED.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_02.1_LedPixel/Sketch_02.1_LedPixel.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_02.1_LedPixel/Sketch_02.1_LedPixel.ino
     :linenos:
     :language: C
     :lines: 9-11
@@ -81,7 +81,7 @@ Define the pins for the RGB LED.
 
 Initialize the LED, set the brightness to 10
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_02.1_LedPixel/Sketch_02.1_LedPixel.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_02.1_LedPixel/Sketch_02.1_LedPixel.ino
     :linenos:
     :language: C
     :lines: 19-20
@@ -89,7 +89,7 @@ Initialize the LED, set the brightness to 10
 
 Cycle through five different colors.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_02.1_LedPixel/Sketch_02.1_LedPixel.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_02.1_LedPixel/Sketch_02.1_LedPixel.ino
     :linenos:
     :language: C
     :lines: 23-30
@@ -181,7 +181,7 @@ Sketch_02.2_Rainbow
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_02.2_Rainbow/Sketch_02.2_Rainbow.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_02.2_Rainbow/Sketch_02.2_Rainbow.ino
     :linenos:
     :language: C
     :dedent:
@@ -191,7 +191,7 @@ Code Explanation
 
 In the loop(), two “for” loops are used, the internal “for” loop(for-j) is used to set the color of each LED, and the external “for” loop(for-i) is used to change the color, in which the self-increment value in i+=2 can be changed to change the color step distance. Changing the delay parameter changes the speed of the color change. ``strip.Wheel((i * 256 / LEDS_COUNT + j) & 255)`` will take color from the color model at equal intervals starting from i.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_02.2_Rainbow/Sketch_02.2_Rainbow.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_02.2_Rainbow/Sketch_02.2_Rainbow.ino
     :linenos:
     :language: C
     :lines: 20-26

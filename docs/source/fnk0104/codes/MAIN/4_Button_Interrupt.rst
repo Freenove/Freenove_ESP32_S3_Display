@@ -53,7 +53,7 @@ Sketch_04.1_Button_Interrupt_UART
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_04.1_Button_Interrupt_UART/Sketch_04.1_Button_Interrupt_UART.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_04.1_Button_Interrupt_UART/Sketch_04.1_Button_Interrupt_UART.ino
     :linenos:
     :language: C
     :dedent:
@@ -63,7 +63,7 @@ Code Explanation
 
 Define the pin of the button.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_04.1_Button_Interrupt_UART/Sketch_04.1_Button_Interrupt_UART.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_04.1_Button_Interrupt_UART/Sketch_04.1_Button_Interrupt_UART.ino
     :linenos:
     :language: C
     :lines: 9-9  
@@ -71,7 +71,7 @@ Define the pin of the button.
 
 Configure the button pin hardware interrupt to trigger on the falling edge signal.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_04.1_Button_Interrupt_UART/Sketch_04.1_Button_Interrupt_UART.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_04.1_Button_Interrupt_UART/Sketch_04.1_Button_Interrupt_UART.ino
     :linenos:
     :language: C
     :lines: 16-16
@@ -79,7 +79,7 @@ Configure the button pin hardware interrupt to trigger on the falling edge signa
 
 The interrupt processing function, counting how many times the button is pressed.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_04.1_Button_Interrupt_UART/Sketch_04.1_Button_Interrupt_UART.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_04.1_Button_Interrupt_UART/Sketch_04.1_Button_Interrupt_UART.ino
     :linenos:
     :language: C
     :lines: 28-33
@@ -87,7 +87,7 @@ The interrupt processing function, counting how many times the button is pressed
 
 When the number of button presses changes, print new data in the serial monitor.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_04.1_Button_Interrupt_UART/Sketch_04.1_Button_Interrupt_UART.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_04.1_Button_Interrupt_UART/Sketch_04.1_Button_Interrupt_UART.ino
     :linenos:
     :language: C
     :lines: 42-47

@@ -54,7 +54,7 @@ Sketch_11.1_Touch
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_11_Touch/Sketch_11_Touch.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_11_Touch/Sketch_11_Touch.ino
     :linenos:
     :language: C
     :dedent:
@@ -64,28 +64,28 @@ Code Explanation
 
 Include the necessary header files.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_11_Touch/Sketch_11_Touch.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_11_Touch/Sketch_11_Touch.ino
     :linenos:
     :lines: 1-1
     :dedent:
 
 Initialize the screen.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_11_Touch/Sketch_11_Touch.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_11_Touch/Sketch_11_Touch.ino
     :linenos:
     :lines: 8-9
     :dedent:
 
 Set the baud rate to 115200.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_11_Touch/Sketch_11_Touch.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_11_Touch/Sketch_11_Touch.ino
     :linenos:
     :lines: 12-12
     :dedent:
 
 Scan touch point data and output it via the serial port.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_11_Touch/Sketch_11_Touch.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_11_Touch/Sketch_11_Touch.ino
     :linenos:
     :lines: 12-12
     :dedent:

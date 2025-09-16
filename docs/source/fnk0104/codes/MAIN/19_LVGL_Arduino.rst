@@ -40,7 +40,7 @@ Sketch_19.1_Lvgl_Arduino
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_19.1_Lvgl_Arduino/Sketch_19.1_Lvgl_Arduino.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_19.1_Lvgl_Arduino/Sketch_19.1_Lvgl_Arduino.ino
     :linenos:
     :language: C
     :dedent:

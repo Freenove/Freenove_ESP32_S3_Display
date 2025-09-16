@@ -40,7 +40,7 @@ Sketch_15.1_Lvgl_Timer
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_15.1_Lvgl_Timer/Sketch_15.1_Lvgl_Timer.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_15.1_Lvgl_Timer/Sketch_15.1_Lvgl_Timer.ino
     :linenos:
     :language: C
     :dedent:
@@ -50,7 +50,7 @@ Code Explanation
 
 Include the header files.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_15.1_Lvgl_Timer/Sketch_15.1_Lvgl_Timer.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_15.1_Lvgl_Timer/Sketch_15.1_Lvgl_Timer.ino
     :linenos:
     :language: C
     :lines: 7-8
@@ -58,7 +58,7 @@ Include the header files.
 
 Set the baud rate to 115200.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_15.1_Lvgl_Timer/Sketch_15.1_Lvgl_Timer.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_15.1_Lvgl_Timer/Sketch_15.1_Lvgl_Timer.ino
     :linenos:
     :language: C
     :lines: 12-12
@@ -66,7 +66,7 @@ Set the baud rate to 115200.
 
 Initialize configuration.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_15.1_Lvgl_Timer/Sketch_15.1_Lvgl_Timer.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_15.1_Lvgl_Timer/Sketch_15.1_Lvgl_Timer.ino
     :linenos:
     :language: C
     :lines: 15-15
@@ -74,7 +74,7 @@ Initialize configuration.
 
 Create and load the interface.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_15.1_Lvgl_Timer/Sketch_15.1_Lvgl_Timer.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_15.1_Lvgl_Timer/Sketch_15.1_Lvgl_Timer.ino
     :linenos:
     :language: C
     :lines: 25-26
@@ -82,7 +82,7 @@ Create and load the interface.
 
 LVGL task processor.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_15.1_Lvgl_Timer/Sketch_15.1_Lvgl_Timer.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_15.1_Lvgl_Timer/Sketch_15.1_Lvgl_Timer.ino
     :linenos:
     :language: C
     :lines: 30-30

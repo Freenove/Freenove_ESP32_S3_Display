@@ -1,5 +1,5 @@
 ######################################################
-Main Tutorial
+Touch Tutorial
 ######################################################
 
 .. toctree::
@@ -26,7 +26,6 @@ Main Tutorial
 .. toctree::
    :maxdepth: 1
    :caption: Projects
-   :numbered:
    :glob:
 
    MAIN/1_Serial.rst

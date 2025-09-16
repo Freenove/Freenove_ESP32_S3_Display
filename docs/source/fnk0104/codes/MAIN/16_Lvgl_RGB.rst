@@ -40,7 +40,7 @@ Sketch_16.1_Lvgl_RGB
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_16.1_Lvgl_RGB/Sketch_16.1_Lvgl_RGB.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_16.1_Lvgl_RGB/Sketch_16.1_Lvgl_RGB.ino
     :linenos:
     :language: C
     :dedent:
@@ -50,7 +50,7 @@ Code Explanation
 
 Include the header files.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_16.1_Lvgl_RGB/Sketch_16.1_Lvgl_RGB.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_16.1_Lvgl_RGB/Sketch_16.1_Lvgl_RGB.ino
     :linenos:
     :language: C
     :lines: 1-4
@@ -58,7 +58,7 @@ Include the header files.
 
 Set the baud rate to 115200
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_16.1_Lvgl_RGB/Sketch_16.1_Lvgl_RGB.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_16.1_Lvgl_RGB/Sketch_16.1_Lvgl_RGB.ino
     :linenos:
     :language: C
     :lines: 7-7
@@ -66,7 +66,7 @@ Set the baud rate to 115200
 
 Initialize the RGB LED.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_16.1_Lvgl_RGB/Sketch_16.1_Lvgl_RGB.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_16.1_Lvgl_RGB/Sketch_16.1_Lvgl_RGB.ino
     :linenos:
     :language: C
     :lines: 10-10
@@ -74,7 +74,7 @@ Initialize the RGB LED.
 
 Create and load the interface.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_16.1_Lvgl_RGB/Sketch_16.1_Lvgl_RGB.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_16.1_Lvgl_RGB/Sketch_16.1_Lvgl_RGB.ino
     :linenos:
     :language: C
     :lines: 20-21
@@ -82,7 +82,7 @@ Create and load the interface.
 
 LVGL task processor.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_16.1_Lvgl_RGB/Sketch_16.1_Lvgl_RGB.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_16.1_Lvgl_RGB/Sketch_16.1_Lvgl_RGB.ino
     :linenos:
     :language: C
     :lines: 25-25

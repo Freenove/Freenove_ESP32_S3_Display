@@ -6,6 +6,23 @@ Project 13.1 LVGL
 **********************************************
 
 Component List
+==============================================
+
+.. table::
+    :align: center
+    :class: table-line
+    :width: 80%
+
+    +-------------------------------+----------------+
+    | Freenove ESP32 S3 Display x 1 | USB cable x1   |
+    |                               |                |
+    | |Chapter01_07|                | |Chapter01_08| |
+    +-------------------------------+----------------+
+
+.. |Chapter01_07| image:: ../_static/imgs/1_Serial/Chapter01_07.png
+.. |Chapter01_08| image:: ../_static/imgs/1_Serial/Chapter01_08.png
+
+Component Knowledge
 =============================================
 
 LVGL is a widely-used embedded GUI library that is implemented in pure C, making it highly portable and performant. It offers rich features and content, supporting both display and input devices such as touchscreens and keyboards.
@@ -77,7 +94,7 @@ Sketch_13.1_LVGL
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_13.1_LVGL/Sketch_13.1_LVGL.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_13.1_LVGL/Sketch_13.1_LVGL.ino
     :linenos:
     :language: C
     :dedent:
@@ -87,7 +104,7 @@ Code Explanation
 
 Include the header file.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_13.1_LVGL/Sketch_13.1_LVGL.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_13.1_LVGL/Sketch_13.1_LVGL.ino
     :linenos:
     :language: C
     :lines: 7-7
@@ -95,7 +112,7 @@ Include the header file.
 
 Set the baud rate to 115200
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_13.1_LVGL/Sketch_13.1_LVGL.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_13.1_LVGL/Sketch_13.1_LVGL.ino
     :linenos:
     :language: C
     :lines: 14-14
@@ -103,7 +120,7 @@ Set the baud rate to 115200
 
 Initialize the screen.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_13.1_LVGL/Sketch_13.1_LVGL.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_13.1_LVGL/Sketch_13.1_LVGL.ino
     :linenos:
     :language: C
     :lines: 17-17
@@ -111,7 +128,7 @@ Initialize the screen.
 
 Configure the screen interface.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_13.1_LVGL/Sketch_13.1_LVGL.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_13.1_LVGL/Sketch_13.1_LVGL.ino
     :linenos:
     :language: C
     :lines: 19-28
@@ -119,7 +136,7 @@ Configure the screen interface.
 
 Let the LVGL handle the tasks.
 
-.. literalinclude:: /freenove_Kit/Sketches/Sketch_13.1_LVGL/Sketch_13.1_LVGL.ino
+.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_13.1_LVGL/Sketch_13.1_LVGL.ino
     :linenos:
     :language: C
     :lines: 35-35
