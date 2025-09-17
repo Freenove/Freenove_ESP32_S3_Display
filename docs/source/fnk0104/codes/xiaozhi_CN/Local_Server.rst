@@ -790,7 +790,6 @@ macOS/Linux 用户请使用 cp 命令
 .. image:: ../_static/imgs/Local_Server/Local94.png
     :align: center
 
-
 现在您可以通过浏览器打开位于 xiaozhi-esp32-server\\main\\xiaozhi-server\\test 目录下的 HTML 文件。
 
 测试步骤如下：

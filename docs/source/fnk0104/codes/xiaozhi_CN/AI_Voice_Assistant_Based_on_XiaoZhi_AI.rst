@@ -32,7 +32,7 @@
 
   - 在线版本：服务可用性取决于小智(xiaozhi.me)服务器覆盖范围，部分区域可能不可用。当前支持地区详见：https://xiaozhi.me/login?redirect=/console/agents
 
-注：用户体验与服务器连接质量直接相关，若至小智服务器的网络状况不佳可能导致性能下降
+    注：用户体验与服务器连接质量直接相关，若至小智服务器的网络状况不佳可能导致性能下降
 
   - 离线版本：无地域限制，可在全球所有国家/地区部署
 
@@ -57,7 +57,7 @@
 免责声明
 **********************************
 
-- 本实现基于开源项目（https://github.com/78/xiaozhi-esp32）进行适配开发，仅供第三方学习及AI功能测试用途，不提供商业应用支持与推广。本教程仅面向技术爱好者个人学习开发使用。
+本实现基于开源项目（https://github.com/78/xiaozhi-esp32）进行适配开发，仅供第三方学习及AI功能测试用途，不提供商业应用支持与推广。本教程仅面向技术爱好者个人学习开发使用。
 
 注意事项：
 
@@ -292,7 +292,7 @@ Mac
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI52.png
     :align: center
 
-此时 ESP32-S3 开发板将显示以下运行日志：
+您将在ESP32-S3开发板上看到以下信息显示。
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI53.png
     :align: center
@@ -412,11 +412,11 @@ ESP32-S3 网络配置指南
 
 若您的ESP32-S3已集成小智AI固件：
 
-在智能手机上启用WiFi
+1、在智能手机上启用WiFi
 
-寻找名为"Xiaozhi-XXXX"的热点（开放网络，无需密码）
+2、寻找名为"Xiaozhi-XXXX"的热点（开放网络，无需密码）
 
-连接该网络以继续
+3、连接该网络以继续
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI68.png
     :align: center
@@ -464,10 +464,6 @@ XiaoZhi AI 服务器配置
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI72.png
     :align: center
 
-如果您还没有帐户，请点击“控制台”并使用您的手机号码注册。
-
-请注意，目前小智 AI 服务器仅支持以下国家的手机号码注册。
-
 如果您还没有帐户，请注册一个并登录。
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI73.png
@@ -478,7 +474,7 @@ XiaoZhi AI 服务器配置
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI74.png
     :align: center
 
-点击 “新建智能体” 来设置一个新的人工智能助理。
+点击 “新建智能体” 来设置一个新的人工智能助手。
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI75.png
     :align: center
@@ -488,7 +484,7 @@ XiaoZhi AI 服务器配置
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI76.png
     :align: center
 
-点击 “配置角色” 来配置您的人工智能助理。
+点击 “配置角色” 来配置您的人工智能助手。
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI77.png
     :align: center
