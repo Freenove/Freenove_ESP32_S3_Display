@@ -77,12 +77,12 @@ Copyright
 
 All the files, materials and instructional guides provided are released under `Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License <https://creativecommons.org/licenses/by-nc-sa/3.0/>`. A copy of this license can be found in the folder containing the Tutorial and software files associated with this product.
 
-.. image:: ../_static/imgs/welcome/welcome00.png
+.. image:: ../_static/imgs/Welcome/welcome00.png
     :align: center
 
 This means you can use these resource in your own derived works, in part or completely but **NOT for the intent or purpose of commercial use**.
 
 Freenove brand and logo are copyright of Freenove Creative Technology Co., Ltd. and cannot be used without written permission.
 
-.. image:: ../_static/imgs/welcome/welcome01.png
+.. image:: ../_static/imgs/Welcome/welcome01.png
     :align: center
