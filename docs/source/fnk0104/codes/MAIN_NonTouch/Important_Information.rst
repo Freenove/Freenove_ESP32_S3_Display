@@ -75,7 +75,7 @@ sale@freenove.com
 Copyright
 ********************************************************
 
-All the files, materials and instructional guides provided are released under `Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License <https://creativecommons.org/licenses/by-nc-sa/3.0/>`. A copy of this license can be found in the folder containing the Tutorial and software files associated with this product.
+All the files, materials and instructional guides provided are released under `Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License <https://creativecommons.org/licenses/by-nc-sa/3.0/>`_. A copy of this license can be found in the folder containing the Tutorial and software files associated with this product.
 
 .. image:: ../_static/imgs/Welcome/welcome00.png
     :align: center
