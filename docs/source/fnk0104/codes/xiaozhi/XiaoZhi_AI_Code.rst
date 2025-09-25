@@ -233,7 +233,7 @@ Component installation may take some time. Please wait and avoid other operation
 .. image:: ../_static/imgs/XiaoZhi_AI_Code/xiaozhi32.png
     :align: center
 
-Connect the ESP32-S3 to your computer using a USB cable, making sure to plug it into the correct Type-C port (do not use the wrong connector)
+Connect the Freenove ESP32-S3 Display to your computer using a USB cable.
 
 Click on **'COMx'** in the bottom-left corner to display all available COM ports on your computer. Locate and select the entry labeled 'ESP32-S3'.
 
@@ -298,7 +298,7 @@ Click 'Build Project' at the bottom to start compiling the entire project. The f
 .. image:: ../_static/imgs/XiaoZhi_AI_Code/xiaozhi44.png
     :align: center
 
-Click 'Flash Device' at the bottom to start uploading the code to your ESP32-S3 module.
+Click 'Flash Device' at the bottom to start uploading the code to your Freenove ESP32-S3 Display.
 
 .. image:: ../_static/imgs/XiaoZhi_AI_Code/xiaozhi45.png
     :align: center
@@ -308,7 +308,7 @@ From the new options menu, select **'UART'** and wait for the code upload to com
 .. image:: ../_static/imgs/XiaoZhi_AI_Code/xiaozhi46.png
     :align: center
 
-Upon seeing the message 'Flash has finished. You can monitor your device with "ESP-IDF: Monitor command"', this indicates you have successfully uploaded XiaoZhi AI's firmware to the ESP32-S3 module.
+Upon seeing the message 'Flash has finished. You can monitor your device with "ESP-IDF: Monitor command"', this indicates you have successfully uploaded XiaoZhi AI's firmware to the Freenove ESP32-S3 Display.
 
 .. image:: ../_static/imgs/XiaoZhi_AI_Code/xiaozhi47.png
     :align: center

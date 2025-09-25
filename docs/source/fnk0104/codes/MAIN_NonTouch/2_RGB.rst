@@ -21,10 +21,9 @@ Component List
 .. table::
     :align: center
     :class: table-line
-    :width: 80%
 
     +-------------------------------+----------------+
-    | Freenove ESP32 S3 Display x 1 | USB cable x1   |
+    | Freenove ESP32-S3 Display x 1 | USB cable x1   |
     |                               |                |
     | |Chapter01_07|                | |Chapter01_08| |
     +-------------------------------+----------------+
@@ -35,7 +34,7 @@ Component List
 Circuit
 ====================================
 
-Connect Freenove ESP32 S3 Display to the computer with USB cable. 
+Connect Freenove ESP32-S3 Display to the computer with USB cable. 
 
 .. image:: ../_static/imgs/Preface/Preface09.png
     :align: center
@@ -43,10 +42,12 @@ Connect Freenove ESP32 S3 Display to the computer with USB cable.
 Sketch
 ====================================
 
-Open **“Sketch_02.1_LedPixel”** folder under **“Freenove_ESP32_S3_Display\\Sketches”** and double-click “Sketch_02.1_LedPixel.ino”.
+Open **“Sketch_02.1_LedPixel”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click “Sketch_02.1_LedPixel.ino”.
 
 Install the needed libraries.
 ------------------------------------
+
+If you have not installed all libaries as per the previous section, please follow the following steps to install the ws2812 library.
 
 Click **Sketch** -> **Include Library** -> **Add .ZIP Library...**
 
@@ -63,7 +64,7 @@ Sketch_02.1_LedPixel
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_02.1_LedPixel/Sketch_02.1_LedPixel.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_02.1_LedPixel/Sketch_02.1_LedPixel.ino
     :linenos:
     :language: C
     :dedent:
@@ -73,7 +74,7 @@ Code Explanation
 
 Define the pins for the RGB LED.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_02.1_LedPixel/Sketch_02.1_LedPixel.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_02.1_LedPixel/Sketch_02.1_LedPixel.ino
     :linenos:
     :language: C
     :lines: 9-11
@@ -81,7 +82,7 @@ Define the pins for the RGB LED.
 
 Initialize the LED, set the brightness to 10
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_02.1_LedPixel/Sketch_02.1_LedPixel.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_02.1_LedPixel/Sketch_02.1_LedPixel.ino
     :linenos:
     :language: C
     :lines: 19-20
@@ -89,7 +90,7 @@ Initialize the LED, set the brightness to 10
 
 Cycle through five different colors.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_02.1_LedPixel/Sketch_02.1_LedPixel.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_02.1_LedPixel/Sketch_02.1_LedPixel.ino
     :linenos:
     :language: C
     :lines: 23-30
@@ -110,7 +111,7 @@ Reference
 
 .. py:function:: Freenove_ESP32_WS2812(u16 n = 8, u8 pin_gpio = 2, u8 chn = 0, LED_TYPE t = TYPE_GRB)
 
-    Constructor to create a ws2812 object.
+    A constructor to create a ws2812 object.
     
     Before each use of the constructor, please add **“#include "Freenove_WS2812_Lib_for_ESP32.h”**
     
@@ -155,10 +156,9 @@ Component List
 .. table::
     :align: center
     :class: table-line
-    :width: 80%
 
     +-------------------------------+----------------+
-    | Freenove ESP32 S3 Display x 1 | USB cable x1   |
+    | Freenove ESP32-S3 Display x 1 | USB cable x1   |
     |                               |                |
     | |Chapter01_07|                | |Chapter01_08| |
     +-------------------------------+----------------+
@@ -166,7 +166,7 @@ Component List
 Circuit
 ====================================
 
-Connect Freenove ESP32 S3 Display to the computer with USB cable. 
+Connect Freenove ESP32-S3 Display to the computer with USB cable. 
 
 .. image:: ../_static/imgs/Preface/Preface09.png
     :align: center
@@ -174,14 +174,14 @@ Connect Freenove ESP32 S3 Display to the computer with USB cable.
 Sketch
 ====================================
 
-Open **“Sketch_02.2_Rainbow”** folder under **“Freenove_ESP32_S3_Display\\Sketches”** and double-click **“Sketch_02.2_Rainbow”**.
+Open **“Sketch_02.2_Rainbow”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_02.2_Rainbow”**.
 
 Sketch_02.2_Rainbow
 ------------------------------------
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_02.2_Rainbow/Sketch_02.2_Rainbow.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_02.2_Rainbow/Sketch_02.2_Rainbow.ino
     :linenos:
     :language: C
     :dedent:
@@ -191,7 +191,7 @@ Code Explanation
 
 In the loop(), two “for” loops are used, the internal “for” loop(for-j) is used to set the color of each LED, and the external “for” loop(for-i) is used to change the color, in which the self-increment value in i+=2 can be changed to change the color step distance. Changing the delay parameter changes the speed of the color change. ``strip.Wheel((i * 256 / LEDS_COUNT + j) & 255)`` will take color from the color model at equal intervals starting from i.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_02.2_Rainbow/Sketch_02.2_Rainbow.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_02.2_Rainbow/Sketch_02.2_Rainbow.ino
     :linenos:
     :language: C
     :lines: 20-26
@@ -225,7 +225,6 @@ Reference
                 For example, 8 represents 2^8 (0~255) levels.
     
     channel: PWM channel number to assign (integer)
-
 
 .. py:function:: void ledcWrite(uint8_t channel, uint32_t duty);	
 

@@ -8,10 +8,9 @@ Project 8.1 BLE USART
 .. table::
     :align: center
     :class: table-line
-    :width: 80%
 
     +-------------------------------+----------------+
-    | Freenove ESP32 S3 Display x 1 | USB cable x1   |
+    | Freenove ESP32-S3 Display x 1 | USB cable x1   |
     |                               |                |
     | |Chapter01_07|                | |Chapter01_08| |
     +-------------------------------+----------------+
@@ -44,20 +43,20 @@ Circuit
 
 Connect Freenove ESP32-S3 to the computer using the USB cable. 
 
-.. image:: ../_static/imgs/8_BLE/Chapter08_00.png
+.. image:: ../_static/imgs/Preface/Preface09.png
     :align: center
 
 Sketch
 =================================
 
-Next, we download the code to Freenove_ESP32_S3_Display to test. Open **“Sketch_08.1_BLE_USART”** folder under **“Freenove_ESP32_S3_Display\\Sketches”** and double-click **“Sketch_08.1_BLE_USART.ino”**.
+Next, we download the code to Freenove_ESP32_S3_Display to test. Open **“Sketch_08.1_BLE_USART”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_08.1_BLE_USART.ino”**.
 
 Sketch_08.1_BLE_USART
 ---------------------------------
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_08.1_BLE_USART/Sketch_08.1_BLE_USART.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.1_BLE_USART/Sketch_08.1_BLE_USART.ino
     :linenos:
     :language: C
     :dedent:
@@ -67,7 +66,7 @@ Code Explanation
 
 Include the necessary header libraries.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_08.1_BLE_USART/Sketch_08.1_BLE_USART.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.1_BLE_USART/Sketch_08.1_BLE_USART.ino
     :linenos:
     :language: C
     :lines: 8-12
@@ -75,7 +74,7 @@ Include the necessary header libraries.
 
 Define service UUID and characteristic UUID.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_08.1_BLE_USART/Sketch_08.1_BLE_USART.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.1_BLE_USART/Sketch_08.1_BLE_USART.ino
     :linenos:
     :language: C
     :lines: 20-22
@@ -83,7 +82,7 @@ Define service UUID and characteristic UUID.
 
 The MyServerCallbacks class handles device connection and disconnection events and updates the deviceConnected status.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_08.1_BLE_USART/Sketch_08.1_BLE_USART.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.1_BLE_USART/Sketch_08.1_BLE_USART.ino
     :linenos:
     :language: C
     :lines: 24-31
@@ -91,7 +90,7 @@ The MyServerCallbacks class handles device connection and disconnection events a
 
 The MyServerCallbacks class handles the received data and save them to the rxload string.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_08.1_BLE_USART/Sketch_08.1_BLE_USART.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.1_BLE_USART/Sketch_08.1_BLE_USART.ino
     :linenos:
     :language: C
     :lines: 33-43
@@ -99,7 +98,7 @@ The MyServerCallbacks class handles the received data and save them to the rxloa
 
 Set the baud rate to 115200.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_08.1_BLE_USART/Sketch_08.1_BLE_USART.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.1_BLE_USART/Sketch_08.1_BLE_USART.ino
     :linenos:
     :language: C
     :lines: 61-61
@@ -107,7 +106,7 @@ Set the baud rate to 115200.
 
 BLE Device Initialization, Service Creation, and Characteristic Setup
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_08.1_BLE_USART/Sketch_08.1_BLE_USART.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.1_BLE_USART/Sketch_08.1_BLE_USART.ino
     :linenos:
     :language: C
     :lines: 62-62
@@ -115,7 +114,7 @@ BLE Device Initialization, Service Creation, and Characteristic Setup
 
 The Loop function check the connection status and serial data every 100 milliseconds.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_08.1_BLE_USART/Sketch_08.1_BLE_USART.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.1_BLE_USART/Sketch_08.1_BLE_USART.ino
     :linenos:
     :language: C
     :lines: 65-80
@@ -136,7 +135,7 @@ https://apps.apple.com/us/app/lightblue/id557428110
 .. image:: ../_static/imgs/8_BLE/Chapter08_02.png
     :align: center
 
-Click **“Upload”** to upload the code to Freenove ESP32 S3 Display.
+Click **“Upload”** to upload the code to Freenove ESP32-S3 Display.
 
 .. image:: ../_static/imgs/8_BLE/Chapter08_03.png
     :align: center
@@ -228,10 +227,9 @@ Component List
 .. table::
     :align: center
     :class: table-line
-    :width: 80%
 
     +-------------------------------+----------------+
-    | Freenove ESP32 S3 Display x 1 | USB cable x1   |
+    | Freenove ESP32-S3 Display x 1 | USB cable x1   |
     |                               |                |
     | |Chapter01_07|                | |Chapter01_08| |
     +-------------------------------+----------------+
@@ -241,20 +239,19 @@ Circuit
 
 Connect Freenove ESP32-S3 to the computer using the USB cable. 
 
-.. image:: ../_static/imgs/8_BLE/Chapter08_00.png
+.. image:: ../_static/imgs/Preface/Preface09.png
     :align: center
 
 Sketch
 ==============================
 
-Next, we download the code to Freenove_ESP32_S3_Display to test. Open“Sketch_08.2_BLE_RGB” folder under “Freenove_ESP32_S3_Display\\Sketches” and double-click “Sketch_08.2_BLE_RGB.ino”.
-
+Next, we download the code to Freenove_ESP32_S3_Display to test. Open **“Sketch_08.2_BLE_RGB”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_08.2_BLE_RGB.ino”**.
 Sketch_08.2_BLE_RGB
 ------------------------------
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
     :linenos:
     :language: C
     :dedent:
@@ -264,7 +261,7 @@ Code Explanation
 
 Include the necessary header files.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
     :linenos:
     :language: C
     :lines: 7-12
@@ -272,7 +269,7 @@ Include the necessary header files.
 
 Define Service UUID and Characteristic UUID.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
     :linenos:
     :language: C
     :lines: 20-22
@@ -280,7 +277,7 @@ Define Service UUID and Characteristic UUID.
 
 Define pins for the RGB LED.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
     :linenos:
     :language: C
     :lines: 24-27
@@ -288,7 +285,7 @@ Define pins for the RGB LED.
 
 The MyServerCallbacks class handles device connection and disconnection events and updates the deviceConnected status.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
     :linenos:
     :language: C
     :lines: 60-67
@@ -296,7 +293,7 @@ The MyServerCallbacks class handles device connection and disconnection events a
 
 The MyCallbacks class handles the receiving data and save them to the rxload string.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
     :linenos:
     :language: C
     :lines: 69-76
@@ -304,7 +301,7 @@ The MyCallbacks class handles the receiving data and save them to the rxload str
 
 Set the baud rate to 115200
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
     :linenos:
     :language: C
     :lines: 97-97
@@ -312,7 +309,7 @@ Set the baud rate to 115200
 
 Initialize RGB LED setting, initialize the BLE device, create services, and set up characteristics.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
     :linenos:
     :language: C
     :lines: 98-100
@@ -320,7 +317,7 @@ Initialize RGB LED setting, initialize the BLE device, create services, and set 
 
 The Loop function checks the sending command every 100 milliseconds.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
     :linenos:
     :language: C
     :lines: 103-131
@@ -331,7 +328,7 @@ Enable the "USB CDC On Boot" feature.
 .. image:: ../_static/imgs/8_BLE/Chapter08_18.png
     :align: center
 
-Click **“Upload”** to upload the code to Freenove ESP32 S3 Display.
+Click **“Upload”** to upload the code to Freenove ESP32-S3 Display.
 
 .. image:: ../_static/imgs/8_BLE/Chapter08_19.png
     :align: center
@@ -346,7 +343,7 @@ Enter the messages to send. Here we take “red_on” as an example.
 .. image:: ../_static/imgs/8_BLE/Chapter08_21.png
     :align: center
 
-The RGB LED on the Freenove ESP32 S3 Display emits red light.
+The RGB LED on the Freenove ESP32-S3 Display emits red light.
 
 .. image:: ../_static/imgs/8_BLE/Chapter08_22.png
     :align: center

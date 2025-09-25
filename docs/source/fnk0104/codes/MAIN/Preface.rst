@@ -2,22 +2,6 @@
 Preface
 ##############################################################################
 
-Freenove ESP32S3 Display
-************************************
-
-.. table::
-    :align: center
-    :class: table-line
-
-    +-------------+-------------+
-    | Top         | Bottom      |
-    |             |             |
-    | |Preface00| | |Preface01| |
-    +-------------+-------------+
-
-.. |Preface00| image:: ../_static/imgs/Preface/Preface00.png
-.. |Preface01| image:: ../_static/imgs/Preface/Preface01.png
-
 Hardware Interfaces
 ************************************
 
@@ -40,14 +24,14 @@ Market-available batteries may feature **two distinct wiring configurations wher
 .. image:: ../_static/imgs/Preface/Preface03.png
     :align: center
 
-We recommend using a charger specially designed for lithium batteries. Due to various specifications and quality of lithium batteries, using a proper charger helps ensure peak performance, safety, and battery longevity.
+**We recommend using a charger specially designed for lithium batteries. Due to various specifications and quality of lithium batteries, using a proper charger helps ensure peak performance, safety, and battery longevity.**
 
-While our product also supports USB charging as a backup option, please note that this method does not support fast charging and is limited to standard slow charging.
+**While our product also supports USB charging as a backup option, please note that this method does not support fast charging and is limited to standard slow charging.**
 
 Speaker
 ==================================
 
-There is a speaker connector (PH1.25mm) on the Freenove ESP32 S3 Display. 
+There is a speaker connector (PH1.25mm) on the Freenove ESP32-S3 Display. 
 
 .. image:: ../_static/imgs/Preface/Preface04.png
     :align: center
@@ -65,13 +49,17 @@ The connector circuit uses SPI communication and supports high-speed Micro SD ca
     +---------+--------+------------+
     |  Item   |  Pins  | Definition |
     +=========+========+============+
-    |         | GPIO23 | SD_CMD     |
+    |         | GPIO38 | SD_CLK     |
     |         +--------+------------+
-    |         | GPIO18 | SD_CLK     |
+    |         | GPIO40 | SD_CMD     |
+    |         +--------+------------+
+    |         | GPIO39 | SD_D0      |
     | SD Card +--------+------------+
-    |         | GPIO19 | SD_D0      |
+    |         | GPIO41 | SD_D1      |
     |         +--------+------------+
-    |         | GPIO5  | SD_CS      |
+    |         | GPIO48 | SD_D2      |
+    |         +--------+------------+
+    |         | GPIO47 | SD_D3      |
     +---------+--------+------------+
 
 .. note::
@@ -89,15 +77,17 @@ TFT Screen
     +------------+--------+------------+
     |    Item    |  Pins  | Definition |
     +============+========+============+
-    |            | GPIO13 | LCD_MOSI   |
+    |            | GPIO10 | TFT_CS     |
     |            +--------+------------+
-    |            | GPIO12 | LCD_MISO   |
+    |            | GPIO11 | TFT_MOSI   |
     |            +--------+------------+
-    | TFT Screen | GPIO14 | LCD_SCK    |
+    |            | GPIO12 | TFT_SCK    |
+    | TFT Screen +--------+------------+
+    |            | GPIO13 | TFT_MISO   |
     |            +--------+------------+
-    |            | GPIO2  | LCD_RS     |
+    |            | GPIO45 | TFT_BL     |
     |            +--------+------------+
-    |            | GPIO15 | LCD_CS     |
+    |            | GPIO46 | TFT_DC     |
     +------------+--------+------------+
 
 Screen Size
@@ -125,28 +115,10 @@ Resolution
 RGB LED
 ==================================
 
-The Freenove ESP32 S3 Display includes an RGB LED (red, green, blue) that can blend colors to create various lighting effects.
+The Freenove ESP32-S3 Display includes an RGB LED (red, green, blue) that can blend colors to create various lighting effects.
 
 .. image:: ../_static/imgs/Preface/Preface07.png
     :align: center
-
-.. image:: ../_static/imgs/Preface/Preface08.png
-    :align: center
-
-.. table:: 
-    :align: center
-    :width: 70%
-    :class: zebra text-center
-
-    +------+--------+
-    | Item |  Pins  |
-    +======+========+
-    | R    | GPIO22 |
-    +------+--------+
-    | G    | GPIO16 |
-    +------+--------+
-    | B    | GPIO17 |
-    +------+--------+
 
 GPIO Pinout Table
 ==================================
@@ -158,16 +130,12 @@ The functions of the pins are allocated as follows:
 .. table:: 
     :align: center
     :width: 70%
-    :class: zebra text-center
+    :class: table-line text-center
 
     +----------------+-----------+-------------+
     | ESP32-S3 N16R8 | Functions | Description |
     +================+===========+=============+
-    | GPIO22         | R         | RGB         |
-    +----------------+-----------+             |
-    | GPIO16         | G         |             |
-    +----------------+-----------+             |
-    | GPIO17         | B         |             |
+    | GPIO42         | DIN       | RGB         |
     +----------------+-----------+-------------+
     | GPIO13         | LCD_MOSI  | TFT_LCD     |
     +----------------+-----------+             |
@@ -177,15 +145,29 @@ The functions of the pins are allocated as follows:
     +----------------+-----------+             |
     | GPIO2          | LCD_RS    |             |
     +----------------+-----------+             |
+    | GPIO2          | LCD_RS    |             |
+    +----------------+-----------+             |
     | GPIO15         | LCD_CS    |             |
     +----------------+-----------+-------------+
-    | GPIO23         | SD_CMD    | SD Card     |
+    | GPIO38         | SD_CLK    | SD Card     |
     +----------------+-----------+             |
-    | GPIO18         | SD_CLK    |             |
+    | GPIO40         | SD_CMD    |             |
     +----------------+-----------+             |
-    | GPIO19         | SD_D0     |             |
+    | GPIO39         | SD_D0     |             |
     +----------------+-----------+             |
-    | GPIO5          | SD_CS     |             |
+    | GPIO41         | SD_D1     |             |
+    +----------------+-----------+             |
+    | GPIO48         | SD_D2     |             |
+    +----------------+-----------+             |
+    | GPIO47         | SD_D3     |             |
+    +----------------+-----------+-------------+
+    | GPIO19         | USB_D-    | USB         |
+    +----------------+-----------+             |
+    | GPIO20         | USB_D+    |             |
+    +----------------+-----------+-------------+
+    | GPIO43         | TXD0      | Serial      |
+    +----------------+-----------+             |
+    | GPIO44         | RXD0      |             |
     +----------------+-----------+-------------+
 
 For more information, refer to the schematic.
@@ -308,7 +290,7 @@ Before starting the learning process, it is necessary to install some libraries 
 .. image:: ../_static/imgs/Preface/Preface50.png
     :align: center
 
-3. On the newly pop-up window, select the files from the Freenove_ESP32_S3_Display /Libraries. Click Open to install the library.
+3. On the newly pop-up window, select the files from the Freenove_ESP32_S3_Display/Libraries. Click Open to install the library.
 
 .. image:: ../_static/imgs/Preface/Preface51.png
     :align: center

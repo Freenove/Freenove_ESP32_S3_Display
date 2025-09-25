@@ -10,7 +10,7 @@
 在本地服务器部署小智AI
 ***************************************************************
 
-如果您不想使用小智AI官方服务器，也可以在本地计算机上搭建简化版服务端。本节我们将使用开源项目 https://github.com/xinnan-tech/xiaozhi-esp32-server 部署本地服务器，并与ESP32-S3建立连接。
+如果您不想使用小智AI官方服务器，也可以在本地计算机上搭建简化版服务端。本节我们将使用开源项目 https://github.com/xinnan-tech/xiaozhi-esp32-server 部署本地服务器，并与Freenove ESP32-S3 Display建立连接。
 
 若使用过程中发现代码存在bug，请前往 https://github.com/xinnan-tech/xiaozhi-esp32-server 提交issue。请注意，我们对该项目并无深入了解，可能无法提供大量协助。
 

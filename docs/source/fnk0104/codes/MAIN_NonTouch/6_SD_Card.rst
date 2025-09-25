@@ -11,10 +11,9 @@ Component List
 .. table::
     :align: center
     :class: table-line
-    :width: 80%
 
     +-------------------------------+----------------+
-    | Freenove ESP32 S3 Display x 1 | USB cable x1   |
+    | Freenove ESP32-S3 Display x 1 | USB cable x1   |
     |                               |                |
     | |Chapter01_07|                | |Chapter01_08| |
     +-------------------------------+----------------+
@@ -117,7 +116,7 @@ Before connecting the USB cable, insert the SD card into the SD card slot on the
 
 Connect Freenove ESP32-S3 to the computer using the USB cable. 
 
-.. image:: ../_static/imgs/6_SD_Card/Chapter06_14.png
+.. image:: ../_static/imgs/Preface/Preface09.png
     :align: center
 
 **If you have any concerns, please feel free to contact us via** support@freenove.com
@@ -125,14 +124,14 @@ Connect Freenove ESP32-S3 to the computer using the USB cable.
 Sketch
 =====================================
 
-Next, we download the code to Freenove_ESP32_S3_Display to test Serial. Open **“Sketch_06.1_SD_Test.ino”** folder under **“Freenove_ESP32_S3_Display\\Sketches”** and double-click **“Sketch_06.1_SD_Test.ino”**.
+Next, we download the code to Freenove_ESP32_S3_Display to test Serial. Open **“Sketch_06.1_SD_Test.ino”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_06.1_SD_Test.ino”**.
 
 Sketch_06.1_SD_Test
 -------------------------------------
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
     :linenos:
     :language: C
     :dedent:
@@ -142,7 +141,7 @@ Code Explanation
 
 Include necessary header files.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
     :linenos:
     :language: C
     :lines: 7-7
@@ -150,7 +149,7 @@ Include necessary header files.
 
 Define SD card pins. In this example, we read and write the SD card via SPI.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
     :linenos:
     :language: C
     :lines: 9-14
@@ -158,7 +157,7 @@ Define SD card pins. In this example, we read and write the SD card via SPI.
 
 Set the baud rate to 115200. 
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
     :linenos:
     :language: C
     :lines: 18-18
@@ -166,7 +165,7 @@ Set the baud rate to 115200.
 
 Initialize the SD card
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
     :linenos:
     :language: C
     :lines: 22-22
@@ -174,7 +173,7 @@ Initialize the SD card
 
 List all files under the root directory.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
     :linenos:
     :language: C
     :lines: 25-26
@@ -182,7 +181,7 @@ List all files under the root directory.
 
 Create a directory named “mydir” and list all files under the root directory.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
     :linenos:
     :language: C
     :lines: 29-30
@@ -190,7 +189,7 @@ Create a directory named “mydir” and list all files under the root directory
 
 Delete the “mydir” directory and list all files under the root directory.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
     :linenos:
     :language: C
     :lines: 34-35
@@ -198,7 +197,7 @@ Delete the “mydir” directory and list all files under the root directory.
 
 Write "Hello" in the hello.txt file, append "World!" to it, then read and print the file contents.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
     :linenos:
     :language: C
     :lines: 38-49
@@ -206,19 +205,13 @@ Write "Hello" in the hello.txt file, append "World!" to it, then read and print 
 
 Rename foo.txt to hello.txt and read the file.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
     :linenos:
     :language: C
     :lines: 51-54
     :dedent:
 
 Enable the "USB CDC On Boot" feature.
-
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
-    :linenos:
-    :language: C
-    :lines: 56-56
-    :dedent:
 
 .. image:: ../_static/imgs/6_SD_Card/Chapter06_15.png
     :align: center

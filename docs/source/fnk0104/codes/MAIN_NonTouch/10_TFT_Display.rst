@@ -11,10 +11,9 @@ Component List
 .. table::
     :align: center
     :class: table-line
-    :width: 80%
 
     +-------------------------------+----------------+
-    | Freenove ESP32 S3 Display x 1 | USB cable x1   |
+    | Freenove ESP32-S3 Display x 1 | USB cable x1   |
     |                               |                |
     | |Chapter01_07|                | |Chapter01_08| |
     +-------------------------------+----------------+
@@ -35,7 +34,7 @@ As one of the finest LCD color displays available, TFT screens offer superior pe
 Circuit
 ====================================
 
-Connect Freenove ESP32 S3 Display to the computer with USB cable. 
+Connect Freenove ESP32-S3 Display to the computer with USB cable. 
 
 .. image:: ../_static/imgs/Preface/Preface09.png
     :align: center
@@ -43,7 +42,7 @@ Connect Freenove ESP32 S3 Display to the computer with USB cable.
 Sketch
 ====================================
 
-Open **“Sketch_10.1_TFT_Rainbow.ino”** folder under **“Freenove_ESP32_S3_Display\\Sketches”** and double-click **“Sketch_10.1_TFT_Rainbow.ino”**.
+Open **“Sketch_10.1_TFT_Rainbow.ino”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_10.1_TFT_Rainbow.ino”**.
 
 Install Libraries
 ------------------------------------
@@ -99,7 +98,7 @@ Sketch_10.1_TFT_Rainbow
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_10.1_TFT_Rainbow/Sketch_10.1_TFT_Rainbow.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.1_TFT_Rainbow/Sketch_10.1_TFT_Rainbow.ino
     :linenos:
     :language: C
     :dedent:
@@ -109,7 +108,7 @@ Code Explanation
 
 Include the necessary header file.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_10.1_TFT_Rainbow/Sketch_10.1_TFT_Rainbow.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.1_TFT_Rainbow/Sketch_10.1_TFT_Rainbow.ino
     :linenos:
     :language: C
     :lines: 7-7
@@ -117,7 +116,7 @@ Include the necessary header file.
 
 Define TFT display object.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_10.1_TFT_Rainbow/Sketch_10.1_TFT_Rainbow.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.1_TFT_Rainbow/Sketch_10.1_TFT_Rainbow.ino
     :linenos:
     :language: C
     :lines: 9-9
@@ -125,7 +124,7 @@ Define TFT display object.
 
 Initialize the TFT display.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_10.1_TFT_Rainbow/Sketch_10.1_TFT_Rainbow.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.1_TFT_Rainbow/Sketch_10.1_TFT_Rainbow.ino
     :linenos:
     :language: C
     :lines: 19-20
@@ -133,7 +132,7 @@ Initialize the TFT display.
 
 Change the color of the screen in the sequence of red -> green -> blue -> black -> white.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_10.1_TFT_Rainbow/Sketch_10.1_TFT_Rainbow.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.1_TFT_Rainbow/Sketch_10.1_TFT_Rainbow.ino
     :linenos:
     :language: C
     :lines: 22-31
@@ -141,7 +140,7 @@ Change the color of the screen in the sequence of red -> green -> blue -> black 
 
 Implement the rainbow animation effect.	
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_10.1_TFT_Rainbow/Sketch_10.1_TFT_Rainbow.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.1_TFT_Rainbow/Sketch_10.1_TFT_Rainbow.ino
     :linenos:
     :language: C
     :lines: 38-85
@@ -149,7 +148,7 @@ Implement the rainbow animation effect.
 
 Text display
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_10.1_TFT_Rainbow/Sketch_10.1_TFT_Rainbow.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.1_TFT_Rainbow/Sketch_10.1_TFT_Rainbow.ino
     :linenos:
     :language: C
     :lines: 86-93
@@ -174,10 +173,9 @@ Component List
 .. table::
     :align: center
     :class: table-line
-    :width: 80%
 
     +-------------------------------+----------------+
-    | Freenove ESP32 S3 Display x 1 | USB cable x1   |
+    | Freenove ESP32-S3 Display x 1 | USB cable x1   |
     |                               |                |
     | |Chapter01_07|                | |Chapter01_08| |
     +-------------------------------+----------------+
@@ -213,14 +211,14 @@ Install TJpg_Decoder_v1.1.0.zip
 .. image:: ../_static/imgs/10_TFT_Display/Chapter10_04.png
     :align: center
 
-Open **“Sketch_10.2_Flash_Jpg_DMA”** folder under **“Freenove_ESP32_S3_Display\\Sketches”** and double-click **“Sketch_10.2_Flash_Jpg_DMA.ino”**.
+Open **“Sketch_10.2_Flash_Jpg_DMA”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_10.2_Flash_Jpg_DMA.ino”**.
 
 Sketch_10.2_Flash_Jpg_DMA
 ------------------------------------
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_10.2_Flash_Jpg_DMA/Sketch_10.2_Flash_Jpg_DMA.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.2_Flash_Jpg_DMA/Sketch_10.2_Flash_Jpg_DMA.ino
     :linenos:
     :language: C
     :dedent:
@@ -230,7 +228,7 @@ Code Explanation
 
 Include necessary header files
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_10.2_Flash_Jpg_DMA/Sketch_10.2_Flash_Jpg_DMA.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.2_Flash_Jpg_DMA/Sketch_10.2_Flash_Jpg_DMA.ino
     :linenos:
     :language: C
     :lines: 5-7
@@ -238,7 +236,7 @@ Include necessary header files
 
 Create TFT object instance.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_10.2_Flash_Jpg_DMA/Sketch_10.2_Flash_Jpg_DMA.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.2_Flash_Jpg_DMA/Sketch_10.2_Flash_Jpg_DMA.ino
     :linenos:
     :language: C
     :lines: 9-9
@@ -246,7 +244,7 @@ Create TFT object instance.
 
 JPEG decoding callback function
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_10.2_Flash_Jpg_DMA/Sketch_10.2_Flash_Jpg_DMA.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.2_Flash_Jpg_DMA/Sketch_10.2_Flash_Jpg_DMA.ino
     :linenos:
     :language: C
     :lines: 12-16
@@ -254,7 +252,7 @@ JPEG decoding callback function
 
 Get JPG size.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_10.2_Flash_Jpg_DMA/Sketch_10.2_Flash_Jpg_DMA.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.2_Flash_Jpg_DMA/Sketch_10.2_Flash_Jpg_DMA.ino
     :linenos:
     :language: C
     :lines: 34-34
@@ -262,7 +260,7 @@ Get JPG size.
 
 Draw images on the TFT screen.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_10.2_Flash_Jpg_DMA/Sketch_10.2_Flash_Jpg_DMA.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.2_Flash_Jpg_DMA/Sketch_10.2_Flash_Jpg_DMA.ino
     :linenos:
     :language: C
     :lines: 41-43
@@ -283,7 +281,7 @@ Custom image display
 
 You can customize the image displayed on the display according to your personal preferences.
 
-First, open Freenove_ESP32_S3_Display\\Sketches\\Sketch_10.2_Flash_Jpg_DMA\\Freenove Image Tool.exe
+First, open **Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches\\Sketch_10.2_Flash_Jpg_DMA\\Freenove Image Tool.exe**
 
 .. image:: ../_static/imgs/10_TFT_Display/Chapter10_07.png
     :align: center

@@ -11,36 +11,35 @@ Component List
 .. table::
     :align: center
     :class: table-line
-    :width: 80%
 
     +-------------------------------+----------------+
-    | Freenove ESP32 S3 Display x 1 | USB cable x1   |
+    | Freenove ESP32-S3 Display x 1 | USB cable x1   |
     |                               |                |
-    | |Chapter01_07|                | |Chapter01_08| |
+    | |Chapter11_04|                | |Chapter11_07| |
     +-------------------------------+----------------+
 
-.. |Chapter01_07| image:: ../_static/imgs/1_Serial/Chapter01_07.png
-.. |Chapter01_08| image:: ../_static/imgs/1_Serial/Chapter01_08.png
+.. |Chapter11_04| image:: ../_static/imgs/11_TFT_Touch/Chapter11_04.png
+.. |Chapter11_07| image:: ../_static/imgs/11_TFT_Touch/Chapter11_07.png
 
 Circuit
 ==========================================
 
 Connect Freenove ESP32 -S3 to the computer using the USB cable. 
 
-.. image:: ../_static/imgs/Preface/Preface09.png
+.. image:: ../_static/imgs/11_TFT_Touch/Chapter11_05.png
     :align: center
 
 Sketch
 ==========================================
 
-Open **“Sketch_16.1_Lvgl_RGB”** folder under **“Freenove_ESP32_S3_Display\\Sketches”** and double-click **“Sketch_16.1_Lvgl_RGB.ino”**.
+Open **“Sketch_16.1_Lvgl_WS2812”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_16.1_Lvgl_WS2812.ino”**.
 
-Sketch_16.1_Lvgl_RGB
+Sketch_16.1_Lvgl_WS2812
 ------------------------------------------
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_16.1_Lvgl_RGB/Sketch_16.1_Lvgl_RGB.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_16.1_Lvgl_WS2812/Sketch_16.1_Lvgl_WS2812.ino
     :linenos:
     :language: C
     :dedent:
@@ -50,7 +49,7 @@ Code Explanation
 
 Include the header files.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_16.1_Lvgl_RGB/Sketch_16.1_Lvgl_RGB.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_16.1_Lvgl_WS2812/Sketch_16.1_Lvgl_WS2812.ino
     :linenos:
     :language: C
     :lines: 1-4
@@ -58,7 +57,7 @@ Include the header files.
 
 Set the baud rate to 115200
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_16.1_Lvgl_RGB/Sketch_16.1_Lvgl_RGB.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_16.1_Lvgl_WS2812/Sketch_16.1_Lvgl_WS2812.ino
     :linenos:
     :language: C
     :lines: 7-7
@@ -66,7 +65,7 @@ Set the baud rate to 115200
 
 Initialize the RGB LED.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_16.1_Lvgl_RGB/Sketch_16.1_Lvgl_RGB.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_16.1_Lvgl_WS2812/Sketch_16.1_Lvgl_WS2812.ino
     :linenos:
     :language: C
     :lines: 10-10
@@ -74,7 +73,7 @@ Initialize the RGB LED.
 
 Create and load the interface.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_16.1_Lvgl_RGB/Sketch_16.1_Lvgl_RGB.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_16.1_Lvgl_WS2812/Sketch_16.1_Lvgl_WS2812.ino
     :linenos:
     :language: C
     :lines: 20-21
@@ -82,7 +81,7 @@ Create and load the interface.
 
 LVGL task processor.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_16.1_Lvgl_RGB/Sketch_16.1_Lvgl_RGB.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_16.1_Lvgl_WS2812/Sketch_16.1_Lvgl_WS2812.ino
     :linenos:
     :language: C
     :lines: 25-25

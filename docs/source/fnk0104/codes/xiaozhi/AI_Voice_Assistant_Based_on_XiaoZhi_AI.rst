@@ -2,12 +2,12 @@
 AI Voice Assistant Based on XiaoZhi AI
 ##############################################################################
 
-This project applies the Freenove ESP32 S3 Display to implement an AI voice assistant, which requires a certain level of programming proficiency as well as familiarity with ESP-IDF and open-source large models.
+This project applies the Freenove ESP32-S3 Display to implement an AI voice assistant, which requires a certain level of programming proficiency as well as familiarity with ESP-IDF and open-source large models.
 
 About the Project
 *********************************
 
-This voice assistant project (https://github.com/Freenove/xiaozhi-esp32) is derived from the open-source project (https://github.com/78/xiaozhi-esp32 ). It enables the invocation of most mainstream large language models (LLMs) on embedded devices and achieves voice conversation functionality through multiple services, including Voice Activity Detection (VAD), Automatic Speech Recognition (ASR), Speech-to-Text (STT), Text-to-Speech (TTS), Memory Storage, and Intent Recognition. Freenove has adapted this project for its Media Kit product. This article will explain how to run the project on the Media Kit.
+This voice assistant project (https://github.com/Freenove/xiaozhi-esp32) is derived from the open-source project (https://github.com/78/xiaozhi-esp32 ). It enables the invocation of most mainstream large language models (LLMs) on embedded devices and achieves voice conversation functionality through multiple services, including Voice Activity Detection (VAD), Automatic Speech Recognition (ASR), Speech-to-Text (STT), Text-to-Speech (TTS), Memory Storage, and Intent Recognition. Freenove has adapted this project for its Freenove ESP32-S3 Display product. This article will explain how to run the project on the Freenove ESP32-S3 Display.
 
 There are two ways to run this project - online or offline.
 
@@ -24,9 +24,9 @@ Cautions
 
 * Project Copyright:
 
-- Voice Assistant Project: Originally developed by "Xiage", this project was forked and adapted by Freenove for the Media Kit, released under MIT License.
+- Voice Assistant Project: Originally developed by "Xiage", this project was forked and adapted by Freenove for the Freenove ESP32-S3 Display, released under MIT License.
 
-- Local Server Project: Originally created by "xinnan-tech", this project was similarly forked and adapted by Freenove for Media Kit integration, licensed under MIT License.
+- Local Server Project: Originally created by "xinnan-tech", this project was similarly forked and adapted by Freenove for Freenove ESP32-S3 Display integration, licensed under MIT License.
 
 * Supprted Countries and Regions:
 
@@ -66,37 +66,15 @@ Notes:
 
 3.	The XiaoZhi server interface currently supports English, Chinese, and Japanese only. Additionally, mobile registration is only available for users in the following countries (see the table below). Users from other countries cannot register yet.
 
-In this project, the ESP32-S3 communicates with XiaoZhi AI server through WebSocket protocol for data exchange.
+In this project, the Freenove ESP32-S3 Display communicates with XiaoZhi AI server through WebSocket protocol for data exchange.
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI00.png
-    :align: center
-
-Freenove ESP32 S3 Display
-**********************************
-
-.. table::
-    :align: center
-    :class: table-line
-
-    +-------------+-------------+
-    | Top         | Bottom      |
-    |             |             |
-    | |Preface00| | |Preface01| |
-    +-------------+-------------+
-
-.. |Preface00| image:: ../_static/imgs/Preface/Preface00.png
-.. |Preface01| image:: ../_static/imgs/Preface/Preface01.png
-
-Hardware Interfaces
-**********************************
-
-.. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI01.png
     :align: center
 
 XiaoZhi AI Firmware
 *************************
 
-If your hardware does not yet have XiaoZhi firmware installed, you can follow the upcoming tutorial to re-flash the firmware onto the ESP32-S3.  
+If your hardware does not yet have XiaoZhi firmware installed, you can follow the upcoming tutorial to re-flash the firmware onto the Freenove ESP32-S3 Display.  
 
 If your hardware already comes with XiaoZhi firmware pre-installed, you may skip this section.  
 
@@ -243,7 +221,7 @@ Type "python --version" to check if Python is installed. If no Python version in
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI43.png
     :align: center
 
-Connect the ESP32-S3 to your computer using a USB cable
+Connect the Freenove ESP32-S3 Display to your computer using a USB cable
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI44.png
     :align: center
@@ -255,12 +233,12 @@ If your computer does not have esptool or its required dependencies installed, t
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI45.png
     :align: center
 
-Then, it will invoke esptool to upload the files from the bin folder to the ESP32-S3.
+Then, it will invoke esptool to upload the files from the bin folder to the Freenove ESP32-S3 Display.
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI46.png
     :align: center
 
-You will see the following messages display on ESP32 S3 board.
+You will see the following messages display on Freenove ESP32-S3 Display.
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI47.png
     :align: center
@@ -278,7 +256,7 @@ Type "python --version" to check if Python is installed. If no Python version in
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI49.png
     :align: center
 
-Connect the ESP32-S3 to your computer using a USB cable
+Connect the Freenove ESP32-S3 Display to your computer using a USB cable
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI50.png
     :align: center
@@ -288,12 +266,12 @@ Type "python upload_xiaozhi_bin.py" and press Enter.
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI51.png
     :align: center
 
-Then, it will invoke esptool to upload the files from the bin folder to the ESP32-S3.
+Then, it will invoke esptool to upload the files from the bin folder to the Freenove ESP32-S3 Display.
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI52.png
     :align: center
 
-You will see the following messages display on ESP32-S3 board.
+You will see the following messages display on Freenove ESP32-S3 Display board.
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI53.png
     :align: center
@@ -315,7 +293,7 @@ Enter **"python --version"** to check if the Python environment is installed. If
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI55.png
     :align: center
 
-Connect the ESP32-S3 to your computer using a USB cable, making sure to plug it into the correct Type-C port (do not use the wrong connector).
+Connect the Freenove ESP32-S3 Display to your computer using a USB cable, making sure to plug it into the correct Type-C port (do not use the wrong connector).
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI56.png
     :align: center
@@ -373,7 +351,7 @@ Run the following command to open the python file.
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI62.png
     :align: center
 
-In the text editor, locate the line '--port', 'COMx' and replace 'COMx' with the port number assigned to your ESP32-S3 on Linux computer.
+In the text editor, locate the line '--port', 'COMx' and replace 'COMx' with the port number assigned to your Freenove ESP32-S3 Display on Linux computer.
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI63.png
     :align: center
@@ -399,19 +377,19 @@ The successful code uploading is as shown below.
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI66.png
     :align: center
 
-The display on the ESP32-S3 is as shown below.
+The display on the Freenove ESP32-S3 Display is as shown below.
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI67.png
     :align: center
 
-ESP32-S3 Network Configuration
-**********************************************
+Freenove ESP32-S3 Display Network Configuration
+*****************************************************
 
-If your ESP32-S3 does not yet have the XiaoZhi AI firmware installed, proceed to the 
+If your Freenove ESP32-S3 Display does not yet have the XiaoZhi AI firmware installed, proceed to the 
 
 If you want to explore the XiaoZhi AI code, go to :ref:`the XiaoZhi AI Code section <fnk0104/codes/xiaozhi/xiaozhi_ai_code:xiaozhi ai code>`.
 
-If your ESP32-S3 already has the XiaoZhi AI firmware integrated:
+If your Freenove ESP32-S3 Display already has the XiaoZhi AI firmware integrated:
 
 1.	On your smart phone, enable WiFi.
 
@@ -427,7 +405,7 @@ After connecting to the WiFi, follow the on-screen prompts to tap the notificati
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI69.png
     :align: center
 
-**WiFi Connection Setup for ESP32-S3**
+**WiFi Connection Setup for Freenove ESP32-S3 Display**
 
 **Enter WiFi Credentials:**
 
@@ -439,7 +417,7 @@ Click Connect to proceed.
 
 **Important Notes:**
 
-- The ESP32-S3 only supports 2.4GHz WiFi networks.
+- The Freenove ESP32-S3 Display only supports 2.4GHz WiFi networks.
 
 - If your router broadcasts both 2.4GHz and 5GHz, ensure the ESP32 connects to the 2.4GHz band only.
 
@@ -448,7 +426,7 @@ Click Connect to proceed.
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI70.png
     :align: center
 
-When you see the following screen, it means your ESP32-S3 has successfully connected to your WiFi network.
+When you see the following screen, it means your Freenove ESP32-S3 Display has successfully connected to your WiFi network.
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI71.png
     :align: center
@@ -456,7 +434,7 @@ When you see the following screen, it means your ESP32-S3 has successfully conne
 XiaoZhi AI Server Configuration
 ***************************************
 
-Ensure your phone/computer and ESP32-S3 are connected to the same router WiFi network.
+Ensure your phone/computer and Freenove ESP32-S3 Display are connected to the same router WiFi network.
 
 Open a browser on your device and visit: https://xiaozhi.me/
 
@@ -509,7 +487,7 @@ Click "Agents" to return to the main dashboard and select "Add Device" to regist
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI80.png
     :align: center
 
-In the new pop-up window, enter the on-screen numeric code displayed on your ESP32-S3. Click "Confirm" to complete pairing.
+In the new pop-up window, enter the on-screen numeric code displayed on your Freenove ESP32-S3 Display. Click "Confirm" to complete pairing.
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI81.png
     :align: center
@@ -519,7 +497,7 @@ The interface will now display as shown below.
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI82.png
     :align: center
 
-Press the RST button on the Freenove ESP32 S3 Display board to restart the board.
+Press the RST button on the Freenove ESP32-S3 Display board to restart the board.
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI83.png
     :align: center

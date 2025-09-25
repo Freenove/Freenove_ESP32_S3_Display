@@ -24,10 +24,9 @@ Component List
 .. table::
     :align: center
     :class: table-line
-    :width: 80%
 
     +-------------------------------+----------------+
-    | Freenove ESP32 S3 Display x 1 | USB cable x1   |
+    | Freenove ESP32-S3 Display x 1 | USB cable x1   |
     |                               |                |
     | |Chapter01_07|                | |Chapter01_08| |
     +-------------------------------+----------------+
@@ -38,7 +37,7 @@ Component List
 Circuit
 ====================================
 
-Connect Freenove ESP32 S3 Display to the computer with USB cable. 
+Connect Freenove ESP32-S3 Display to the computer with USB cable. 
 
 .. image:: ../_static/imgs/Preface/Preface09.png
     :align: center
@@ -46,14 +45,14 @@ Connect Freenove ESP32 S3 Display to the computer with USB cable.
 Sketch
 ====================================
 
-Open **“Sketch_04.1_Button_Interrupt_UART”** folder under **“Freenove_ESP32_S3_Display\\Sketches”** and double-click **“Sketch_04.1_Button_Interrupt_UART.ino”**.
+Open **“Sketch_04.1_Button_Interrupt_UART”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_04.1_Button_Interrupt_UART.ino”**.
 
 Sketch_04.1_Button_Interrupt_UART
 -------------------------------------
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_04.1_Button_Interrupt_UART/Sketch_04.1_Button_Interrupt_UART.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_04.1_Button_Interrupt_UART/Sketch_04.1_Button_Interrupt_UART.ino
     :linenos:
     :language: C
     :dedent:
@@ -63,7 +62,7 @@ Code Explanation
 
 Define the pin of the button.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_04.1_Button_Interrupt_UART/Sketch_04.1_Button_Interrupt_UART.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_04.1_Button_Interrupt_UART/Sketch_04.1_Button_Interrupt_UART.ino
     :linenos:
     :language: C
     :lines: 9-9  
@@ -71,7 +70,7 @@ Define the pin of the button.
 
 Configure the button pin hardware interrupt to trigger on the falling edge signal.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_04.1_Button_Interrupt_UART/Sketch_04.1_Button_Interrupt_UART.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_04.1_Button_Interrupt_UART/Sketch_04.1_Button_Interrupt_UART.ino
     :linenos:
     :language: C
     :lines: 16-16
@@ -79,7 +78,7 @@ Configure the button pin hardware interrupt to trigger on the falling edge signa
 
 The interrupt processing function, counting how many times the button is pressed.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_04.1_Button_Interrupt_UART/Sketch_04.1_Button_Interrupt_UART.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_04.1_Button_Interrupt_UART/Sketch_04.1_Button_Interrupt_UART.ino
     :linenos:
     :language: C
     :lines: 28-33
@@ -87,7 +86,7 @@ The interrupt processing function, counting how many times the button is pressed
 
 When the number of button presses changes, print new data in the serial monitor.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_04.1_Button_Interrupt_UART/Sketch_04.1_Button_Interrupt_UART.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_04.1_Button_Interrupt_UART/Sketch_04.1_Button_Interrupt_UART.ino
     :linenos:
     :language: C
     :lines: 42-47

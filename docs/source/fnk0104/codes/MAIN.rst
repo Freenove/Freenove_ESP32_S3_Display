@@ -11,6 +11,13 @@ Touch Tutorial
 
 .. toctree::
    :maxdepth: 1
+   :caption: Freenove ESP32S3 Display
+   :glob:
+
+   MAIN/Freenove_ESP32S3_Display.rst
+
+.. toctree::
+   :maxdepth: 1
    :caption: List
    :glob:
    

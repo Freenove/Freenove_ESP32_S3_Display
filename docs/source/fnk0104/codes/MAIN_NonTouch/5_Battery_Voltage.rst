@@ -11,14 +11,11 @@ Related Knowledge
 ADC
 -------------------------------------
 
-ADC is an electronic integrated circuit used to convert analog signals such as voltages to digital or binary form consisting of 1s and 0s. The range of our ADC on Raspberry Pi Pico (W) is 10 bits, which means the resolution is 2^10=1024, and it represents a range (at 3.3V) will be divided equally to 1024 parts. The rage of analog values corresponds to ADC values. So the more bits the ADC has, the denser the partition of analog will be and the greater the precision of the resulting conversion.
+ADC is an electronic integrated circuit used to convert analog signals such as voltages to digital or binary form consisting of 1s and 0s. The range of our ADC on Freenove ESP32-S3 Display is 12 bits, which means the resolution is 2^12=4095, and it represents a range (at 3.3V) will be divided equally to 4095 parts. The rage of analog values corresponds to ADC values. So the more bits the ADC has, the denser the partition of analog will be and the greater the precision of the resulting conversion.
 
-.. image:: ../_static/imgs/5_Battery_Voltage/Chapter05_00.png
-    :align: center
+Subsection 1: the analog in rang of 0V---3.3/4095 V corresponds to digital 0;
 
-Subsection 1: the analog in rang of 0V---3.3/1023 V corresponds to digital 0;
-
-Subsection 2: the analog in rang of 3.3/1023 V---2*3.3 /1023V corresponds to digital 1;
+Subsection 2: the analog in rang of 3.3/4095 V---2*3.3 /4095V corresponds to digital 1;
 
 The following analog will be divided accordingly.
 
@@ -26,7 +23,7 @@ The conversion formula is as follows:
 
 .. math::
 
-    \text{ADC Value} = \frac{\text{Analog Voltage}}{3.3} \times 1023
+    \text{ADC Value} = \frac{\text{Analog Voltage}}{3.3} \times 4095
 
 Battery Voltage
 -------------------------------------
@@ -40,7 +37,7 @@ The ADC pin on this board has a voltage sampling range of 0~3.3V. However, when 
 
 To ensure accurate voltage measurement and ADC pin protection, the circuit employs a resistive voltage divider that scales the battery voltage down by a factor of 0.5. At a full charge (4.2V), the divided voltage at the ADC input is 2.1V, well within the safe operating range. This design enables reliable battery monitoring while preventing overvoltage damage to the ADC.
 
-:combo:`red font-bolder:Please note that this kit does not include a lithium battery, please buy one yourself. For more information about battery, please refer to` :ref:`Battery <fnk0104/codes/main_nontouch/preface:battery (optional)>`.
+:combo:`red font-bolder:Please note that this kit does not include a lithium battery, please buy one yourself. For more information about battery, please refer to` :ref:`Battery <fnk0104/codes/main/preface:battery (optional)>`.
 
 Component List
 ====================================
@@ -48,10 +45,9 @@ Component List
 .. table::
     :align: center
     :class: table-line
-    :width: 80%
 
     +-------------------------------+----------------+
-    | Freenove ESP32 S3 Display x 1 | USB cable x1   |
+    | Freenove ESP32-S3 Display x 1 | USB cable x1   |
     |                               |                |
     | |Chapter01_07|                | |Chapter01_08| |
     +-------------------------------+----------------+
@@ -62,7 +58,7 @@ Component List
 Circuit
 ====================================
 
-Connect Freenove ESP32 S3 Display to the computer with USB cable. 
+Connect Freenove ESP32-S3 Display to the computer with USB cable. 
 
 .. image:: ../_static/imgs/Preface/Preface09.png
     :align: center
@@ -70,14 +66,14 @@ Connect Freenove ESP32 S3 Display to the computer with USB cable.
 Sketch
 ====================================
 
-Next, we download the code to Freenove_ESP32_S3_Display to test Serial. Open“Sketch_05.1_Battery_Voltage.ino” folder under “Freenove_ESP32_S3_Display\\Sketches” and double-click “Sketch_05.1_Battery_Voltage.ino”.
+Next, we download the code to Freenove ESP32-S3 Display to test Serial. Open“Sketch_05.1_Battery_Voltage.ino” folder under “Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches” and double-click “Sketch_05.1_Battery_Voltage.ino”.
 
 Sketch_05.1_Battery_Voltage
 -------------------------------------
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
     :linenos:
     :language: C
     :dedent:
@@ -87,7 +83,7 @@ Code Explanation
 
 Define the pins for the button and RGB LED.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
     :linenos:
     :language: C
     :lines: 7-7
@@ -95,7 +91,7 @@ Define the pins for the button and RGB LED.
 
 Set the battery voltage detecting pin to input mode.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
     :linenos:
     :language: C
     :lines: 10-10
@@ -103,7 +99,7 @@ Set the battery voltage detecting pin to input mode.
 
 Set the battery voltage detecting pin to input mode.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
     :linenos:
     :language: C
     :lines: 11-11
@@ -111,7 +107,7 @@ Set the battery voltage detecting pin to input mode.
 
 Measure the battery voltage every 300ms and outputs the reading to the serial monitor.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
     :linenos:
     :language: C
     :lines: 14-19
@@ -135,6 +131,6 @@ Once the program starts, open the serial monitor to view the battery voltage rea
 Reference
 -----------------------------
 
-.. py:function:: uint32_t analogReadMilliVolts(uint8_t pin)	
+.. c:function:: uint32_t analogReadMilliVolts(uint8_t pin)	
 
     This function reads the voltage directly from the analog pin and returns the value in millivolts (mV), with a maximum return value of 3300mV (3.3V)

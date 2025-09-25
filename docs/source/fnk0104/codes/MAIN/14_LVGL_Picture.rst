@@ -11,16 +11,15 @@ Component List
 .. table::
     :align: center
     :class: table-line
-    :width: 80%
 
     +-------------------------------+----------------+
-    | Freenove ESP32 S3 Display x 1 | USB cable x1   |
+    | Freenove ESP32-S3 Display x 1 | USB cable x1   |
     |                               |                |
-    | |Chapter01_07|                | |Chapter01_08| |
+    | |Chapter11_04|                | |Chapter11_07| |
     +-------------------------------+----------------+
 
-.. |Chapter01_07| image:: ../_static/imgs/1_Serial/Chapter01_07.png
-.. |Chapter01_08| image:: ../_static/imgs/1_Serial/Chapter01_08.png
+.. |Chapter11_04| image:: ../_static/imgs/11_TFT_Touch/Chapter11_04.png
+.. |Chapter11_07| image:: ../_static/imgs/11_TFT_Touch/Chapter11_07.png
 
 Circuit
 ==============================================================================
@@ -29,24 +28,27 @@ Before connecting the USB cable, insert the SD card into the SD card slot on the
 
 :combo:`red font-bolder:Please note that this kit does not include SD card and card reader; please buy them yourself.`
 
-Connect Freenove ESP32-S3 to the computer using the USB cable. 
-
-.. image:: ../_static/imgs/14_LVGL_Picture/Chapter14_00.png
+.. image:: ../_static/imgs/6_SD_Card/Chapter06_13.png
     :align: center
 
-If you have any concerns, please feel free to contact us via support@freenove.com
+Connect Freenove ESP32-S3 to the computer using the USB cable. 
+
+.. image:: ../_static/imgs/11_TFT_Touch/Chapter11_05.png
+    :align: center
+
+**If you have any concerns, please feel free to contact us via** support@freenove.com
 
 Sketch
 ==========================================
 
-Open **“Sketch_14.1_Lvgl_Picture”** folder under **“Freenove_ESP32_S3_Display\\Sketches”** and double-click **“Sketch_14.1_Lvgl_Picture.ino”**. 
+Open **“Sketch_14.1_Lvgl_Picture”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_14.1_Lvgl_Picture.ino”**. 
 
 Sketch_14.1_Lvgl_Picture
 ------------------------------------------
 
 The following is the program code:	
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_14.1_Lvgl_Picture/Sketch_14.1_Lvgl_Picture.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_14.1_Lvgl_Picture/Sketch_14.1_Lvgl_Picture.ino
     :linenos:
     :language: C
     :dedent:
@@ -56,7 +58,7 @@ Code Explanation
 
 Include the header files.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_14.1_Lvgl_Picture/Sketch_14.1_Lvgl_Picture.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_14.1_Lvgl_Picture/Sketch_14.1_Lvgl_Picture.ino
     :linenos:
     :language: C
     :lines: 10-12
@@ -64,7 +66,7 @@ Include the header files.
 
 Define the pins.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_14.1_Lvgl_Picture/Sketch_14.1_Lvgl_Picture.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_14.1_Lvgl_Picture/Sketch_14.1_Lvgl_Picture.ino
     :linenos:
     :language: C
     :lines: 14-19
@@ -72,7 +74,7 @@ Define the pins.
 
 Set the baud rate to 115200
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_14.1_Lvgl_Picture/Sketch_14.1_Lvgl_Picture.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_14.1_Lvgl_Picture/Sketch_14.1_Lvgl_Picture.ino
     :linenos:
     :language: C
     :lines: 25-25
@@ -80,7 +82,7 @@ Set the baud rate to 115200
 
 Initialize configuration.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_14.1_Lvgl_Picture/Sketch_14.1_Lvgl_Picture.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_14.1_Lvgl_Picture/Sketch_14.1_Lvgl_Picture.ino
     :linenos:
     :language: C
     :lines: 27-28
@@ -88,7 +90,7 @@ Initialize configuration.
 
 Create and load the interface.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_14.1_Lvgl_Picture/Sketch_14.1_Lvgl_Picture.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_14.1_Lvgl_Picture/Sketch_14.1_Lvgl_Picture.ino
     :linenos:
     :language: C
     :lines: 42-43
@@ -96,13 +98,13 @@ Create and load the interface.
 
 LVGL Task Processor
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_14.1_Lvgl_Picture/Sketch_14.1_Lvgl_Picture.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_14.1_Lvgl_Picture/Sketch_14.1_Lvgl_Picture.ino
     :linenos:
     :language: C
     :lines: 50-50
     :dedent:
 
-Copy the Picture folder under the Freenove_ESP32_S3_Display\\Sketches\\Sketch_14.1_Lvgl_Picture directory to the SD card root directory.
+Copy the Picture folder under the **Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches\\Sketch_14.1_Lvgl_Picture** directory to the SD card root directory.
 
 .. image:: ../_static/imgs/14_LVGL_Picture/Chapter14_01.png
     :align: center

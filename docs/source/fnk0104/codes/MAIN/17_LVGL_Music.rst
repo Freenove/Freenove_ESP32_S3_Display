@@ -11,20 +11,19 @@ Component List
 .. table::
     :align: center
     :class: table-line
-    :width: 80%
 
     +-------------------------------+----------------+
-    | Freenove ESP32 S3 Display x 1 | USB cable x1   |
+    | Freenove ESP32-S3 Display x 1 | USB cable x1   |
     |                               |                |
-    | |Chapter07_00|                | |Chapter07_01| |
+    | |Chapter11_04|                | |Chapter11_07| |
     +-------------------------------+----------------+
     | Speaker x1                                     |
     |                                                |
     | |Chapter07_02|                                 |
     +------------------------------------------------+
 
-.. |Chapter07_00| image:: ../_static/imgs/7_Music/Chapter07_00.png
-.. |Chapter07_01| image:: ../_static/imgs/7_Music/Chapter07_01.png
+.. |Chapter11_04| image:: ../_static/imgs/11_TFT_Touch/Chapter11_04.png
+.. |Chapter11_07| image:: ../_static/imgs/11_TFT_Touch/Chapter11_07.png
 .. |Chapter07_02| image:: ../_static/imgs/7_Music/Chapter07_02.png
 
 .. note::
@@ -36,25 +35,25 @@ Circuit
 
 Connect Freenove ESP32-S3 to the computer using the USB cable. 
 
-.. image:: ../_static/imgs/17_LVGL_Music/Chapter17_00.png
+.. image:: ../_static/imgs/6_SD_Card/Chapter06_13.png
     :align: center
 
 Connect Freenove ESP32-S3 to the computer using the USB cable. 
 
-.. image:: ../_static/imgs/17_LVGL_Music/Chapter17_01.png
+.. image:: ../_static/imgs/11_TFT_Touch/Chapter11_05.png
     :align: center
 
 Sketch
 ================================
 
-Open **“Sketch_17.1_Lvgl_Music”** folder under **“Freenove_ESP32_S3_Display\\Sketches”** and double-click **“Sketch_17.1_Lvgl_Music.ino”**.
+Open **“Sketch_17.1_Lvgl_Music”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_17.1_Lvgl_Music.ino”**.
 
 Sketch_17.1_Lvgl_Music
 ------------------------------------------
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
     :linenos:
     :language: C
     :dedent:
@@ -64,7 +63,7 @@ Code Explanation
 
 Include the header files.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
     :linenos:
     :language: C
     :lines: 7-13
@@ -72,7 +71,7 @@ Include the header files.
 
 Define the pins.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
     :linenos:
     :language: C
     :lines: 7-13
@@ -80,7 +79,7 @@ Define the pins.
 
 Set the baud rate to 115200
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
     :linenos:
     :language: C
     :lines: 50-50
@@ -88,7 +87,7 @@ Set the baud rate to 115200
 
 Initialize configuration.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
     :linenos:
     :language: C
     :lines: 53-59
@@ -96,7 +95,7 @@ Initialize configuration.
 
 Create and load the interface.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
     :linenos:
     :language: C
     :lines: 66-67
@@ -104,13 +103,13 @@ Create and load the interface.
 
 LVGL task processor.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
     :linenos:
     :language: C
     :lines: 73-73
     :dedent:
 
-Insert the SD card to the card reader and plug them to the computer. Copy the **Music** folder under the **Freenove_ESP32_S3_Display\\Sketches\\Sketch_17.1_Lvgl_Music** directory to the root directory of the SD card.
+Insert the SD card to the card reader and plug them to the computer. Copy the **Music** folder under the **Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches\\Sketch_17.1_Lvgl_Music** directory to the root directory of the SD card.
 
 .. image:: ../_static/imgs/17_LVGL_Music/Chapter17_02.png
     :align: center

@@ -10,7 +10,7 @@ This project is derived from the open-source repository: https://github.com/xinn
 Deploying XiaoZhi AI on a Local Server
 ***************************************************************
 
-If you prefer not to use the XiaoZhi AI server, you can also set up a simplified version of the server on your own computer. In this section, we will use the open-source project at https://github.com/xinnan-tech/xiaozhi-esp32-server to deploy a local server and establish a connection with the ESP32-S3. 
+If you prefer not to use the XiaoZhi AI server, you can also set up a simplified version of the server on your own computer. In this section, we will use the open-source project at https://github.com/xinnan-tech/xiaozhi-esp32-server to deploy a local server and establish a connection with the Freenove ESP32-S3 Display. 
 
 If you encounter any bugs in the code during use, please submit an issue at https://github.com/xinnan-tech/xiaozhi-esp32-server. Please note that we do not have an in-depth understanding of this project and may not be able to provide extensive assistance.
 

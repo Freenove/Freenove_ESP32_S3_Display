@@ -236,7 +236,7 @@ Linux
 .. image:: ../_static/imgs/XiaoZhi_AI_Code/xiaozhi32.png
     :align: center
 
-使用USB线将ESP32-S3连接至电脑，注意必须插入正确的Type-C接口（请勿接错插口）
+使用USB线将Freenove ESP32-S3 Display连接至电脑
 
 点击左下角的 'COMx' 按钮，显示电脑所有可用COM端口。找到并选择标有"ESP32-S3"的选项
 
@@ -301,7 +301,7 @@ Linux
 .. image:: ../_static/imgs/XiaoZhi_AI_Code/xiaozhi44.png
     :align: center
 
-点击底部的 '烧录设备(Flash Device)' 开始将代码上传至ESP32-S3模块。
+点击底部的 '烧录设备(Flash Device)' 开始将代码上传至Freenove ESP32-S3 Display。
 
 .. image:: ../_static/imgs/XiaoZhi_AI_Code/xiaozhi45.png
     :align: center
@@ -311,7 +311,7 @@ Linux
 .. image:: ../_static/imgs/XiaoZhi_AI_Code/xiaozhi46.png
     :align: center
 
-当看到 '烧录完成。您可以使用"ESP-IDF: Monitor command"监控设备' 的提示时，即表示您已成功将XiaoZhi AI固件烧录至ESP32-S3模块。
+当看到 '烧录完成。您可以使用"ESP-IDF: Monitor command"监控设备' 的提示时，即表示您已成功将XiaoZhi AI固件烧录至Freenove ESP32-S3 Display。
 
 .. image:: ../_static/imgs/XiaoZhi_AI_Code/xiaozhi47.png
     :align: center

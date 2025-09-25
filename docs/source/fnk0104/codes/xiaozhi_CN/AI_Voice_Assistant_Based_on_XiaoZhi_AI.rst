@@ -2,12 +2,12 @@
 基于小智AI的语音助手
 ##############################################################################
 
-该项目采用Freenove ESP32 S3显示屏实现AI语音助手功能，需具备一定的编程功底，并熟悉ESP-IDF开发框架及开源大模型技术。
+该项目采用Freenove ESP32-S3 Display显示屏实现AI语音助手功能，需具备一定的编程功底，并熟悉ESP-IDF开发框架及开源大模型技术。
 
 关于本项目
 *********************************
 
-该语音助手项目（https://github.com/Freenove/xiaozhi-esp32）衍生自开源项目（https://github.com/78/xiaozhi-esp32），可在嵌入式设备上调用主流大语言模型（LLM），通过语音活动检测（VAD）、自动语音识别（ASR）、语音转文本（STT）、文本转语音（TTS）、记忆存储及意图识别等多模块服务实现语音对话功能。Freenove公司已将其适配至Media Kit产品，本文将阐述如何在Media Kit上运行该项目。
+该语音助手项目（https://github.com/Freenove/xiaozhi-esp32）衍生自开源项目（https://github.com/78/xiaozhi-esp32），可在嵌入式设备上调用主流大语言模型（LLM），通过语音活动检测（VAD）、自动语音识别（ASR）、语音转文本（STT）、文本转语音（TTS）、记忆存储及意图识别等多模块服务实现语音对话功能。Freenove公司已将其适配至Freenove ESP32-S3 Display产品，本文将阐述如何在Freenove ESP32-S3 Display上运行该项目。
 
 1、在线模式：连接至小智（xiaozhi.me）服务器，目前面向个人用户免费开放体验。
 
@@ -24,9 +24,9 @@
 
 * 项目版权声明
 
-  - 语音助手项目：原开发者"Xiage"，Freenove公司为适配Media Kit进行分支修改，基于MIT开源协议发布。
+  - 语音助手项目：原开发者"Xiage"，Freenove公司为适配Freenove ESP32-S3 Display进行分支修改，基于MIT开源协议发布。
 
-  - 本地服务器项目：原开发者"xinnan-tech"，Freenove公司同样为Media Kit集成进行分支改造，采用MIT开源协议。
+  - 本地服务器项目：原开发者"xinnan-tech"，Freenove公司同样为Freenove ESP32-S3 Display集成进行分支改造，采用MIT开源协议。
 
 * 支持国家/地区
 
@@ -67,37 +67,15 @@
 
 3、小智服务器界面目前仅支持英文、中文、日文显示，手机号注册仅限以下国家/地区用户（详见下表），其他地区用户暂无法注册
 
-本项目通过WebSocket协议实现ESP32-S3与小智AI服务器的数据通信。
+本项目通过WebSocket协议实现Freenove ESP32-S3 Display与小智AI服务器的数据通信。
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI00.png
-    :align: center
-
-Freenove ESP32 S3 Display
-**********************************
-
-.. table::
-    :align: center
-    :class: table-line
-
-    +-------------+-------------+
-    | Top         | Bottom      |
-    |             |             |
-    | |Preface00| | |Preface01| |
-    +-------------+-------------+
-
-.. |Preface00| image:: ../_static/imgs/Preface/Preface00.png
-.. |Preface01| image:: ../_static/imgs/Preface/Preface01.png
-
-硬件接口
-**********************************
-
-.. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI01.png
     :align: center
 
 小智AI固件
 *************************
 
-若设备尚未安装小智AI固件，请按照后续教程为ESP32-S3重新烧录固件。
+若设备尚未安装小智AI固件，请按照后续教程为Freenove ESP32-S3 Display重新烧录固件。
 
 若设备已预装小智AI固件，则可跳过本步骤。
 
@@ -242,7 +220,7 @@ Windows
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI43.png
     :align: center
 
-使用USB数据线将ESP32-S3连接至电脑
+使用USB数据线将Freenove ESP32-S3 Display连接至电脑
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI44.png
     :align: center
@@ -254,12 +232,12 @@ Windows
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI45.png
     :align: center
 
-随后，程序将调用esptool，将bin文件夹中的文件烧录至ESP32-S3。
+随后，程序将调用esptool，将bin文件夹中的文件烧录至Freenove ESP32-S3 Display。
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI46.png
     :align: center
 
-您将在ESP32-S3开发板上看到以下信息显示。
+您将在Freenove ESP32-S3 Display开发板上看到以下信息显示。
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI47.png
     :align: center
@@ -277,7 +255,7 @@ Mac
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI49.png
     :align: center
 
-使用USB数据线将ESP32-S3开发板连接至电脑
+使用USB数据线将Freenove ESP32-S3 Display开发板连接至电脑
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI50.png
     :align: center
@@ -287,12 +265,12 @@ Mac
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI51.png
     :align: center
 
-随后系统将自动调用 esptool 工具，将 bin 目录下的固件文件烧录至 ESP32-S3 开发板
+随后系统将自动调用 esptool 工具，将 bin 目录下的固件文件烧录至 Freenove ESP32-S3 Display 开发板
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI52.png
     :align: center
 
-您将在ESP32-S3开发板上看到以下信息显示。
+您将在Freenove ESP32-S3 Display开发板上看到以下信息显示。
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI53.png
     :align: center
@@ -314,7 +292,7 @@ Linux
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI55.png
     :align: center
 
-使用 USB 数据线将 ESP32-S3 开发板连接至电脑，请确保插入正确的 Type-C 接口（切勿接错端口）。
+使用 USB 数据线将 Freenove ESP32-S3 Display 开发板连接至电脑，请确保插入正确的 Type-C 接口（切勿接错端口）。
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI56.png
     :align: center
@@ -343,23 +321,23 @@ Linux
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI59.png
     :align: center
 
-执行以下命令检测 ESP32-S3 端口号
+执行以下命令检测 Freenove ESP32-S3 Display 端口号
 
 .. code-block:: console
     
     ls /dev/tty*
 
-当 ESP32-S3 未连接电脑时，端口显示如下
+当 Freenove ESP32-S3 Display 未连接电脑时，端口显示如下
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI60.png
     :align: center
 
-当连接 ESP32-S3 后，系统将生成新端口
+当连接 Freenove ESP32-S3 Display 后，系统将生成新端口
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI61.png
     :align: center
 
-新生成的端口即为 ESP32-S3 所用，请记录该端口号。
+新生成的端口即为 Freenove ESP32-S3 Display 所用，请记录该端口号。
 
 运行 Python 文件前，需先修改端口配置。
 
@@ -372,7 +350,7 @@ Linux
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI62.png
     :align: center
 
-在文本编辑器中定位 '--port' 参数行，将其中的 'COMx' 替换为 Linux 系统中 ESP32-S3 分配的实际端口号
+在文本编辑器中定位 '--port' 参数行，将其中的 'COMx' 替换为 Linux 系统中 Freenove ESP32-S3 Display 分配的实际端口号
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI63.png
     :align: center
@@ -398,19 +376,19 @@ Linux
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI66.png
     :align: center
 
-ESP32-S3 开发板显示如下：
+Freenove ESP32-S3 Display 开发板显示如下：
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI67.png
     :align: center
 
-ESP32-S3 网络配置指南
+Freenove ESP32-S3 Display 网络配置指南
 **********************************************
 
-如果您的ESP32-S3尚未安装小智AI固件，请前往
+如果您的Freenove ESP32-S3 Display尚未安装小智AI固件，请前往
 
 若想探索小智AI代码，请参阅 :ref:`小智AI代码章节 <fnk0104/codes/xiaozhi_cn/xiaozhi_ai_code:小智ai代码>`
 
-若您的ESP32-S3已集成小智AI固件：
+若您的Freenove ESP32-S3 Display已集成小智AI固件：
 
 1、在智能手机上启用WiFi
 
@@ -426,7 +404,7 @@ ESP32-S3 网络配置指南
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI69.png
     :align: center
 
-ESP32-S3的WiFi连接设置
+Freenove ESP32-S3 Display的WiFi连接设置
 
 **输入WiFi凭证：**
 
@@ -438,7 +416,7 @@ SSID：输入您的WiFi网络名称（仅支持2.4GHz）
 
 **重要提示：**
 
-    - ESP32-S3仅支持2.4GHz WiFi网络
+    - Freenove ESP32-S3 Display仅支持2.4GHz WiFi网络
 
     - 若路由器同时广播2.4GHz和5GHz信号，请确保设备仅连接2.4GHz频段
 
@@ -447,7 +425,7 @@ SSID：输入您的WiFi网络名称（仅支持2.4GHz）
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI70.png
     :align: center
 
-当出现以下界面时，表示ESP32-S3已成功连接您的WiFi网络
+当出现以下界面时，表示Freenove ESP32-S3 Display已成功连接您的WiFi网络
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI71.png
     :align: center
@@ -455,7 +433,7 @@ SSID：输入您的WiFi网络名称（仅支持2.4GHz）
 XiaoZhi AI 服务器配置
 ***************************************
 
-确保您的手机/电脑和 ESP32-S3 连接到同一个路由器 WiFi 网络。
+确保您的手机/电脑和 Freenove ESP32-S3 Display 连接到同一个路由器 WiFi 网络。
 
 在您的设备上打开浏览器并访问：https://xiaozhi.me/
 
@@ -504,7 +482,7 @@ XiaoZhi AI 服务器配置
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI80.png
     :align: center
 
-在新的弹出窗口中，输入您的 ESP32-S3 上显示的屏幕数字代码。点击“确定”完成配对。
+在新的弹出窗口中，输入您的 Freenove ESP32-S3 Display 上显示的屏幕数字代码。点击“确定”完成配对。
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI81.png
     :align: center
@@ -514,7 +492,7 @@ XiaoZhi AI 服务器配置
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI82.png
     :align: center
 
-按下 Freenove ESP32 S3 Display上的 RST 按钮重新启动电路板。
+按下 Freenove ESP32-S3 Display上的 RST 按钮重新启动电路板。
 
 .. image:: ../_static/imgs/AI_Voice_Assistant_Based_on_XiaoZhi_AI/AI83.png
     :align: center

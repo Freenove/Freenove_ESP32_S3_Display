@@ -2,7 +2,7 @@
 Chapter 3 Button
 ##############################################################################
 
-The Boot button on the Freenove ESP32 S3 Display can be configured as a regular input button after the program starts.
+The Boot button on the Freenove ESP32-S3 Display can be configured as a regular input button after the program starts.
 
 Project 3.1 Button RGB
 *************************************
@@ -17,7 +17,7 @@ Button
 
 In embedded systems, buttons are one of the most common human-machine input devices. When a button is not pressed, its opposing contacts are connected while adjacent contacts remain disconnected. Conversely, when the button is pressed, adjacent contacts connect while opposing contacts disconnect.
 
-**Usage of the Boot Button on the Freenove CYD Board:**
+**Usage of the Boot Button on the Freenove ESP32-S3 Display:**
 
 **Manual Entry into Download Mode:**
 
@@ -54,10 +54,9 @@ Component List
 .. table::
     :align: center
     :class: table-line
-    :width: 80%
 
     +-------------------------------+----------------+
-    | Freenove ESP32 S3 Display x 1 | USB cable x1   |
+    | Freenove ESP32-S3 Display x 1 | USB cable x1   |
     |                               |                |
     | |Chapter01_07|                | |Chapter01_08| |
     +-------------------------------+----------------+
@@ -68,7 +67,7 @@ Component List
 Circuit
 ====================================
 
-Connect Freenove ESP32 S3 Display to the computer with USB cable. 
+Connect Freenove ESP32-S3 Display to the computer with USB cable. 
 
 .. image:: ../_static/imgs/Preface/Preface09.png
     :align: center
@@ -76,14 +75,14 @@ Connect Freenove ESP32 S3 Display to the computer with USB cable.
 Sketch
 ====================================
 
-Open **“Sketch_03.1_Button_RGB”** folder under **“Freenove_ESP32_S3_Display\\Sketches”** and double-click **“Sketch_03.1_Button_RGB.ino”**.
+Open **“Sketch_03.1_Button_RGB”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_03.1_Button_RGB.ino”**.
 
 Sketch_03.1_Button_RGB
 ------------------------------------
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_03.1_Button_RGB/Sketch_03.1_Button_RGB.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_03.1_Button_RGB/Sketch_03.1_Button_RGB.ino
     :linenos:
     :language: C
     :dedent:
@@ -93,7 +92,7 @@ Code Explanation
 
 Define the pins for the button and the RGB LED.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_03.1_Button_RGB/Sketch_03.1_Button_RGB.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_03.1_Button_RGB/Sketch_03.1_Button_RGB.ino
     :linenos:
     :language: C
     :lines: 10-13
@@ -101,7 +100,7 @@ Define the pins for the button and the RGB LED.
 
 Initialize the RGB LED and the button. 
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_03.1_Button_RGB/Sketch_03.1_Button_RGB.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_03.1_Button_RGB/Sketch_03.1_Button_RGB.ino
     :linenos:
     :language: C
     :lines: 53-55
@@ -109,13 +108,13 @@ Initialize the RGB LED and the button.
 
 Control the color of the RGB LED through the button.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_03.1_Button_RGB/Sketch_03.1_Button_RGB.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_03.1_Button_RGB/Sketch_03.1_Button_RGB.ino
     :linenos:
     :language: C
     :lines: 60-70
     :dedent:
 
-Click “Upload” to upload the code to Freenove_ESP32_S3_Display.
+Click “Upload” to upload the code to Freenove ESP32-S3 Display.
 
 .. image:: ../_static/imgs/3_Button/Chapter03_02.png
     :align: center

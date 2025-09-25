@@ -11,10 +11,9 @@ Component List
 .. table::
     :align: center
     :class: table-line
-    :width: 80%
 
     +-------------------------------+----------------+
-    | Freenove ESP32 S3 Display x 1 | USB cable x1   |
+    | Freenove ESP32-S3 Display x 1 | USB cable x1   |
     |                               |                |
     | |Chapter01_07|                | |Chapter01_08| |
     +-------------------------------+----------------+
@@ -59,17 +58,17 @@ Circuit
 
 Connect Freenove ESP32 -S3 to the computer using the USB cable. 
 
-.. image:: ../_static/imgs/9_WIFI_Web_Server/Chapter09_00.png
+.. image:: ../_static/imgs/Preface/Preface09.png
     :align: center
 
 Sketch
 ============================================
 
-Next, we download the code to Freenove_ESP32_S3_Display to test. Open **“Sketch_09.1_WiFi_Web_Servers_LED”** folder under **“Freenove_ESP32_S3_Display\\Sketches”** and double-click **“Sketch_09.1_WiFi_Web_Servers_LED.ino”**.
+Next, we download the code to Freenove_ESP32_S3_Display to test. Open **“Sketch_09.1_WiFi_Web_Servers_LED”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_09.1_WiFi_Web_Servers_LED.ino”**.
 
 :combo:`red font-bolder:Important Note: Before upload the code, please ensure that the Wi-Fi SSID and Password are correctly configured in the code, and that the Wi-Fi network to connect is 2.4GHz.`
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
     :linenos:
     :language: C
     :lines: 11-12
@@ -80,7 +79,7 @@ Sketch_09.1_WiFi_Web_Servers_LED
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
     :linenos:
     :language: C
     :dedent:
@@ -90,7 +89,7 @@ Code Explanation
 
 Include necessary header files.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
     :linenos:
     :language: C
     :lines: 7-7
@@ -98,7 +97,7 @@ Include necessary header files.
 
 Configure WiFi SSID and password.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
     :linenos:
     :language: C
     :lines: 11-12
@@ -106,7 +105,7 @@ Configure WiFi SSID and password.
 
 Define pins for the RGB LED.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
     :linenos:
     :language: C
     :lines: 21-23
@@ -114,7 +113,7 @@ Define pins for the RGB LED.
 
 Initialize the configuration related to RGB LED.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
     :linenos:
     :language: C
     :lines: 39-42
@@ -122,7 +121,7 @@ Initialize the configuration related to RGB LED.
 
 Connect to WIFI.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
     :linenos:
     :language: C
     :lines: 60-67
@@ -130,7 +129,7 @@ Connect to WIFI.
 
 Check if there are any new clients connected to the server.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
     :linenos:
     :language: C
     :lines: 78-78
@@ -138,7 +137,7 @@ Check if there are any new clients connected to the server.
 
 Parse the URL command and control the corresponding LED on and off.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
     :linenos:
     :language: C
     :lines: 96-121
@@ -146,7 +145,7 @@ Parse the URL command and control the corresponding LED on and off.
 
 Use CSS styles to enhance the visual appeal of web interfaces.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
     :linenos:
     :language: C
     :lines: 140-153
@@ -154,7 +153,7 @@ Use CSS styles to enhance the visual appeal of web interfaces.
 
 Generate the HTML contents to control the LED.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
     :linenos:
     :language: C
     :lines: 159-175
@@ -162,7 +161,7 @@ Generate the HTML contents to control the LED.
 
 Disconnect from the client and print the disconnection information in the serial monitor
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
     :linenos:
     :language: C
     :lines: 202-204

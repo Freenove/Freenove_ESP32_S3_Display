@@ -11,20 +11,19 @@ Component List
 .. table::
     :align: center
     :class: table-line
-    :width: 80%
 
     +-------------------------------+----------------+
-    | Freenove ESP32 S3 Display x 1 | USB cable x1   |
+    | Freenove ESP32-S3 Display x 1 | USB cable x1   |
     |                               |                |
-    | |Chapter07_00|                | |Chapter07_01| |
+    | |Chapter01_07|                | |Chapter01_08| |
     +-------------------------------+----------------+
     | Speaker x1                                     |
     |                                                |
     | |Chapter07_02|                                 |
     +------------------------------------------------+
 
-.. |Chapter07_00| image:: ../_static/imgs/7_Music/Chapter07_00.png
-.. |Chapter07_01| image:: ../_static/imgs/7_Music/Chapter07_01.png
+.. |Chapter01_07| image:: ../_static/imgs/1_Serial/Chapter01_07.png
+.. |Chapter01_08| image:: ../_static/imgs/1_Serial/Chapter01_08.png
 .. |Chapter07_02| image:: ../_static/imgs/7_Music/Chapter07_02.png
 
 :combo:`red font-bolder:Please note that this kit does not include SD card and card reader, please buy them by yourself.`
@@ -36,7 +35,7 @@ Before connecting the USB cable, insert the SD card into the SD card slot on the
 
 Please note that this kit does not include SD card and card reader; please buy them yourself.
 
-.. image:: ../_static/imgs/7_Music/Chapter07_03.png
+.. image:: ../_static/imgs/6_SD_Card/Chapter06_13.png
     :align: center
 
 Connect speaker
@@ -46,32 +45,33 @@ Connect speaker
 
 Connect Freenove ESP32-S3 to the computer using the USB cable. 
 
-.. image:: ../_static/imgs/7_Music/Chapter07_05.png
+.. image:: ../_static/imgs/Preface/Preface09.png
     :align: center
 
 Sketch
 =====================================
 
 Install the needed libraries.
+-------------------------------------
 
 Click **Sketch** -> **Include Library** -> **Add .ZIP Library...**
 
 .. image:: ../_static/imgs/7_Music/Chapter07_06.png
     :align: center
 
-Select ESP32-audioI2S_v3.0.13.zip
+Select **ESP32-audioI2S_v3.0.13.zip**
 
 .. image:: ../_static/imgs/7_Music/Chapter07_07.png
     :align: center
 
-Next, we download the code to Freenove_ESP32_S3_Display to test. Open **“Sketch_07.1_Music”** folder under **“Freenove_ESP32_S3_Display\\Sketches”** and double-click **“Sketch_07.1_Music.ino”**.
+Next, we download the code to Freenove_ESP32_S3_Display to test. Open **“Sketch_07.1_Music”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_07.1_Music.ino”**.
 
 Sketch_07.1_Music
 -------------------------------------
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
     :dedent:
@@ -81,7 +81,7 @@ Code Explanation
 
 Include necessary header files.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
     :lines: 1-9
@@ -89,7 +89,7 @@ Include necessary header files.
 
 Define the pins.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
     :lines: 11-28
@@ -97,7 +97,7 @@ Define the pins.
 
 Declare an I2S object
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
     :lines: 30-31
@@ -105,7 +105,7 @@ Declare an I2S object
 
 Set the baud rate to 115200
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
     :lines: 46-46
@@ -113,7 +113,7 @@ Set the baud rate to 115200
 
 SD card init
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
     :lines: 48-62
@@ -121,7 +121,7 @@ SD card init
 
 Read audio data and play it.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
     :lines: 63-68
@@ -129,7 +129,7 @@ Read audio data and play it.
 
 play music
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
     :lines: 71-71
@@ -149,7 +149,7 @@ It is necessary to change the settings in Arduino IDE before clicking the Upload
 .. image:: ../_static/imgs/7_Music/Chapter07_09.png
     :align: center
 
-Click **“Upload”** to upload the code to Freenove ESP32 S3 Display.
+Click **“Upload”** to upload the code to Freenove ESP32-S3 Display.
 
 .. image:: ../_static/imgs/7_Music/Chapter07_10.png
     :align: center
@@ -165,12 +165,11 @@ Component List
 .. table::
     :align: center
     :class: table-line
-    :width: 80%
 
     +-------------------------------+----------------+
-    | Freenove ESP32 S3 Display x 1 | USB cable x1   |
+    | Freenove ESP32-S3 Display x 1 | USB cable x1   |
     |                               |                |
-    | |Chapter07_00|                | |Chapter07_01| |
+    | |Chapter01_07|                | |Chapter01_08| |
     +-------------------------------+----------------+
     | Speaker x1                                     |
     |                                                |
@@ -199,17 +198,17 @@ Before connecting the USB cable, insert the SD card into the SD card slot on the
 
 :combo:`red font-bolder:Please note that this kit does not include SD card and card reader; please buy them yourself.`
 
-.. image:: ../_static/imgs/7_Music/Chapter07_12.png
+.. image:: ../_static/imgs/6_SD_Card/Chapter06_13.png
     :align: center
 
 Connect speaker
 
-.. image:: ../_static/imgs/7_Music/Chapter07_13.png
+.. image:: ../_static/imgs/7_Music/Chapter07_04.png
     :align: center
 
-Connect Freenove ESP32 S3 Display to the computer using the USB cable.
+Connect Freenove ESP32-S3 to the computer using the USB cable. 
 
-.. image:: ../_static/imgs/7_Music/Chapter07_14.png
+.. image:: ../_static/imgs/Preface/Preface09.png
     :align: center
 
 Sketch
@@ -220,7 +219,7 @@ Sketch_07.2_Echo
 
 The following is the program code:
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
     :linenos:
     :language: C
     :dedent:
@@ -230,7 +229,7 @@ Code Explanation
 
 Include necessary header files.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
     :linenos:
     :language: C
     :lines: 1-8
@@ -238,7 +237,7 @@ Include necessary header files.
 
 Define the pins.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
     :linenos:
     :language: C
     :lines: 1-8
@@ -246,7 +245,7 @@ Define the pins.
 
 Declare an I2S object
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
     :linenos:
     :language: C
     :lines: 29-29
@@ -254,7 +253,7 @@ Declare an I2S object
 
 Set the baud rate to 115200
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
     :linenos:
     :language: C
     :lines: 45-45
@@ -262,7 +261,7 @@ Set the baud rate to 115200
 
 Initialize the audio device.
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
     :linenos:
     :language: C
     :lines: 50-55
@@ -270,7 +269,7 @@ Initialize the audio device.
 
 Implement audio recording and playback functionality
 
-.. literalinclude:: /freenove_Kit/Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
+.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
     :linenos:
     :language: C
     :lines: 60-75

@@ -8,5 +8,6 @@ XiaoZhi CN
    :glob:
 
    xiaozhi_CN/AI_Voice_Assistant_Based_on_XiaoZhi_AI.rst
+   xiaozhi_CN/Freenove_ESP32S3_Display.rst
    xiaozhi_CN/XiaoZhi_AI_Code.rst
    xiaozhi_CN/Local_Server.rst
