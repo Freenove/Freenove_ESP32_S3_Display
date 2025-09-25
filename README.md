@@ -2,7 +2,13 @@
 
 > Freenove ESP32 S3 Display
 
-<img src='Picture/top.jpg' width='50%'/><img src='Picture/bottom.jpg' width='50%'/>
+## Touch
+
+<img src='Picture/Touch_Top.png' width='50%'/><img src='Picture/Touch_Bottom.png' width='50%'/>
+
+## NonTouch
+
+<img src='Picture/NonTouch_Top.png' width='50%'/><img src='Picture/NonTouch_Bottom.png' width='50%'/>
 
 ### Download
 
