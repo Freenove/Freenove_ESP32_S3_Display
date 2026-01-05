@@ -57,42 +57,6 @@ Install **TFT_eSPI_v2.5.43.zip** and **TFT_eSPI_Setups_v1.2.zip**
 .. image:: ../_static/imgs/10_TFT_Display/Chapter10_01.png
     :align: center
 
-How to configure (Important)
-------------------------------------
-
-Open This PC, input %USERPROFILE%\\Documents\\Arduino\\libraries\\TFT_eSPI_Setups and press the Enter key.
-
-.. image:: ../_static/imgs/10_TFT_Display/Chapter10_18.png
-    :align: center
-
-Right click **User_Setup_Select.h**, click **Edit**.
-
-.. image:: ../_static/imgs/10_TFT_Display/Chapter10_19.png
-    :align: center
-
-Uncomment the corresponding macro definition based on the model purchased.
-
-If the screen does not have touch functionality, configure as below:
-
-.. image:: ../_static/imgs/10_TFT_Display/Chapter10_20.png
-    :align: center
-
-If the screen has touch functionality, configure as below:
-
-.. image:: ../_static/imgs/10_TFT_Display/Chapter10_22.png
-    :align: center
-
-:combo:`red font-bolder:Important Note: Only one macro definition should be uncommented.`
-
-Save the change and exit the file.
-
-.. warning::
-
-    :combo:`red font-bolder:If the following update prompt appears, click "LATER". Updating the TFT_eSPI library will reset all related configurations. If you click "INSTALL", please reinstall the TFT_eSPI library to ensure proper project operation.`
-
-.. image:: ../_static/imgs/10_TFT_Display/Chapter10_21.png
-    :align: center
-
 Sketch_10.1_TFT_Rainbow
 ------------------------------------
 
