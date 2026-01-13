@@ -169,7 +169,7 @@ static inline esp_err_t es8311_read_reg(es8311_handle_t dev, uint8_t reg_addr, u
 
     Wire.beginTransmission(es->dev_addr);
     Wire.write(reg_addr);
-    uint8_t err = Wire.endTransmission(false); // false 表示发送 Restart 信号
+    uint8_t err = Wire.endTransmission(false); 
 
     if (err != 0) {
         ESP_LOGE(TAG, "I2C Read (Write addr) Error: %d", err);
