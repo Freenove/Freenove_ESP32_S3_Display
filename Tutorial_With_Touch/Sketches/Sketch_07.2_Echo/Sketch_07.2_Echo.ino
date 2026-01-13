@@ -3,7 +3,7 @@
 #include "SD_MMC.h"
 #include "SPI.h"
 #include "es8311.h"
-//#include "Audio.h"
+#include "Audio.h"
 #include "Wire.h"
 #include "ESP_I2S.h"
 
@@ -63,13 +63,10 @@ void loop()
   size_t wav_size;
   // Record 5 seconds of audio data
   Serial.println("Start recording for 5 seconds...");
-  es8311_set_voice_mute(true);
-  delay(50);
   wav_buffer = es8311_i2s.recordWAV(5, &wav_size);
   Serial.println("Recording completed.");
-  es8311_set_voice_mute(false);
   delay(1000);
-  
+
   Serial.println("Start playing the recording...");
   es8311_i2s.playWAV(wav_buffer, wav_size);
   Serial.println("Playback has been completed.");

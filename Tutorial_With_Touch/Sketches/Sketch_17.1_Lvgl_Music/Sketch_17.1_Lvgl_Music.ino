@@ -56,7 +56,6 @@ void setup(){
       Serial.println("ES8311 init failed!");
       return;
     }
-    es8311_set_mic_gain(ES8311_MIC_GAIN_MIN); // Close mic
     screen.init();
 
     String LVGL_Arduino = "Hello Arduino! ";
