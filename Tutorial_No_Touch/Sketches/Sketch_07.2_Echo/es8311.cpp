@@ -1,20 +1,23 @@
+#include <stdint.h>
 /*
  * SPDX-FileCopyrightText: 2015-2022 Espressif Systems (Shanghai) CO LTD
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#include <Arduino.h>
+#include <Wire.h>
 #include <string.h>
 #include "es8311.h"
 #include "driver/gpio.h"
 #include "esp_log.h"
 #include "esp_err.h"
 #include "esp_check.h"
-#include "driver/i2s_std.h"
+
 #include "es8311_reg.h"
 
 typedef struct {
-    i2c_port_t port;
+    int port;
     uint16_t dev_addr;
 } es8311_dev_t;
 
@@ -141,18 +144,46 @@ static const struct _coeff_div coeff_div[] = {
 };
 
 static const char *TAG = "ES8311";
+static es8311_handle_t global_es_handle = NULL;
 
 static inline esp_err_t es8311_write_reg(es8311_handle_t dev, uint8_t reg_addr, uint8_t data)
 {
     es8311_dev_t *es = (es8311_dev_t *) dev;
-    const uint8_t write_buf[2] = {reg_addr, data};
-    return i2c_master_write_to_device(es->port, es->dev_addr, write_buf, sizeof(write_buf), pdMS_TO_TICKS(1000));
+
+    Wire.beginTransmission(es->dev_addr);
+    Wire.write(reg_addr);
+    Wire.write(data);
+    uint8_t err = Wire.endTransmission();
+    
+    if(err == 0){
+        return ESP_OK;
+    } else {
+        ESP_LOGE(TAG, "I2C Write Error :%d", err);
+        return ESP_FAIL;
+    }
 }
 
 static inline esp_err_t es8311_read_reg(es8311_handle_t dev, uint8_t reg_addr, uint8_t *reg_value)
 {
     es8311_dev_t *es = (es8311_dev_t *) dev;
-    return i2c_master_write_read_device(es->port, es->dev_addr, &reg_addr, 1, reg_value, 1, pdMS_TO_TICKS(1000));
+
+    Wire.beginTransmission(es->dev_addr);
+    Wire.write(reg_addr);
+    uint8_t err = Wire.endTransmission(false); 
+
+    if (err != 0) {
+        ESP_LOGE(TAG, "I2C Read (Write addr) Error: %d", err);
+        return ESP_FAIL;
+    }
+
+    uint8_t len = Wire.requestFrom((uint16_t)es->dev_addr, (uint8_t)1);
+    if (len == 1) {
+        *reg_value = Wire.read();
+        return ESP_OK;
+    } else {
+        ESP_LOGE(TAG, "I2C Read Error: No data");
+        return ESP_FAIL;
+    }
 }
 
 /*
@@ -433,7 +464,7 @@ void es8311_register_dump(es8311_handle_t dev)
     }
 }
 
-es8311_handle_t es8311_create(const i2c_port_t port, const uint16_t dev_addr)
+es8311_handle_t es8311_create(int port, const uint16_t dev_addr)
 {
     es8311_dev_t *sensor = (es8311_dev_t *) calloc(1, sizeof(es8311_dev_t));
     sensor->port = port;
@@ -441,11 +472,30 @@ es8311_handle_t es8311_create(const i2c_port_t port, const uint16_t dev_addr)
     return (es8311_handle_t) sensor;
 }
 
+void es8311_set_mic_gain(es8311_mic_gain_t gain)
+{
+    if(global_es_handle) {
+        es8311_microphone_gain_set(global_es_handle, gain);
+    }
+}
+
+void es8311_set_voice_mute(bool mute)
+{
+    if(global_es_handle) {
+        es8311_voice_mute(global_es_handle, mute);
+    }
+}
+
 esp_err_t es8311_codec_init(void)
 {
     /* Initialize es8311 codec */
-    es8311_handle_t es_handle = es8311_create(I2C_NUM_0, ES8311_ADDRRES_0);
-    ESP_RETURN_ON_FALSE(es_handle, ESP_FAIL, TAG, "es8311 create failed");
+    es8311_handle_t es_handle = es8311_create(0, ES8311_ADDRRES_0);
+
+    if(!es_handle) {
+        ESP_LOGE(TAG, "es8311 create failed.");
+        return ESP_FAIL;
+    }
+    
     const es8311_clock_config_t es_clk = {
         .mclk_inverted = false,
         .sclk_inverted = false,
@@ -458,6 +508,6 @@ esp_err_t es8311_codec_init(void)
     ESP_RETURN_ON_ERROR(es8311_sample_frequency_config(es_handle, EXAMPLE_SAMPLE_RATE * EXAMPLE_MCLK_MULTIPLE, EXAMPLE_SAMPLE_RATE), TAG, "set es8311 sample frequency failed");
     ESP_RETURN_ON_ERROR(es8311_voice_volume_set(es_handle, EXAMPLE_VOICE_VOLUME, NULL), TAG, "set es8311 volume failed");
     ESP_RETURN_ON_ERROR(es8311_microphone_config(es_handle, false), TAG, "set es8311 microphone failed");
-    // ESP_RETURN_ON_ERROR(es8311_microphone_gain_set(es_handle, ES8311_MIC_GAIN_24DB), TAG, "set es8311 microphone gain failed");
+    ESP_RETURN_ON_ERROR(es8311_microphone_gain_set(es_handle, ES8311_MIC_GAIN_24DB), TAG, "set mic gain failed");
     return ESP_OK;
 }

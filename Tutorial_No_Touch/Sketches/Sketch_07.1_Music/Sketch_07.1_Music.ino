@@ -60,6 +60,7 @@ void setup() {
     Serial.println("ES8311 init failed!");
     return;
   }
+  es8311_set_voice_mute(ES8311_MIC_GAIN_MIN);
   //audio init
   audio.setPinout(I2S_BCK, I2S_WS, I2S_DOUT, I2S_MCK);
   audio.setVolume(10);
