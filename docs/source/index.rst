@@ -36,3 +36,4 @@ This product provides the following online documents.
    fnk0104/codes/MAIN.rst
    fnk0104/codes/MAIN_NonTouch.rst
    fnk0104/codes/xiaozhi.rst
+   fnk0104/codes/Board_Test.rst
