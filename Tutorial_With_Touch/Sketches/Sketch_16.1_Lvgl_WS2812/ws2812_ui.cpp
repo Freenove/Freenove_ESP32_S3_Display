@@ -64,17 +64,29 @@ static void slider_event_cb(lv_event_t *e) {
 void create_lable(lvgl_ws2812_ui *ui, lv_obj_t **lable1, lv_obj_t **lable2) {
   *lable1 = lv_label_create(ui->ws2812);
   lv_obj_set_style_text_align(*lable1, LV_TEXT_ALIGN_LEFT, 0);
-  lv_obj_set_size(*lable1, 85, 20);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_size(*lable1, 100, 30);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_size(*lable1, 85, 20);
+  #endif
 
   *lable2 = lv_label_create(ui->ws2812);
   lv_obj_set_style_text_align(*lable2, LV_TEXT_ALIGN_CENTER, 0);
-  lv_obj_set_size(*lable2, 45, 20);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_size(*lable2, 60, 30);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_size(*lable2, 45, 20);
+  #endif
 }
 
 static lv_obj_t *create_slider(lvgl_ws2812_ui *ui, lv_color_t color) {
   lv_obj_t *slider = lv_slider_create(ui->ws2812);
   lv_slider_set_range(slider, 0, 255);
-  lv_obj_set_size(slider, 200, 10);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_size(slider, 280, 15);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_size(slider, 200, 10);
+  #endif
   lv_obj_set_style_bg_color(slider, color, LV_PART_KNOB);
   lv_obj_set_style_bg_color(slider, color, LV_PART_INDICATOR);
   lv_obj_add_event_cb(slider, slider_event_cb, LV_EVENT_VALUE_CHANGED, NULL);
@@ -96,8 +108,13 @@ void setup_scr_ws2812(lvgl_ws2812_ui *ui) {
   //Write codes picture_home
   ui->ws2812_home = lv_imgbtn_create(ui->ws2812);
   lv_obj_remove_style_all(ui->ws2812_home);
-  lv_obj_set_pos(ui->ws2812_home, 150, 10);
-  lv_obj_set_size(ui->ws2812_home, 80, 80);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_pos(ui->ws2812_home, 200, 20);
+    lv_obj_set_size(ui->ws2812_home, 100, 100);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_pos(ui->ws2812_home, 150, 10);
+    lv_obj_set_size(ui->ws2812_home, 80, 80);
+  #endif
   lv_img_set_src(ui->ws2812_home, &img_home);
   static lv_style_t style_pr;              //Apply for a style
   lv_style_init(&style_pr);                //Initialize it
@@ -105,8 +122,13 @@ void setup_scr_ws2812(lvgl_ws2812_ui *ui) {
   lv_obj_add_style(ui->ws2812_home, &style_pr, LV_STATE_PRESSED);
 
   create_lable(ui, &ui->ws2812_lable_red, &ui->ws2812_text_red);
-  lv_obj_set_pos(ui->ws2812_lable_red, 10, 10);
-  lv_obj_set_pos(ui->ws2812_text_red, 95, 10);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_pos(ui->ws2812_lable_red, 10, 10);
+    lv_obj_set_pos(ui->ws2812_text_red, 110, 10);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_pos(ui->ws2812_lable_red, 10, 10);
+    lv_obj_set_pos(ui->ws2812_text_red, 95, 10);
+  #endif
   lv_label_set_text(ui->ws2812_lable_red, "red");
   lv_label_set_text(ui->ws2812_text_red, "255");
   static lv_style_t style_color_red;
@@ -118,8 +140,13 @@ void setup_scr_ws2812(lvgl_ws2812_ui *ui) {
   lv_obj_add_style(ui->ws2812_text_red, &style_color_red, LV_PART_MAIN);
 
   create_lable(ui, &ui->ws2812_lable_green, &ui->ws2812_text_green);
-  lv_obj_set_pos(ui->ws2812_lable_green, 10, 30);
-  lv_obj_set_pos(ui->ws2812_text_green, 95, 30);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_pos(ui->ws2812_lable_green, 10, 40);
+    lv_obj_set_pos(ui->ws2812_text_green, 110, 40);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_pos(ui->ws2812_lable_green, 10, 30);
+    lv_obj_set_pos(ui->ws2812_text_green, 95, 30);
+  #endif
   lv_label_set_text(ui->ws2812_lable_green, "green");
   lv_label_set_text(ui->ws2812_text_green, "255");
   static lv_style_t style_color_green;
@@ -131,8 +158,13 @@ void setup_scr_ws2812(lvgl_ws2812_ui *ui) {
   lv_obj_add_style(ui->ws2812_text_green, &style_color_green, LV_PART_MAIN);
 
   create_lable(ui, &ui->ws2812_lable_blue, &ui->ws2812_text_blue);
-  lv_obj_set_pos(ui->ws2812_lable_blue, 10, 50);
-  lv_obj_set_pos(ui->ws2812_text_blue, 95, 50);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_pos(ui->ws2812_lable_blue, 10, 70);
+    lv_obj_set_pos(ui->ws2812_text_blue, 110, 70);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_pos(ui->ws2812_lable_blue, 10, 50);
+    lv_obj_set_pos(ui->ws2812_text_blue, 95, 50);
+  #endif
   lv_label_set_text(ui->ws2812_lable_blue, "blue");
   lv_label_set_text(ui->ws2812_text_blue, "255");
   static lv_style_t style_color_blue;
@@ -144,13 +176,18 @@ void setup_scr_ws2812(lvgl_ws2812_ui *ui) {
   lv_obj_add_style(ui->ws2812_text_blue, &style_color_blue, LV_PART_MAIN);
 
   create_lable(ui, &ui->ws2812_lable_brightness, &ui->ws2812_text_brightness);
-  lv_obj_set_pos(ui->ws2812_lable_brightness, 10, 70);
-  lv_obj_set_pos(ui->ws2812_text_brightness, 95, 70);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_pos(ui->ws2812_lable_brightness, 10, 100);
+    lv_obj_set_pos(ui->ws2812_text_brightness, 110, 100);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_pos(ui->ws2812_lable_brightness, 10, 70);
+    lv_obj_set_pos(ui->ws2812_text_brightness, 95, 70);
+  #endif
   lv_label_set_text(ui->ws2812_lable_brightness, "brightness");
   lv_label_set_text(ui->ws2812_text_brightness, "255");
   static lv_style_t style_color_brightness;
   lv_style_init(&style_color_brightness);
-  lv_style_set_border_width(&style_color_brightness, 1);
+  lv_style_set_border_width(&style_color_brightness, 2);
   lv_style_set_border_color(&style_color_brightness, lv_palette_darken(LV_PALETTE_GREY, 2));
   lv_style_set_text_color(&style_color_brightness, lv_palette_darken(LV_PALETTE_GREY, 2));
   lv_obj_add_style(ui->ws2812_lable_brightness, &style_color_brightness, LV_PART_MAIN);

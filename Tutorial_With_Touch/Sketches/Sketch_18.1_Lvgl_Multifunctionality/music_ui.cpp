@@ -1,6 +1,21 @@
 #include "music_ui.h"
+#include "Audio.h"
+#include "lv_img.h"
+#include "main_ui.h"
 
-#define MUSIC_FOLDER     "/music"
+#if defined FNK0104N_3P5_320x480_ST77922
+  #define MUSIC_FOLDER     "/music"
+  #define AUDIO_I2S_MCK 17
+  #define AUDIO_I2S_BCK 18
+  #define AUDIO_I2S_DOUT 15
+  #define AUDIO_I2S_WS 21
+#else
+  #define MUSIC_FOLDER     "/music"
+  #define AUDIO_I2S_MCK 4
+  #define AUDIO_I2S_BCK 5
+  #define AUDIO_I2S_DOUT 8
+  #define AUDIO_I2S_WS 7
+#endif
 
 lvgl_music_ui guider_music_ui;//music ui structure 
 int music_button_state = 0;   //UI Button status
@@ -192,6 +207,7 @@ static void music_slider_change_event_handler(lv_event_t * e){
 void setup_scr_music(lvgl_music_ui *ui) {
   music_iis_init();
   ui->music = lv_obj_create(NULL);
+  lv_obj_clear_flag(ui->music, LV_OBJ_FLAG_SCROLLABLE); 
   lv_coord_t screen_width = lv_obj_get_width(ui->music);    // Get screen width
   lv_coord_t screen_height = lv_obj_get_height(ui->music);  // Get screen height
   
@@ -213,57 +229,102 @@ void setup_scr_music(lvgl_music_ui *ui) {
   lv_style_set_translate_y(&style_pr, 5);//Style: Every time you trigger, move down 5 pixels
 
   ui->music_imgbtn_home = lv_imgbtn_create(ui->music);
-  lv_obj_set_pos(ui->music_imgbtn_home, 80, 20);
-  lv_obj_set_size(ui->music_imgbtn_home, 80, 80);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_pos(ui->music_imgbtn_home, 110, 70);
+    lv_obj_set_size(ui->music_imgbtn_home, 100, 100);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_pos(ui->music_imgbtn_home, 80, 20);
+    lv_obj_set_size(ui->music_imgbtn_home, 80, 80);
+  #endif
   lv_img_set_src(ui->music_imgbtn_home, &img_home);
   lv_obj_add_style(ui->music_imgbtn_home, &style_pr, LV_STATE_PRESSED);//Triggered when the button is pressed
 
   ui->music_slider_label = lv_label_create(ui->music);
-  lv_obj_set_size(ui->music_slider_label, 160, 20);
-  lv_obj_align(ui->music_slider_label, LV_ALIGN_CENTER, 40, -30);
-
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_size(ui->music_slider_label, 240, 25);
+    lv_obj_align(ui->music_slider_label, LV_ALIGN_CENTER, 85, -50);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_size(ui->music_slider_label, 160, 20);
+    lv_obj_align(ui->music_slider_label, LV_ALIGN_CENTER, 40, -30);
+  #endif
+  
   ui->music_slider_valume = lv_slider_create(ui->music);
-  lv_obj_set_size(ui->music_slider_valume, 180, 10);
-  lv_obj_set_pos(ui->music_slider_valume, 30, 150);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_size(ui->music_slider_valume, 240, 15);
+    lv_obj_set_pos(ui->music_slider_valume, 40, 200);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_size(ui->music_slider_valume, 180, 10);
+    lv_obj_set_pos(ui->music_slider_valume, 30, 150);
+  #endif
   lv_slider_set_mode(ui->music_slider_valume, LV_SLIDER_MODE_NORMAL);
   lv_slider_set_range(ui->music_slider_valume, 0, 21);
   lv_slider_set_value(ui->music_slider_valume, 10, LV_ANIM_OFF);
 
   ui->music_label = lv_label_create(ui->music);
-  lv_obj_set_pos(ui->music_label, 40, 180);
-  lv_obj_set_size(ui->music_label, 160, 20);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_pos(ui->music_label, 55, 270);
+    lv_obj_set_size(ui->music_label, 210, 25);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_pos(ui->music_label, 40, 180);
+    lv_obj_set_size(ui->music_label, 160, 20);
+  #endif
   String music_name = get_file_name_by_index(MUSIC_FOLDER, music_index_num);
   music_set_label_text(music_name.c_str());
   lv_label_set_long_mode(ui->music_label, LV_LABEL_LONG_SCROLL_CIRCULAR );
   lv_obj_set_style_text_align(ui->music_label, LV_TEXT_ALIGN_CENTER, 0);
 
   ui->music_imgbtn_left = lv_imgbtn_create(ui->music);
-  lv_obj_set_pos(ui->music_imgbtn_left, 0, 220);
-  lv_obj_set_size(ui->music_imgbtn_left, 60, 60);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_pos(ui->music_imgbtn_left, 0, 360);
+    lv_obj_set_size(ui->music_imgbtn_left, 80, 80);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_pos(ui->music_imgbtn_left, 0, 220);
+    lv_obj_set_size(ui->music_imgbtn_left, 60, 60);
+  #endif
   lv_img_set_src(ui->music_imgbtn_left, &img_left);
   lv_obj_add_style(ui->music_imgbtn_left, &style_pr, LV_STATE_PRESSED);//Triggered when the button is pressed
 
   ui->music_imgbtn_play = lv_imgbtn_create(ui->music);
-  lv_obj_set_pos(ui->music_imgbtn_play, 60, 220);
-  lv_obj_set_size(ui->music_imgbtn_play, 60, 60);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_pos(ui->music_imgbtn_play, 80, 360);
+    lv_obj_set_size(ui->music_imgbtn_play, 80, 80);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_pos(ui->music_imgbtn_play, 60, 220);
+    lv_obj_set_size(ui->music_imgbtn_play, 60, 60);
+  #endif
   lv_img_set_src(ui->music_imgbtn_play, &img_pause);
   lv_obj_add_style(ui->music_imgbtn_play, &style_pr, LV_STATE_PRESSED);//Triggered when the button is pressed
 
   ui->music_imgbtn_stop = lv_imgbtn_create(ui->music);
-  lv_obj_set_pos(ui->music_imgbtn_stop, 120, 220);
-  lv_obj_set_size(ui->music_imgbtn_stop, 60, 60);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_pos(ui->music_imgbtn_stop, 160, 360);
+    lv_obj_set_size(ui->music_imgbtn_stop, 80, 80);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_pos(ui->music_imgbtn_stop, 120, 220);
+    lv_obj_set_size(ui->music_imgbtn_stop, 80, 80);
+  #endif
   lv_img_set_src(ui->music_imgbtn_stop, &img_stop);
   lv_obj_add_style(ui->music_imgbtn_stop, &style_pr, LV_STATE_PRESSED);//Triggered when the button is pressed
 
   ui->music_imgbtn_right = lv_imgbtn_create(ui->music);
-  lv_obj_set_pos(ui->music_imgbtn_right, 180, 220);
-  lv_obj_set_size(ui->music_imgbtn_right, 60, 60);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_pos(ui->music_imgbtn_right, 240, 360);
+    lv_obj_set_size(ui->music_imgbtn_right, 80, 80);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_pos(ui->music_imgbtn_right, 180, 220);
+    lv_obj_set_size(ui->music_imgbtn_right, 60, 60);
+  #endif
   lv_img_set_src(ui->music_imgbtn_right, &img_right);
   lv_obj_add_style(ui->music_imgbtn_right, &style_pr, LV_STATE_PRESSED);//Triggered when the button is pressed
 
   ui->music_bar_time = lv_bar_create(ui->music);
-  lv_obj_set_size(ui->music_bar_time, 240, 5);
-  lv_obj_set_pos(ui->music_bar_time, 0, 290);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_size(ui->music_bar_time, 320, 10);
+    lv_obj_set_pos(ui->music_bar_time, 0, 470);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_size(ui->music_bar_time, 240, 5);
+    lv_obj_set_pos(ui->music_bar_time, 0, 315);
+  #endif
   lv_slider_set_mode(ui->music_bar_time, LV_SLIDER_MODE_NORMAL);
   lv_bar_set_range(ui->music_bar_time, 0, 100);
   lv_bar_set_value(ui->music_bar_time, 0, LV_ANIM_OFF);
@@ -348,7 +409,7 @@ int music_task_is_running(void) {
 
 //Initialize the audio interface
 int music_iis_init(void) {
-  return audio.setPinout(I2S_BCK, I2S_WS, I2S_DOUT, I2S_MCK);
+  return audio.setPinout(AUDIO_I2S_BCK, AUDIO_I2S_WS, AUDIO_I2S_DOUT, AUDIO_I2S_MCK);
 }
 //Set the volume: 0-21
 void music_set_volume(int volume) {
@@ -394,4 +455,3 @@ long music_read_play_position(void) {
 void music_loop(void) {
   audio.loop();
 }
-

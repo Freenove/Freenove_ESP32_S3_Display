@@ -3,9 +3,14 @@
 
 #include "lvgl.h"
 #include "Arduino.h"
+#include "TFT_eSPI.h"
 
 #define LEDS_COUNT 1
-#define LEDS_PIN 42
+#ifdef FNK0104N_3P5_320x480_ST77922
+  #define LEDS_PIN 40
+#else
+  #define LEDS_PIN 42
+#endif
 #define CHANNEL 0
 
 typedef struct lvgl_ws2812

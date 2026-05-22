@@ -1,7 +1,7 @@
 /*
 * @ File:   Sketch_13.1_LVGL.ino
-* @ Author: [Zhentao Lin]
-* @ Date:   [2025-06-20]
+* @ Author: [Eason Shen]
+* @ Date:   [2026-05-15]
 */
 
 #include "display.h"

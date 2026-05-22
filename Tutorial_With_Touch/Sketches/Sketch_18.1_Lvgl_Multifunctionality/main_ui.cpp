@@ -1,4 +1,3 @@
-
 #include "main_ui.h"
 
 lvgl_main_ui guider_main_ui;  // main ui structure
@@ -131,36 +130,61 @@ void setup_scr_main(lvgl_main_ui *ui) {
 
   //Write codes main_imgbtn_logo
   ui->main_imgbtn_logo = lv_imgbtn_create(ui->main);
-  lv_obj_set_pos(ui->main_imgbtn_logo, 40, 20);
-  lv_obj_set_size(ui->main_imgbtn_logo, 160, 90);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_pos(ui->main_imgbtn_logo, 80, 50);
+    lv_obj_set_size(ui->main_imgbtn_logo, 160, 90);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_pos(ui->main_imgbtn_logo, 40, 20);
+    lv_obj_set_size(ui->main_imgbtn_logo, 160, 90);
+  #endif
   lv_img_set_src(ui->main_imgbtn_logo, &img_freenove);
   lv_obj_add_style(ui->main_imgbtn_logo, &style_pr, LV_STATE_PRESSED);  //Triggered when the button is pressed
 
   //Write codes main_imgbtn_picture
   ui->main_imgbtn_picture = lv_imgbtn_create(ui->main);
-  lv_obj_set_pos(ui->main_imgbtn_picture, 20, 135);
-  lv_obj_set_size(ui->main_imgbtn_picture, 80, 80);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_pos(ui->main_imgbtn_picture, 30, 200);
+    lv_obj_set_size(ui->main_imgbtn_picture, 100, 100);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_pos(ui->main_imgbtn_picture, 20, 135);
+    lv_obj_set_size(ui->main_imgbtn_picture, 80, 80);
+  #endif
   lv_img_set_src(ui->main_imgbtn_picture, &img_picture);
   lv_obj_add_style(ui->main_imgbtn_picture, &style_pr, LV_STATE_PRESSED);  //Triggered when the button is pressed
 
   //Write codes main_imgbtn_timer
   ui->main_imgbtn_timer = lv_imgbtn_create(ui->main);
-  lv_obj_set_pos(ui->main_imgbtn_timer, 140, 135);
-  lv_obj_set_size(ui->main_imgbtn_timer, 80, 80);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_pos(ui->main_imgbtn_timer, 190, 200);
+    lv_obj_set_size(ui->main_imgbtn_timer, 100, 100);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_pos(ui->main_imgbtn_timer, 140, 135);
+    lv_obj_set_size(ui->main_imgbtn_timer, 80, 80);
+  #endif
   lv_img_set_src(ui->main_imgbtn_timer, &img_timer);
   lv_obj_add_style(ui->main_imgbtn_timer, &style_pr, LV_STATE_PRESSED);  //Triggered when the button is pressed
 
   //Write codes main_imgbtn_ws2812
   ui->main_imgbtn_ws2812 = lv_imgbtn_create(ui->main);
-  lv_obj_set_pos(ui->main_imgbtn_ws2812, 20, 225);
-  lv_obj_set_size(ui->main_imgbtn_ws2812, 80, 80);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_pos(ui->main_imgbtn_ws2812, 30, 330);
+    lv_obj_set_size(ui->main_imgbtn_ws2812, 100, 100);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_pos(ui->main_imgbtn_ws2812, 20, 225);
+    lv_obj_set_size(ui->main_imgbtn_ws2812, 80, 80);
+  #endif
   lv_img_set_src(ui->main_imgbtn_ws2812, &img_led);
   lv_obj_add_style(ui->main_imgbtn_ws2812, &style_pr, LV_STATE_PRESSED);  //Triggered when the button is pressed
 
   //Write codes main_imgbtn_music
   ui->main_imgbtn_music = lv_imgbtn_create(ui->main);
-  lv_obj_set_pos(ui->main_imgbtn_music, 140, 225);
-  lv_obj_set_size(ui->main_imgbtn_music, 80, 80);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_pos(ui->main_imgbtn_music, 190, 330);
+    lv_obj_set_size(ui->main_imgbtn_music, 100, 100);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_pos(ui->main_imgbtn_music, 140, 225);
+    lv_obj_set_size(ui->main_imgbtn_music, 80, 80);
+  #endif
   lv_img_set_src(ui->main_imgbtn_music, &img_music);
   lv_obj_add_style(ui->main_imgbtn_music, &style_pr, LV_STATE_PRESSED);  //Triggered when the button is pressed
 

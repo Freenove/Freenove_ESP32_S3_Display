@@ -5,27 +5,56 @@
 #include "demos/lv_demos.h" 
 #include <TFT_eSPI.h>
 
-#ifdef FNK0104B_2P8_240x320_ILI9341
-    #include "FT6336U.h"
-#endif
-
 /*To use the built-in examples and demos of LVGL uncomment the includes below respectively.
  *You also need to copy `lvgl/examples` to `lvgl/src/examples`. Similarly for the demos `lvgl/demos` to `lvgl/src/demos`.
  Note that the `lv_examples` library is for LVGL v7 and you shouldn't install it for this version (since LVGL v8)
  as the examples and demos are now part of the main LVGL library. */
-
-/*Change to your screen resolution*/
-#define TFT_DIRECTION 0   //Select TFT Direction (0 - 3)
-
-#ifdef FNK0104B_2P8_240x320_ILI9341
-    #define I2C_SCL 15
-    #define I2C_SDA 16
-    #define INT_N_PIN 17
-    #define RST_N_PIN 18
+#ifdef FNK0104N_3P5_320x480_ST77922
+  #define TFT_SCREEN_WIDTH 320
+  #define TFT_SCREEN_HEIGHT 480
+#elif defined FNK0104AB_2P8_240x320_ILI9341
+  #define TFT_SCREEN_WIDTH 240
+  #define TFT_SCREEN_HEIGHT 320
+#elif defined FNK0104S_4P0_320x480_ST7796
+  #define TFT_SCREEN_WIDTH 320
+  #define TFT_SCREEN_HEIGHT 480
 #endif
 
-#define TFT_SCREEN_WIDTH 240
-#define TFT_SCREEN_HEIGHT 320
+// 3.5inch ST77922
+#ifdef FNK0104N_3P5_320x480_ST77922
+ #include <SPI.h>
+ #include "ST77922.h"
+ #include "ST77922_Touch.h"
+ 
+ static lv_color_t buf[ TFT_SCREEN_WIDTH * 40 ];
+
+ ST77922 tft_st77922 = ST77922();
+ ST77922_TOUCH touch_st77922;
+
+ void my_rounder_cb(lv_disp_drv_t * disp_drv, lv_area_t * area)
+ {
+   area->x1 = area->x1 & ~0x3;
+   area->y1 = area->y1 & ~0x3;
+
+   area->x2 = area->x2 | 0x3;
+   area->y2 = area->y2 | 0x3;
+ }
+ 
+// 2.8inch ILI9341
+#else
+ #include "FT6336U.h"
+
+ #define I2C_SCL 15
+ #define I2C_SDA 16
+ #define INT_N_PIN 17
+ #define RST_N_PIN 18
+ 
+ static lv_color_t buf[ TFT_SCREEN_WIDTH * 40 ];
+
+ TFT_eSPI tft = TFT_eSPI(TFT_SCREEN_WIDTH, TFT_SCREEN_HEIGHT); /* TFT instance */
+ FT6336U ft6336u(I2C_SDA, I2C_SCL, RST_N_PIN, INT_N_PIN); 
+ FT6336U_TouchPointType tp; 
+#endif
 
 static const uint16_t screenWidth = TFT_SCREEN_WIDTH;
 static const uint16_t screenHeight = TFT_SCREEN_HEIGHT;
@@ -33,12 +62,8 @@ static const uint16_t screenHeightBuf = TFT_SCREEN_HEIGHT / 10;
 static lv_disp_draw_buf_t draw_buf;
 static lv_color_t draw_buf1[screenWidth * screenHeightBuf];
 
-TFT_eSPI tft = TFT_eSPI(screenWidth, screenHeight); /* TFT instance */
-
-#ifdef FNK0104B_2P8_240x320_ILI9341
-    FT6336U ft6336u(I2C_SDA, I2C_SCL, RST_N_PIN, INT_N_PIN); 
-    FT6336U_TouchPointType tp; 
-#endif
+/*Change to your screen resolution*/
+#define TFT_DIRECTION 0   //Select TFT Direction (0 - 3)
 
 #if LV_USE_LOG != 0
 /* Serial debugging */
@@ -50,45 +75,68 @@ void my_print(const char * buf)
 #endif
 
 /* Display flushing */
-void my_disp_flush( lv_disp_drv_t *disp_drv, const lv_area_t *area, lv_color_t *color_p )
+void my_disp_flush( lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *color_p )
 {
     uint32_t w = ( area->x2 - area->x1 + 1 );
     uint32_t h = ( area->y2 - area->y1 + 1 );
+    
+    #if defined FNK0104N_3P5_320x480_ST77922
+      tft_st77922.Fill_Colors(area->x1, area->y1, w, h, (uint16_t *)color_p);
+    #else
+      tft.startWrite();
+      tft.setAddrWindow( area->x1, area->y1, w, h );
+      tft.pushColors((uint16_t*)&color_p->full, w * h, true );
+      tft.endWrite();
+    #endif
 
-    tft.startWrite();
-    tft.setAddrWindow( area->x1, area->y1, w, h );
-    tft.pushColors( ( uint16_t * )&color_p->full, w * h, true );
-    tft.endWrite();
-
-    lv_disp_flush_ready( disp_drv );
+    lv_disp_flush_ready( disp );
 }
 
-#ifdef FNK0104B_2P8_240x320_ILI9341
+/*Read the touchpad*/
 void my_touchpad_read( lv_indev_drv_t * indev_driver, lv_indev_data_t * data )
 {
-    uint16_t touchX, touchY;
-
-    //bool touched = tft.getTouch( &touchX, &touchY, 600 );
-    tp = ft6336u.scan(); 
-    int touched = tp.touch_count;
-
-    if( !touched )
-    {
-        data->state = LV_INDEV_STATE_REL;
-    }
-    else
-    {
-        int x = tp.tp[0].x;
-        int y = tp.tp[0].y;
+    #ifdef FNK0104N_3P5_320x480_ST77922
+      uint16_t screenWidth = tft_st77922.Get_Width();
+      uint16_t screenHeight = tft_st77922.Get_Height();
+      if( touch_st77922.Get_Touch() )
+      {
+        uint16_t x = touch_st77922.touch.x[0];
+        uint16_t y = touch_st77922.touch.y[0];
         if(x >= 0 && x < screenWidth && y >= 0 && y < screenHeight)
         {
             data->state = LV_INDEV_STATE_PR;
-            data->point.x = tp.tp[0].x;
-            data->point.y = tp.tp[0].y;
+            data->point.x = x;
+            data->point.y = y;
         }
-    }
+      }
+      else
+      {
+        data->state = LV_INDEV_STATE_REL;
+      }
+    #else
+      uint16_t touchX, touchY;
+
+      //bool touched = tft.getTouch( &touchX, &touchY, 600 );
+      tp = ft6336u.scan(); 
+      int touched = tp.touch_count;
+  
+      if( !touched )
+      {
+          data->state = LV_INDEV_STATE_REL;
+      }
+      else
+      {
+          int x = tp.tp[0].x;
+          int y = tp.tp[0].y;
+          if(x >= 0 && x < screenWidth && y >= 0 && y < screenHeight)
+          {
+              data->state = LV_INDEV_STATE_PR;
+              data->point.x = tp.tp[0].x;
+              data->point.y = tp.tp[0].y;
+          }
+      }
+    #endif
 }
-#endif
 
 void setup()
 {
@@ -100,18 +148,24 @@ void setup()
     Serial.println( LVGL_Arduino );
     Serial.println( "I am LVGL_Arduino" );
 
-    tft.begin();          /* TFT init */
-    tft.setRotation(TFT_DIRECTION); 
-    #ifdef FNK0104B_2P8_240x320_ILI9341
-        ft6336u.begin(); 
+    #ifdef FNK0104N_3P5_320x480_ST77922
+      tft_st77922.Init();
+      tft_st77922.Set_Rotation(TFT_DIRECTION);
+  
+      uint16_t screenWidth = tft_st77922.Get_Width();
+      uint16_t screenHeight = tft_st77922.Get_Height();
+      
+      lv_init();
+      lv_disp_draw_buf_init( &draw_buf, buf, NULL, screenWidth * 40 );
+      touch_st77922.init();
+      touch_st77922.Set_Rotation(TFT_DIRECTION); 
+    #else
+      ft6336u.begin(); 
+      lv_init();
+      tft.begin();          /* TFT init */
+      tft.setRotation( TFT_DIRECTION ); /* Landscape orientation, flipped */
+      lv_disp_draw_buf_init( &draw_buf, buf, NULL, screenWidth * 10 );
     #endif
-    lv_init();
-
-#if LV_USE_LOG != 0
-    lv_log_register_print_cb( my_print ); /* register print function for debugging */
-#endif
-
-    lv_disp_draw_buf_init(&draw_buf, draw_buf1, NULL, screenWidth * screenHeightBuf);
 
     /*Initialize the display*/
     static lv_disp_drv_t disp_drv;
@@ -121,27 +175,28 @@ void setup()
     disp_drv.ver_res = screenHeight;
     disp_drv.flush_cb = my_disp_flush;
     disp_drv.draw_buf = &draw_buf;
+    #ifdef FNK0104N_3P5_320x480_ST77922
+      disp_drv.rounder_cb = my_rounder_cb;
+    #endif
     lv_disp_drv_register( &disp_drv );
 
-    #ifdef FNK0104B_2P8_240x320_ILI9341
-        /*Initialize the (dummy) input device driver*/
-        static lv_indev_drv_t indev_drv;
-        lv_indev_drv_init( &indev_drv );
-        indev_drv.type = LV_INDEV_TYPE_POINTER;
-        indev_drv.read_cb = my_touchpad_read;
-        lv_indev_drv_register( &indev_drv );
-    #endif
-  
+    /*Initialize the (dummy) input device driver*/
+    static lv_indev_drv_t indev_drv;
+    lv_indev_drv_init( &indev_drv );
+    indev_drv.type = LV_INDEV_TYPE_POINTER;
+    indev_drv.read_cb = my_touchpad_read;
+    lv_indev_drv_register( &indev_drv );
+    
     /* Create simple label */
     // lv_obj_t *label = lv_label_create( lv_scr_act() );
     // lv_label_set_text( label, "Hello Ardino and LVGL!");
     // lv_obj_align( label, LV_ALIGN_CENTER, 0, 0 );
- 
+    
     /* Try an example. See all the examples 
      * online: https://docs.lvgl.io/master/examples.html
      * source codes: https://github.com/lvgl/lvgl/tree/e7f88efa5853128bf871dde335c0ca8da9eb7731/examples */
      //lv_example_btn_1();
-   
+    
      /*Or try out a demo. Don't forget to enable the demos in lv_conf.h. E.g. LV_USE_DEMOS_WIDGETS*/
     lv_demo_widgets();               
     // lv_demo_benchmark();          

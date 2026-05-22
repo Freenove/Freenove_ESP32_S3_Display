@@ -13,7 +13,6 @@ void setup() {
 
   /*** Init screen ***/
   screen.init();
-
   /***  Print lvgl version ***/
   String LVGL_Arduino = "Hello Arduino! ";
   LVGL_Arduino += String('V') + lv_version_major() + "." + lv_version_minor() + "." + lv_version_patch();
@@ -28,5 +27,5 @@ void setup() {
 
 void loop() {
   screen.routine();
-  delay(1);
+  delay(5);
 }

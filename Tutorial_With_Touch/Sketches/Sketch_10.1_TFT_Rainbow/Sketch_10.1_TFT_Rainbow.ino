@@ -1,12 +1,27 @@
 /*
 * @ File:   Sketch_10.1_TFT_Rainbow.ino
-* @ Author: [Zhentao Lin]
-* @ Date:   [2025-08-23]
+* @ Author: [Eason Shen]
+* @ Date:   [2026-05-15]
 */
 
-#include <TFT_eSPI.h>  // TFT display library
+#include <TFT_eSPI.h> 
+#include <SPI.h>
 
-TFT_eSPI tft = TFT_eSPI();  // Create TFT object instance
+#ifdef FNK0104N_3P5_320x480_ST77922
+  #define SCREEN_WIDTH 480
+  #define SCREEN_HEIGHT 320
+  TFT_eSPI tft_qspi = TFT_eSPI();
+  TFT_eSprite tft = TFT_eSprite(&tft_qspi);
+  ST77922 tft_st77922 = ST77922();
+#elif defined FNK0104AB_2P8_240x320_ILI9341
+  #define SCREEN_WIDTH 320
+  #define SCREEN_HEIGHT 240
+  TFT_eSPI tft = TFT_eSPI();  // Create TFT object instance
+#elif defined FNK0104S_4P0_320x480_ST7796
+  #define SCREEN_WIDTH 480
+  #define SCREEN_HEIGHT 320
+  TFT_eSPI tft = TFT_eSPI();  // Create TFT object instance
+#endif
 
 unsigned long targetTime = 0;     // Timing variable to control animation intervals
 byte red = 31;                    // Start with full red
@@ -16,18 +31,50 @@ byte state = 0;                   // State machine variable
 unsigned int colour = red << 11;  // Initial color value: Red only
 
 void setup(void) {
-  tft.init();                   // Initialize the TFT screen
-  tft.setRotation(1);           // Set screen rotation (landscape mode)
+  #ifdef FNK0104N_3P5_320x480_ST77922
+    tft_st77922.Init();
+    tft_st77922.Set_Rotation(1);
+    tft.createSprite(tft_st77922.Get_Width(), tft_st77922.Get_Height());
+    tft.setSwapBytes(true);
+  #else
+    tft.init();                   // Initialize the TFT screen
+    tft.setRotation(1);           // Set screen rotation (landscape mode)
+  #endif
   targetTime = millis() + 100;  // Set initial target time for rainbow effect
-  tft.fillScreen(TFT_RED);  // Fill screen with solid red
+  #ifdef FNK0104N_3P5_320x480_ST77922
+    tft.fillSprite(TFT_RED);  // Fill screen with solid red
+    tft_st77922.Fill_Colors(0, 0, tft_st77922.Get_Width(), tft_st77922.Get_Height(), (uint16_t *)tft.getPointer());
+  #else
+    tft.fillScreen(TFT_RED);  // Fill screen with solid red
+  #endif
   delay(1000);
-  tft.fillScreen(TFT_GREEN);  // Fill screen with solid green
+  #ifdef FNK0104N_3P5_320x480_ST77922
+    tft.fillSprite(TFT_GREEN);  // Fill screen with solid green
+    tft_st77922.Fill_Colors(0, 0, tft_st77922.Get_Width(), tft_st77922.Get_Height(), (uint16_t *)tft.getPointer());
+  #else
+    tft.fillScreen(TFT_GREEN);
+  #endif
   delay(1000);
-  tft.fillScreen(TFT_BLUE);  // Fill screen with solid blue
+  #ifdef FNK0104N_3P5_320x480_ST77922
+    tft.fillSprite(TFT_BLUE);  // Fill screen with solid blue
+    tft_st77922.Fill_Colors(0, 0, tft_st77922.Get_Width(), tft_st77922.Get_Height(), (uint16_t *)tft.getPointer());
+  #else
+    tft.fillScreen(TFT_BLUE);
+  #endif
   delay(1000);
-  tft.fillScreen(TFT_BLACK);  // Fill screen with solid black
+  #ifdef FNK0104N_3P5_320x480_ST77922
+    tft.fillSprite(TFT_BLACK);  // Fill screen with solid black
+    tft_st77922.Fill_Colors(0, 0, tft_st77922.Get_Width(), tft_st77922.Get_Height(), (uint16_t *)tft.getPointer());
+  #else
+    tft.fillScreen(TFT_BLACK);
+  #endif
   delay(1000);
-  tft.fillScreen(TFT_WHITE);  // Fill screen with solid white
+  #ifdef FNK0104N_3P5_320x480_ST77922
+    tft.fillSprite(TFT_WHITE);  // Fill screen with solid white
+    tft_st77922.Fill_Colors(0, 0, tft_st77922.Get_Width(), tft_st77922.Get_Height(), (uint16_t *)tft.getPointer());
+  #else
+    tft.fillScreen(TFT_WHITE);
+  #endif
   delay(1000);
 }
 
@@ -35,8 +82,8 @@ void loop() {
   if (targetTime < millis()) {      // Check if it's time to start the rainbow animation
     targetTime = millis() + 10000;  // Set next trigger after 10 seconds
 
-    for (int i = 0; i < 320; i++) {                   // Generate horizontal rainbow using vertical lines
-      tft.drawFastVLine(i, 0, tft.height(), colour);  // Draw one vertical line
+    for (int i = 0; i < SCREEN_WIDTH; i++) {                   // Generate horizontal rainbow using vertical lines
+      tft.drawFastVLine(i, 0, SCREEN_HEIGHT, colour);
       switch (state) {
         case 0:
           green += 2;  // Transition from red to yellow (increase green)
@@ -98,6 +145,9 @@ void loop() {
     int font = 2;                                            // Font type
     xpos += tft.drawFloat(pi, precision, xpos, ypos, font);  // Draw float and update x-position
     tft.drawString(" is pi", xpos, ypos, font);              // Continue drawing string from updated x position
+    #ifdef FNK0104N_3P5_320x480_ST77922
+      tft_st77922.Fill_Colors(0, 0, tft_st77922.Get_Width(), tft_st77922.Get_Height(), (uint16_t *)tft.getPointer());
+    #endif
     delay(6000);  // Wait before next cycle
   }
 }

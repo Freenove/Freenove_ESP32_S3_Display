@@ -1,3 +1,9 @@
+/*
+* @ File:   Sketch_07.1_Music.ino
+* @ Author: [Eason Shen]
+* @ Date:   [2026-05-15]
+*/
+
 #include <Arduino.h>
 #include "FS.h"
 #include "SD_MMC.h"
@@ -8,24 +14,49 @@
 #include "ESP_I2S.h"
 #include "demo_music.h"
 
-//ESP32-S3 IO Pin define
-#define SD_SCK 38
-#define SD_CMD 40
-#define SD_D0 39
-#define SD_D1 41
-#define SD_D2 48
-#define SD_D3 47
+#define FNK0104AB_2P8_240x320_ILI9341
+//#define FNK0104N_3P5_320x480_ST77922
+//#define FNK0104S_4P0_320x480_ST7796
 
-//I2S IO Pin define
-#define I2S_MCK 4
-#define I2S_BCK 5
-#define I2S_DINT 6
-#define I2S_DOUT 8
-#define I2S_WS 7
-#define AP_ENABLE 1
-#define I2C_SCL 15        /*!< GPIO number used for I2C master clock */
-#define I2C_SDA 16        /*!< GPIO number used for I2C master data  */
-#define I2C_SPEED 400000  /*!< I2C master clock frequency */
+#ifdef FNK0104N_3P5_320x480_ST77922
+ //ESP32-S3 IO Pin define
+ #define SD_SCK 5
+ #define SD_CMD 4
+ #define SD_D0 6
+ #define SD_D1 7
+ #define SD_D2 2
+ #define SD_D3 3
+ 
+ //I2S IO Pin define
+ #define I2S_MCK 17
+ #define I2S_BCK 18
+ #define I2S_DINT 16
+ #define I2S_DOUT 15
+ #define I2S_WS 21
+ #define AP_ENABLE 1
+ #define I2C_SCL 39        /*!< GPIO number used for I2C master clock */
+ #define I2C_SDA 38        /*!< GPIO number used for I2C master data  */
+ #define I2C_SPEED 400000  /*!< I2C master clock frequency */
+#else
+ //ESP32-S3 IO Pin define
+ #define SD_SCK 38
+ #define SD_CMD 40
+ #define SD_D0 39
+ #define SD_D1 41
+ #define SD_D2 48
+ #define SD_D3 47
+ 
+ //I2S IO Pin define
+ #define I2S_MCK 4
+ #define I2S_BCK 5
+ #define I2S_DINT 6
+ #define I2S_DOUT 8
+ #define I2S_WS 7
+ #define AP_ENABLE 1
+ #define I2C_SCL 15        /*!< GPIO number used for I2C master clock */
+ #define I2C_SDA 16        /*!< GPIO number used for I2C master data  */
+ #define I2C_SPEED 400000  /*!< I2C master clock frequency */
+#endif
 
 Audio audio;
 I2SClass es8311_i2s;
@@ -60,7 +91,6 @@ void setup() {
     Serial.println("ES8311 init failed!");
     return;
   }
-  es8311_set_voice_mute(ES8311_MIC_GAIN_MIN);
   //audio init
   audio.setPinout(I2S_BCK, I2S_WS, I2S_DOUT, I2S_MCK);
   audio.setVolume(10);

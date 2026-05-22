@@ -1,16 +1,24 @@
 /*
 * @ File:   Sketch_03.1_Button_RGB.ino
-* @ Author: [Zhentao Lin]
-* @ Date:   [2025-08-19]
+* @ Author: [Eason Shen]
+* @ Date:   [2026-05-15]
 */
 
 #include <Arduino.h>
 #include "Freenove_WS2812_Lib_for_ESP32.h"
 
-#define KEY_PIN 0
+#define FNK0104AB_2P8_240x320_ILI9341
+//#define FNK0104N_3P5_320x480_ST77922
+//#define FNK0104S_4P0_320x480_ST7796
+
+#ifdef FNK0104N_3P5_320x480_ST77922
+ #define LEDS_PIN   40
+#else
+ #define LEDS_PIN   42
+#endif
 #define LEDS_COUNT 1
-#define LEDS_PIN   42
 #define CHANNEL    0
+#define KEY_PIN 0
 
 Freenove_ESP32_WS2812 strip = Freenove_ESP32_WS2812(LEDS_COUNT, LEDS_PIN, CHANNEL, TYPE_GRB);
 

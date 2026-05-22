@@ -152,7 +152,11 @@ void setup_scr_chronograph(lvgl_chronograph_ui *ui)
 
   ui->chronograph_home = lv_imgbtn_create(ui->chronograph);
   lv_obj_remove_style_all(ui->chronograph_home);
-  lv_obj_set_size(ui->chronograph_home, 80, 80);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_size(ui->chronograph_home, 100, 100);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_size(ui->chronograph_home, 80, 80);
+  #endif
   lv_img_set_src(ui->chronograph_home, &img_home);
   lv_obj_align(ui->chronograph_home, LV_ALIGN_TOP_MID, 0, (screen_height - 180) / 4);
   static lv_style_t style_pr;             // Apply for a style

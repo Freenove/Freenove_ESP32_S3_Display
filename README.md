@@ -2,13 +2,21 @@
 
 > Freenove ESP32 S3 Display
 
-## Touch
+## FNK0104A(2.8 inch ILI9341 NonTouch)
 
-<img src='Picture/Touch_Top.png' width='50%'/><img src='Picture/Touch_Bottom.png' width='50%'/>
+<img src='Picture/FNK0104A_Top.png' width='50%'/><img src='Picture/FNK0104A_Bottom.png' width='50%'/>
 
-## NonTouch
+## FNK0104B(2.8 inch ILI9341 Touch)
 
-<img src='Picture/NonTouch_Top.png' width='50%'/><img src='Picture/NonTouch_Bottom.png' width='50%'/>
+<img src='Picture/FNK0104B_Top.png' width='50%'/><img src='Picture/FNK0104B_Bottom.png' width='50%'/>
+
+## FNK0104N(3.5 inch ST77922 Touch)
+
+<img src='Picture/FNK0104N_Top.png' width='50%'/><img src='Picture/FNK0104N_Bottom.png' width='50%'/>
+
+## FNK0104S(4.0 inch ST7789 Touch)
+
+<img src='Picture/FNK0104S_Top.png' width='50%'/><img src='Picture/FNK0104S_Bottom.png' width='50%'/>
 
 ### Download
 

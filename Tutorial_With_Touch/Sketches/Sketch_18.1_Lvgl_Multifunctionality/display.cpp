@@ -1,17 +1,47 @@
 #include "display.h"
-#include "TFT_eSPI.h"
-#include "FT6336U.h"
 
-static const uint16_t screenWidth  = 240;
-static const uint16_t screenHeight = 320;
+#ifdef FNK0104N_3P5_320x480_ST77922
+  static const uint16_t screenWidth  = 320;
+  static const uint16_t screenHeight = 480;
+#elif defined FNK0104AB_2P8_240x320_ILI9341
+  static const uint16_t screenWidth  = 240;
+  static const uint16_t screenHeight = 320;
+#elif defined FNK0104S_4P0_320x480_ST7796
+  static const uint16_t screenWidth  = 320;
+  static const uint16_t screenHeight = 480;
+#endif
 
-static lv_disp_draw_buf_t draw_buf;
-static lv_color_t buf[ screenWidth * 10 ];
+#ifdef FNK0104N_3P5_320x480_ST77922
+ #include <SPI.h>
+ #include "ST77922.h"
+ #include "ST77922_Touch.h"
 
-TFT_eSPI tft = TFT_eSPI(screenWidth, screenHeight); /* TFT instance */
-FT6336U ft6336u(I2C_SDA, I2C_SCL, RST_N_PIN, INT_N_PIN); 
-FT6336U_TouchPointType tp; 
+ static lv_disp_draw_buf_t draw_buf;
+ static lv_color_t buf[ 480 * 40 ];
 
+ ST77922 tft_st77922 = ST77922();
+ ST77922_TOUCH touch_st77922;
+
+ void my_rounder_cb(lv_disp_drv_t * disp_drv, lv_area_t * area)
+ {
+   area->x1 = area->x1 & ~0x3;
+   area->y1 = area->y1 & ~0x3;
+
+   area->x2 = area->x2 | 0x3;
+   area->y2 = area->y2 | 0x3;
+ }
+ 
+// 2.8inch ILI9341
+#else
+ #include "FT6336U.h"
+
+ static lv_disp_draw_buf_t draw_buf;
+ static lv_color_t buf[ screenWidth * 40 ];
+
+ TFT_eSPI tft = TFT_eSPI(screenWidth, screenHeight); /* TFT instance */
+ FT6336U ft6336u(I2C_SDA, I2C_SCL, RST_N_PIN, INT_N_PIN); 
+ FT6336U_TouchPointType tp; 
+#endif
 
 #if LV_USE_LOG != 0
 /* Serial debugging */
@@ -27,11 +57,15 @@ void my_disp_flush( lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *colo
 {
     uint32_t w = ( area->x2 - area->x1 + 1 );
     uint32_t h = ( area->y2 - area->y1 + 1 );
-
-    tft.startWrite();
-    tft.setAddrWindow( area->x1, area->y1, w, h );
-    tft.pushColors((uint16_t*)&color_p->full, w * h, true );
-    tft.endWrite();
+    
+    #if defined FNK0104N_3P5_320x480_ST77922
+      tft_st77922.Fill_Colors(area->x1, area->y1, w, h, (uint16_t *)color_p);
+    #else
+      tft.startWrite();
+      tft.setAddrWindow( area->x1, area->y1, w, h );
+      tft.pushColors((uint16_t*)&color_p->full, w * h, true );
+      tft.endWrite();
+    #endif
 
     lv_disp_flush_ready( disp );
 }
@@ -39,40 +73,68 @@ void my_disp_flush( lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *colo
 /*Read the touchpad*/
 void my_touchpad_read( lv_indev_drv_t * indev_driver, lv_indev_data_t * data )
 {
-    uint16_t touchX, touchY;
-
-    //bool touched = tft.getTouch( &touchX, &touchY, 600 );
-    tp = ft6336u.scan(); 
-    int touched = tp.touch_count;
-
-    if( !touched )
-    {
-        data->state = LV_INDEV_STATE_REL;
-    }
-    else
-    {
-        int x = tp.tp[0].x;
-        int y = tp.tp[0].y;
+    #ifdef FNK0104N_3P5_320x480_ST77922
+      if( touch_st77922.Get_Touch() )
+      {
+        uint16_t x = touch_st77922.touch.x[0];
+        uint16_t y = touch_st77922.touch.y[0];
         if(x >= 0 && x < screenWidth && y >= 0 && y < screenHeight)
         {
             data->state = LV_INDEV_STATE_PR;
-            data->point.x = tp.tp[0].x;
-            data->point.y = tp.tp[0].y;
+            data->point.x = x;
+            data->point.y = y;
         }
-    }
+      }
+      else
+      {
+        data->state = LV_INDEV_STATE_REL;
+      }
+    #else
+      uint16_t touchX, touchY;
+
+      //bool touched = tft.getTouch( &touchX, &touchY, 600 );
+      tp = ft6336u.scan(); 
+      int touched = tp.touch_count;
+  
+      if( !touched )
+      {
+          data->state = LV_INDEV_STATE_REL;
+      }
+      else
+      {
+          int x = tp.tp[0].x;
+          int y = tp.tp[0].y;
+          if(x >= 0 && x < screenWidth && y >= 0 && y < screenHeight)
+          {
+              data->state = LV_INDEV_STATE_PR;
+              data->point.x = tp.tp[0].x;
+              data->point.y = tp.tp[0].y;
+          }
+      }
+    #endif
 }
 
 void Display::init(void)
 {
-    ft6336u.begin(); 
 #if LV_USE_LOG != 0
     lv_log_register_print_cb( my_print ); /* register print function for debugging */
 #endif
-    lv_init();
-    tft.begin();          /* TFT init */
-    tft.setRotation( TFT_DIRECTION ); /* Landscape orientation, flipped */
-    lv_disp_draw_buf_init( &draw_buf, buf, NULL, screenWidth * 10 );
-
+    #ifdef FNK0104N_3P5_320x480_ST77922
+      tft_st77922.Init();
+      tft_st77922.Set_Rotation(TFT_DIRECTION);
+      
+      lv_init();
+      lv_disp_draw_buf_init( &draw_buf, buf, NULL, screenWidth * 40 );
+      touch_st77922.init();
+      touch_st77922.Set_Rotation(TFT_DIRECTION); 
+    #else
+      ft6336u.begin(); 
+      lv_init();
+      tft.begin();          /* TFT init */
+      tft.setRotation( TFT_DIRECTION ); /* Landscape orientation, flipped */
+      lv_disp_draw_buf_init( &draw_buf, buf, NULL, screenWidth * 10 );
+    #endif
+    
     /*Initialize the display*/
     static lv_disp_drv_t disp_drv;
     lv_disp_drv_init( &disp_drv );
@@ -81,6 +143,10 @@ void Display::init(void)
     disp_drv.ver_res = screenHeight;
     disp_drv.flush_cb = my_disp_flush;
     disp_drv.draw_buf = &draw_buf;
+    #ifdef FNK0104N_3P5_320x480_ST77922
+      disp_drv.rounder_cb = my_rounder_cb;
+    #endif
+    
     lv_disp_drv_register( &disp_drv );
 
     /*Initialize the (dummy) input device driver*/

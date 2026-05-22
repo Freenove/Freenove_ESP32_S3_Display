@@ -12,6 +12,26 @@
 #include "es8311.h"
 #include "ESP_I2S.h"
 
+#ifdef FNK0104N_3P5_320x480_ST77922
+#define SD_MMC_CLK 5
+#define SD_MMC_CMD 4
+#define SD_MMC_D0 6
+#define SD_MMC_D1 7
+#define SD_MMC_D2 2
+#define SD_MMC_D3 3
+
+//I2S IO Pin define
+#define I2S_MCK 17
+#define I2S_BCK 18
+#define I2S_DINT 16
+#define I2S_DOUT 15
+#define I2S_WS 21
+#define AP_ENABLE 1
+#define I2C_SCL 39        /*!< GPIO number used for I2C master clock */
+#define I2C_SDA 38        /*!< GPIO number used for I2C master data  */
+#define I2C_SPEED 400000  /*!< I2C master clock frequency */
+
+#else
 #define SD_MMC_CMD 40  // Please do not modify it.
 #define SD_MMC_CLK 38  // Please do not modify it.
 #define SD_MMC_D0  39  // Please do not modify it.
@@ -29,6 +49,7 @@
 #define I2C_SCL 15        /*!< GPIO number used for I2C master clock */
 #define I2C_SDA 16        /*!< GPIO number used for I2C master data  */
 #define I2C_SPEED 400000  /*!< I2C master clock frequency */
+#endif
 
 Display screen;
 I2SClass es8311_i2s;

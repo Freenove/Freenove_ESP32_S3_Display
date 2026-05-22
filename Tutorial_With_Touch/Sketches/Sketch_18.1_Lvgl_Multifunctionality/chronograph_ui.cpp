@@ -1,5 +1,6 @@
-
+#include "main_ui.h"
 #include "chronograph_ui.h"
+#include "lv_img.h"
 
 lvgl_chronograph_ui guider_chronograph_ui;
 static uint16_t chronograph_timer_milliseconds = 0;
@@ -18,7 +19,7 @@ static void chronograph_imgbtn_home_event_handler(lv_event_t *e)
   {
   case LV_EVENT_CLICKED:
   {
-    Serial.println("Clicked the return button.");
+    Serial.println("Clicked the logo button.");
   }
   break;
   case LV_EVENT_RELEASED:
@@ -153,7 +154,11 @@ void setup_scr_chronograph(lvgl_chronograph_ui *ui)
 
   ui->chronograph_home = lv_imgbtn_create(ui->chronograph);
   lv_obj_remove_style_all(ui->chronograph_home);
-  lv_obj_set_size(ui->chronograph_home, 80, 80);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_size(ui->chronograph_home, 100, 100);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_size(ui->chronograph_home, 80, 80);
+  #endif
   lv_img_set_src(ui->chronograph_home, &img_home);
   lv_obj_align(ui->chronograph_home, LV_ALIGN_TOP_MID, 0, (screen_height - 180) / 4);
   static lv_style_t style_pr;             // Apply for a style
@@ -175,13 +180,21 @@ void setup_scr_chronograph(lvgl_chronograph_ui *ui)
   lv_obj_add_style(ui->chronograph_btn_show, &style_show, LV_PART_MAIN);
 
   ui->chronograph_imgbtn_play = lv_imgbtn_create(ui->chronograph);
-  lv_obj_set_size(ui->chronograph_imgbtn_play, 60, 60);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_size(ui->chronograph_imgbtn_play, 80, 80);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_size(ui->chronograph_imgbtn_play, 60, 60);
+  #endif
   lv_img_set_src(ui->chronograph_imgbtn_play, &img_pause);
   lv_obj_align_to(ui->chronograph_imgbtn_play, ui->chronograph_btn_show, LV_ALIGN_OUT_BOTTOM_MID, -(screen_width - 120) / 3, (screen_height - 180) / 4);
   lv_obj_add_style(ui->chronograph_imgbtn_play, &style_pr, LV_STATE_PRESSED);
 
   ui->chronograph_imgbtn_stop = lv_imgbtn_create(ui->chronograph);
-  lv_obj_set_size(ui->chronograph_imgbtn_stop, 60, 60);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_size(ui->chronograph_imgbtn_stop, 80, 80);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_size(ui->chronograph_imgbtn_stop, 60, 60);
+  #endif
   lv_img_set_src(ui->chronograph_imgbtn_stop, &img_stop);
   lv_obj_align_to(ui->chronograph_imgbtn_stop, ui->chronograph_btn_show, LV_ALIGN_OUT_BOTTOM_MID, (screen_width - 120) / 3, (screen_height - 180) / 4);
   lv_obj_add_style(ui->chronograph_imgbtn_stop, &style_pr, LV_STATE_PRESSED);

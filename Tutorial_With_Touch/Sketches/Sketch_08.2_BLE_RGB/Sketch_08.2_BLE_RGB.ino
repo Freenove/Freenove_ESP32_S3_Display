@@ -1,7 +1,7 @@
 /*
 * @ File:   Sketch_08.2_BLE_RGB.ino
-* @ Author: [Zhentao Lin]
-* @ Date:   [2025-06-14]
+* @ Author: [Eason Shen]
+* @ Date:   [2026-05-14]
 */
 
 #include "BLEDevice.h"
@@ -21,10 +21,16 @@ String rxload = "Test\n";
 #define CHARACTERISTIC_UUID_RX "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
 #define CHARACTERISTIC_UUID_TX "6E400003-B5A3-F393-E0A9-E50E24DCCA9E"
 
-#define KEY_PIN 0
+#define FNK0104AB_2P8_240x320_ILI9341
+
+#ifdef FNK0104N_3P5_320x480_ST77922
+ #define LEDS_PIN   40
+#elif defined FNK0104AB_2P8_240x320_ILI9341
+ #define LEDS_PIN   40
+#endif
 #define LEDS_COUNT 1
-#define LEDS_PIN   42
 #define CHANNEL    0
+#define KEY_PIN 0
 
 Freenove_ESP32_WS2812 strip = Freenove_ESP32_WS2812(LEDS_COUNT, LEDS_PIN, CHANNEL, TYPE_GRB);
 

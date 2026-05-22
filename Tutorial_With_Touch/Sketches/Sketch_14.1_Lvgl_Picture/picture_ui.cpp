@@ -83,31 +83,49 @@ void setup_scr_picture(lvgl_picture_ui *ui){
 
 	//Write codes picture_left
 	ui->picture_left = lv_imgbtn_create(ui->picture);
-	lv_obj_set_pos(ui->picture_left, 10, 250);
-	lv_obj_set_size(ui->picture_left, 60, 60);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_pos(ui->picture_left, 10, 390);
+	  lv_obj_set_size(ui->picture_left, 80, 80);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_pos(ui->picture_left, 10, 250);
+    lv_obj_set_size(ui->picture_left, 60, 60);
+  #endif
 	lv_img_set_src(ui->picture_left, &img_left);
 	lv_obj_add_style(ui->picture_left, &style_pr, LV_STATE_PRESSED);//Triggered when the button is pressed
 
 	//Write codes picture_right
 	ui->picture_right = lv_imgbtn_create(ui->picture);
-	lv_obj_set_pos(ui->picture_right, 170, 250);
-	lv_obj_set_size(ui->picture_right, 60, 60);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_pos(ui->picture_right, 230, 390);
+	  lv_obj_set_size(ui->picture_right, 80, 80);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_pos(ui->picture_right, 170, 250);
+    lv_obj_set_size(ui->picture_right, 60, 60);
+  #endif
 	lv_img_set_src(ui->picture_right, &img_right);
 	lv_obj_add_style(ui->picture_right, &style_pr, LV_STATE_PRESSED);//Triggered when the button is pressed
 
 	//Write codes picture_home
 	ui->picture_home = lv_imgbtn_create(ui->picture);
 	lv_obj_remove_style_all(ui->picture_home);
-	lv_obj_set_pos(ui->picture_home, 80, 240);
-	lv_obj_set_size(ui->picture_home, 80, 80);
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+    lv_obj_set_pos(ui->picture_home, 110, 380);
+	  lv_obj_set_size(ui->picture_home, 100, 100);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_pos(ui->picture_home, 80, 240);
+    lv_obj_set_size(ui->picture_home, 80, 80);
+  #endif
 	lv_img_set_src(ui->picture_home, &img_home);
 	lv_obj_add_style(ui->picture_home, &style_pr, LV_STATE_PRESSED);//Triggered when the button is pressed
 
 	//Write codes picture_show
 	ui->picture_show = lv_img_create(ui->picture);
 	lv_obj_set_pos(ui->picture_show, 0, 0);
-	lv_obj_set_size(ui->picture_show, 240, 240);
-
+  #if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+	  lv_obj_set_size(ui->picture_show, 320, 320);
+  #elif defined FNK0104AB_2P8_240x320_ILI9341
+    lv_obj_set_size(ui->picture_show, 240, 240);
+  #endif
   String file_name = get_file_name_by_index(PICTURE_FOLDER, picture_index_num);
   picture_imgbtn_display(file_name.c_str());
 

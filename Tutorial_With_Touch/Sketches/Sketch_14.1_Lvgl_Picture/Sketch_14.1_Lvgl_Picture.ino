@@ -4,19 +4,28 @@
  * on an ESP32 microcontroller. It initializes a display, sets up an SD card for image storage, and loads a specific UI screen using LVGL.
  * The GUI includes elements managed by LVGL, and images are loaded from the SD card for display.
  *
- * Author: Zhentao Lin
- * Date:   2025-04-08
+ * Author: Eason shen
+ * Date:   2026-05-14
  */
 #include "display.h"
 #include "picture_ui.h"
 #include "driver_sdmmc.h"
 
-#define SD_MMC_CMD 40  // Please do not modify it.
-#define SD_MMC_CLK 38  // Please do not modify it.
-#define SD_MMC_D0  39  // Please do not modify it.
-#define SD_MMC_D1  41  // Please do not modify it.
-#define SD_MMC_D2  48  // Please do not modify it.
-#define SD_MMC_D3  47  // Please do not modify it.
+#ifdef FNK0104N_3P5_320x480_ST77922
+  #define SD_MMC_CMD 4  // Please do not modify it.
+  #define SD_MMC_CLK 5  // Please do not modify it.
+  #define SD_MMC_D0  6  // Please do not modify it.
+  #define SD_MMC_D1  7  // Please do not modify it.
+  #define SD_MMC_D2  2  // Please do not modify it.
+  #define SD_MMC_D3  3  // Please do not modify it.
+#else
+  #define SD_MMC_CMD 40  // Please do not modify it.
+  #define SD_MMC_CLK 38  // Please do not modify it.
+  #define SD_MMC_D0  39  // Please do not modify it.
+  #define SD_MMC_D1  41  // Please do not modify it.
+  #define SD_MMC_D2  48  // Please do not modify it.
+  #define SD_MMC_D3  47  // Please do not modify it.
+#endif
 
 Display screen;  // Create an instance of the Display class
 

@@ -1,7 +1,7 @@
 /*
 * @ File:   Sketch_04.1_Button_Interrupt_UART.ino
-* @ Author: [Zhentao Lin]
-* @ Date:   [2025-08-19]
+* @ Author: [Eason Shen]
+* @ Date:   [2026-05-14]
 */
 
 #include <Arduino.h>

@@ -1,23 +1,42 @@
 #ifndef __LV_IMG_H
 #define __LV_IMG_H
 
+#include "TFT_eSPI.h"
+
 #define SELECT_IMG_SIZE_60   (60)
 #define SELECT_IMG_SIZE_80   (80)
 #define SELECT_IMG_SIZE_100  (100)
 
-#define SELECT_IMG_HOME      SELECT_IMG_SIZE_80
-#define SELECT_IMG_LED       SELECT_IMG_SIZE_80
-#define SELECT_IMG_MUSIC     SELECT_IMG_SIZE_80
-#define SELECT_IMG_PICTURE   SELECT_IMG_SIZE_80
-#define SELECT_IMG_TIMER     SELECT_IMG_SIZE_80
+#if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+  #define SELECT_IMG_HOME      SELECT_IMG_SIZE_100
+  #define SELECT_IMG_MUSIC     SELECT_IMG_SIZE_100
+  #define SELECT_IMG_PICTURE   SELECT_IMG_SIZE_100
+  #define SELECT_IMG_TIMER     SELECT_IMG_SIZE_100
+  #define SELECT_IMG_LED       SELECT_IMG_SIZE_100
+#elif defined FNK0104AB_2P8_240x320_ILI9341
+  #define SELECT_IMG_HOME      SELECT_IMG_SIZE_80
+  #define SELECT_IMG_MUSIC     SELECT_IMG_SIZE_80
+  #define SELECT_IMG_PICTURE   SELECT_IMG_SIZE_80
+  #define SELECT_IMG_TIMER     SELECT_IMG_SIZE_80
+  #define SELECT_IMG_LED       SELECT_IMG_SIZE_80
+#endif
 #define SELECT_IMG_CAMERA    SELECT_IMG_SIZE_80
 #define SELECT_IMG_HEARTBEAT SELECT_IMG_SIZE_80
 #define SELECT_IMG_RECORDER  SELECT_IMG_SIZE_80
-#define SELECT_IMG_LEFT      SELECT_IMG_SIZE_60
-#define SELECT_IMG_RIGHT     SELECT_IMG_SIZE_60
-#define SELECT_IMG_PLAYING   SELECT_IMG_SIZE_60
-#define SELECT_IMG_PAUSE     SELECT_IMG_SIZE_60
-#define SELECT_IMG_STOP      SELECT_IMG_SIZE_60
+#if defined (FNK0104N_3P5_320x480_ST77922) || defined (FNK0104S_4P0_320x480_ST7796)
+  #define SELECT_IMG_LEFT      SELECT_IMG_SIZE_80
+  #define SELECT_IMG_RIGHT     SELECT_IMG_SIZE_80
+  #define SELECT_IMG_PLAYING   SELECT_IMG_SIZE_80
+  #define SELECT_IMG_PAUSE     SELECT_IMG_SIZE_80
+  #define SELECT_IMG_STOP      SELECT_IMG_SIZE_80
+#elif defined FNK0104AB_2P8_240x320_ILI9341
+  #define SELECT_IMG_LEFT      SELECT_IMG_SIZE_60
+  #define SELECT_IMG_RIGHT     SELECT_IMG_SIZE_60
+  #define SELECT_IMG_PLAYING   SELECT_IMG_SIZE_60
+  #define SELECT_IMG_PAUSE     SELECT_IMG_SIZE_60
+  #define SELECT_IMG_STOP      SELECT_IMG_SIZE_60
+#endif
+
 
 extern lv_img_dsc_t img_freenove;
 extern lv_img_dsc_t img_home;
@@ -33,6 +52,7 @@ extern lv_img_dsc_t img_right;
 extern lv_img_dsc_t img_playing;
 extern lv_img_dsc_t img_pause;
 extern lv_img_dsc_t img_stop;
+extern uint8_t img_freenove_map[];
 
 void lv_img_freenove_init(void);
 void lv_img_home_init(void);
@@ -51,6 +71,3 @@ void lv_img_stop_init(void);
 
 
 #endif
-
-
-

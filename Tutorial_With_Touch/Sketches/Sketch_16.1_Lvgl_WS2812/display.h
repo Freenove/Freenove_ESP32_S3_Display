@@ -2,18 +2,14 @@
 #define __DISPLAY_H
 
 #include "lvgl.h"
+#include "Arduino.h"
+#include "TFT_eSPI.h"
 
-#ifndef I2C_SCL
-#define I2C_SCL 15
-#endif
-#ifndef I2C_SDA
-#define I2C_SDA 16
-#endif
-#ifndef INT_N_PIN
-#define INT_N_PIN 17
-#endif
-#ifndef RST_N_PIN
-#define RST_N_PIN 18
+#if defined (FNK0104AB_2P8_240x320_ILI9341) || defined (FNK0104S_4P0_320x480_ST7796)
+  #define I2C_SCL 15
+  #define I2C_SDA 16
+  #define INT_N_PIN 17
+  #define RST_N_PIN 18
 #endif
 
 #define TFT_DIRECTION 0   //TFT direction

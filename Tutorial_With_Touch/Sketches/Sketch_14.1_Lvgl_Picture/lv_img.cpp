@@ -1,4 +1,3 @@
-
 #include "lvgl.h"
 #include "lv_img.h"
 
@@ -13407,10 +13406,3 @@ void lv_img_stop_init(void)
   img_stop.data_size = header.w * header.h * LV_COLOR_SIZE / 8,
   img_stop.data = img_stop_map;
 };
-
-
-
-
-
-
-

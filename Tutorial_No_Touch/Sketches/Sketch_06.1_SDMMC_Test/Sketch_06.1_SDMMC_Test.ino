@@ -1,18 +1,30 @@
 /*
 * @ File:   Sketch_06.1_SDMMC_Test.ino
-* @ Author: [Zhentao Lin]
-* @ Date:   [2025-08-19]
+* @ Author: [Eason Shen]
+* @ Date:   [2026-05-15]
 */
 
 #include "driver_sdmmc.h"
 
-#define SD_MMC_CMD 40  // Please do not modify it.
-#define SD_MMC_CLK 38  // Please do not modify it.
-#define SD_MMC_D0  39  // Please do not modify it.
-#define SD_MMC_D1  41  // Please do not modify it.
-#define SD_MMC_D2  48  // Please do not modify it.
-#define SD_MMC_D3  47  // Please do not modify it.
+#define FNK0104AB_2P8_240x320_ILI9341
+//#define FNK0104N_3P5_320x480_ST77922
+//#define FNK0104S_4P0_320x480_ST7796
 
+#ifdef FNK0104N_3P5_320x480_ST77922
+ #define SD_MMC_CMD 4  // Please do not modify it.
+ #define SD_MMC_CLK 5  // Please do not modify it.
+ #define SD_MMC_D0  6  // Please do not modify it.
+ #define SD_MMC_D1  7  // Please do not modify it.
+ #define SD_MMC_D2  2  // Please do not modify it.
+ #define SD_MMC_D3  3  // Please do not modify it.
+#else
+ #define SD_MMC_CMD 40  // Please do not modify it.
+ #define SD_MMC_CLK 38  // Please do not modify it.
+ #define SD_MMC_D0  39  // Please do not modify it.
+ #define SD_MMC_D1  41  // Please do not modify it.
+ #define SD_MMC_D2  48  // Please do not modify it.
+ #define SD_MMC_D3  47  // Please do not modify it.
+#endif
 void setup() {
   // Initialize serial communication at 115200 bits per second
   Serial.begin(115200);
