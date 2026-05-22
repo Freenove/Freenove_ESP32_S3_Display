@@ -66,7 +66,7 @@ Connect Freenove ESP32-S3 Display to the computer with USB cable.
 Sketch
 ====================================
 
-Next, we download the code to Freenove ESP32-S3 Display to test Serial. Open“Sketch_05.1_Battery_Voltage.ino” folder under “Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches” and double-click “Sketch_05.1_Battery_Voltage.ino”.
+Next, we download the code to Freenove ESP32-S3 Display to test Serial. Open"Sketch_05.1_Battery_Voltage.ino" folder under "Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches" and double-click "Sketch_05.1_Battery_Voltage.ino".
 
 Sketch_05.1_Battery_Voltage
 -------------------------------------
@@ -86,7 +86,7 @@ Define the pins for the button and RGB LED.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
     :linenos:
     :language: C
-    :lines: 7-7
+    :lines: 7-15
     :dedent:
 
 Set the battery voltage detecting pin to input mode.
@@ -94,7 +94,7 @@ Set the battery voltage detecting pin to input mode.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
     :linenos:
     :language: C
-    :lines: 10-10
+    :lines: 18-18
     :dedent:
 
 Set the battery voltage detecting pin to input mode.
@@ -102,7 +102,7 @@ Set the battery voltage detecting pin to input mode.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
     :linenos:
     :language: C
-    :lines: 11-11
+    :lines: 19-19
     :dedent:
 
 Measure the battery voltage every 300ms and outputs the reading to the serial monitor.
@@ -110,15 +110,25 @@ Measure the battery voltage every 300ms and outputs the reading to the serial mo
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_05.1_Battery_Voltage/Sketch_05.1_Battery_Voltage.ino
     :linenos:
     :language: C
-    :lines: 14-19
+    :lines: 22-27
     :dedent:
+
+Before compiling and uploading the code, please be sure to confirm the hardware model you are using. Based on your device, please modify the macro definition (#define) at the top of the code: remove the comment symbols (//) in front of the corresponding model, and ensure that the other models remain commented out. The default setting is the 2.8-inch model.
+
+.. code-block:: c
+    :linenos:
+    :dedent:
+
+    #define FNK0104AB_2P8_240x320_ILI9341
+    //#define FNK0104N_3P5_320x480_ST77922
+    //#define FNK0104S_4P0_320x480_ST7796
 
 Enable the "USB CDC On Boot" feature.
 
 .. image:: ../_static/imgs/5_Battery_Voltage/Chapter05_02.png
     :align: center
 
-Click “Upload” to upload the code to Freenove_ESP32_S3_Display.
+Click "**Upload**" to upload the code to Freenove_ESP32_S3_Display.
 
 .. image:: ../_static/imgs/5_Battery_Voltage/Chapter05_03.png
     :align: center

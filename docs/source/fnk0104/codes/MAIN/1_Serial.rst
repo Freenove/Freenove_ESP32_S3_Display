@@ -64,12 +64,12 @@ Please note that when "USB CDC On Boot" is set to "Enable", the ESP32-S3 will vi
 .. image:: ../_static/imgs/1_Serial/Chapter01_12.png
     :align: center
 
-If “USB CDC On Boot” is set to “Disable”, the onboard USB interface can only be used to upload code.
+If "USB CDC On Boot" is set to "Disable", the onboard USB interface can only be used to upload code.
 
 Sketch
 ====================================
 
-Open **“Sketch_01.1_SerialRW”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click “Sketch_01.1_SerialRW.ino”.
+Open **"Sketch_01.1_SerialRW"** folder under **"Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches"** and double-click "Sketch_01.1_SerialRW.ino".
 
 Sketch_01.1_SerialRW
 -------------------------------------
@@ -106,7 +106,7 @@ Receive serial port data and save it in the inputString string.
     :lines: 20-21
     :dedent:
 
-The purpose of this code is to display data on the serial monitor. Click “Upload” to upload the code to Freenove ESP32-S3 Display.
+The purpose of this code is to display data on the serial monitor. Click "Upload" to upload the code to Freenove ESP32-S3 Display.
 
 .. image:: ../_static/imgs/1_Serial/Chapter01_05.png
     :align: center

@@ -74,7 +74,7 @@ Define the pins.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
     :linenos:
     :language: C
-    :lines: 7-13
+    :lines: 15-52
     :dedent:
 
 Set the baud rate to 115200
@@ -82,7 +82,7 @@ Set the baud rate to 115200
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
     :linenos:
     :language: C
-    :lines: 50-50
+    :lines: 71-71
     :dedent:
 
 Initialize configuration.
@@ -90,7 +90,7 @@ Initialize configuration.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
     :linenos:
     :language: C
-    :lines: 53-59
+    :lines: 74-81
     :dedent:
 
 Create and load the interface.
@@ -98,7 +98,7 @@ Create and load the interface.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
     :linenos:
     :language: C
-    :lines: 66-67
+    :lines: 88-89
     :dedent:
 
 LVGL task processor.
@@ -106,7 +106,7 @@ LVGL task processor.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_17.1_Lvgl_Music/Sketch_17.1_Lvgl_Music.ino
     :linenos:
     :language: C
-    :lines: 73-73
+    :lines: 95-95
     :dedent:
 
 Insert the SD card to the card reader and plug them to the computer. Copy the **Music** folder under the **Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches\\Sketch_17.1_Lvgl_Music** directory to the root directory of the SD card.

@@ -69,7 +69,7 @@ Define the pins.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_14.1_Lvgl_Picture/Sketch_14.1_Lvgl_Picture.ino
     :linenos:
     :language: C
-    :lines: 14-19
+    :lines: 14-28
     :dedent:
 
 Set the baud rate to 115200
@@ -77,7 +77,7 @@ Set the baud rate to 115200
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_14.1_Lvgl_Picture/Sketch_14.1_Lvgl_Picture.ino
     :linenos:
     :language: C
-    :lines: 25-25
+    :lines: 34-34
     :dedent:
 
 Initialize configuration.
@@ -85,7 +85,7 @@ Initialize configuration.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_14.1_Lvgl_Picture/Sketch_14.1_Lvgl_Picture.ino
     :linenos:
     :language: C
-    :lines: 27-28
+    :lines: 37-38
     :dedent:
 
 Create and load the interface.
@@ -93,7 +93,7 @@ Create and load the interface.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_14.1_Lvgl_Picture/Sketch_14.1_Lvgl_Picture.ino
     :linenos:
     :language: C
-    :lines: 42-43
+    :lines: 51-52
     :dedent:
 
 LVGL Task Processor
@@ -101,7 +101,7 @@ LVGL Task Processor
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_14.1_Lvgl_Picture/Sketch_14.1_Lvgl_Picture.ino
     :linenos:
     :language: C
-    :lines: 50-50
+    :lines: 59-59
     :dedent:
 
 Copy the Picture folder under the **Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches\\Sketch_14.1_Lvgl_Picture** directory to the SD card root directory.

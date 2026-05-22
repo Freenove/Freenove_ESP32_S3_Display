@@ -76,7 +76,7 @@ Create and load the interface.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_15.1_Lvgl_Timer/Sketch_15.1_Lvgl_Timer.ino
     :linenos:
     :language: C
-    :lines: 25-26
+    :lines: 24-25
     :dedent:
 
 LVGL task processor.
@@ -84,7 +84,7 @@ LVGL task processor.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_15.1_Lvgl_Timer/Sketch_15.1_Lvgl_Timer.ino
     :linenos:
     :language: C
-    :lines: 30-30
+    :lines: 29-29
     :dedent:
 
 Click “Upload” to upload the code to Freenove ESP32-S3 Display. Set the baud rate to 115200.

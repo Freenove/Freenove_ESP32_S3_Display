@@ -86,7 +86,34 @@ Install **lvgl_v8.4.0.zip**
 .. image:: ../_static/imgs/13_LVGL/Chapter13_01.png
     :align: center
 
-Open **“Sketch_11.1_LVGL”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_11.1_LVGL.ino”**.
+Click File -> Preferences...
+
+.. image:: ../_static/imgs/13_LVGL/Chapter13_07.png
+    :align: center
+
+Linux and Mac users can use the ``cd`` command on Terminal to enter the sketchbook location, and Windows users can copy and paste it in the file explorer.
+
+.. image:: ../_static/imgs/13_LVGL/Chapter13_08.png
+    :align: center
+
+If your device is the FNK0104N (3.5-inch), please continue with the subsequent operations; otherwise, you can skip these steps.
+
+Double click **libraries**.
+
+.. image:: ../_static/imgs/13_LVGL/Chapter13_09.png
+    :align: center
+
+Double click **lvgl->src**.
+
+.. image:: ../_static/imgs/13_LVGL/Chapter13_10.png
+    :align: center
+
+Open **lv_conf.h**, Define **LV_COLOR_16_SWAP** as 1.
+
+.. image:: ../_static/imgs/13_LVGL/Chapter13_06.png
+    :align: center
+
+Open "**Sketch_11.1_LVGL**" folder under "**Freenove_ESP32_S3_Display\\Sketches**" and double-click "**Sketch_11.1_LVGL.ino**".
 
 Sketch_11.1_LVGL
 --------------------------------------
@@ -146,7 +173,7 @@ Enable the "USB CDC On Boot" feature.
 .. image:: ../_static/imgs/13_LVGL/Chapter13_02.png
     :align: center
 
-Click **“Upload”** to upload the code to Freenove ESP32 Display. Set the baud rate to 115200.
+Click **"Upload"** to upload the code to Freenove ESP32 Display. Set the baud rate to 115200.
 
 .. image:: ../_static/imgs/13_LVGL/Chapter13_03.png
     :align: center
@@ -156,7 +183,7 @@ Data will be printed on the serial monitor.
 .. image:: ../_static/imgs/13_LVGL/Chapter13_04.png
     :align: center
 
-The text **“Hello Arduino! V8.4.0”** will be displayed on the screen.
+The text **"Hello Arduino! V8.4.0"** will be displayed on the screen.
 
 .. image:: ../_static/imgs/13_LVGL/Chapter13_05.png
     :align: center

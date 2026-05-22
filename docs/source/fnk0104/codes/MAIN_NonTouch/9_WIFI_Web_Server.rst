@@ -64,7 +64,7 @@ Connect Freenove ESP32 -S3 to the computer using the USB cable.
 Sketch
 ============================================
 
-Next, we download the code to Freenove_ESP32_S3_Display to test. Open **“Sketch_09.1_WiFi_Web_Servers_LED”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_09.1_WiFi_Web_Servers_LED.ino”**.
+Next, we download the code to Freenove_ESP32_S3_Display to test. Open **"Sketch_09.1_WiFi_Web_Servers_LED"** folder under **"Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches"** and double-click **"Sketch_09.1_WiFi_Web_Servers_LED.ino"**.
 
 :combo:`red font-bolder:Important Note: Before upload the code, please ensure that the Wi-Fi SSID and Password are correctly configured in the code, and that the Wi-Fi network to connect is 2.4GHz.`
 
@@ -108,7 +108,7 @@ Define pins for the RGB LED.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
     :linenos:
     :language: C
-    :lines: 21-23
+    :lines: 24-30
     :dedent:
 
 Initialize the configuration related to RGB LED.
@@ -116,7 +116,7 @@ Initialize the configuration related to RGB LED.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
     :linenos:
     :language: C
-    :lines: 39-42
+    :lines: 46-49
     :dedent:
 
 Connect to WIFI.
@@ -124,7 +124,7 @@ Connect to WIFI.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
     :linenos:
     :language: C
-    :lines: 60-67
+    :lines: 67-81
     :dedent:
 
 Check if there are any new clients connected to the server.
@@ -132,7 +132,7 @@ Check if there are any new clients connected to the server.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
     :linenos:
     :language: C
-    :lines: 78-78
+    :lines: 85-85
     :dedent:
 
 Parse the URL command and control the corresponding LED on and off.
@@ -140,7 +140,7 @@ Parse the URL command and control the corresponding LED on and off.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
     :linenos:
     :language: C
-    :lines: 96-121
+    :lines: 103-128
     :dedent:
 
 Use CSS styles to enhance the visual appeal of web interfaces.
@@ -148,7 +148,7 @@ Use CSS styles to enhance the visual appeal of web interfaces.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
     :linenos:
     :language: C
-    :lines: 140-153
+    :lines: 147-160
     :dedent:
 
 Generate the HTML contents to control the LED.
@@ -156,7 +156,7 @@ Generate the HTML contents to control the LED.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
     :linenos:
     :language: C
-    :lines: 159-175
+    :lines: 166-182
     :dedent:
 
 Disconnect from the client and print the disconnection information in the serial monitor
@@ -164,15 +164,25 @@ Disconnect from the client and print the disconnection information in the serial
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_09.1_WiFi_Web_Servers_LED/Sketch_09.1_WiFi_Web_Servers_LED.ino
     :linenos:
     :language: C
-    :lines: 202-204
+    :lines: 209-211
     :dedent:
+
+Before compiling and uploading the code, please be sure to confirm the hardware model you are using. Based on your device, please modify the macro definition (#define) at the top of the code: remove the comment symbols (//) in front of the corresponding model, and ensure that the other models remain commented out. The default setting is the 2.8-inch model.
+
+.. code-block:: c
+    :linenos:
+    :dedent:
+
+    #define FNK0104AB_2P8_240x320_ILI9341
+    //#define FNK0104N_3P5_320x480_ST77922
+    //#define FNK0104S_4P0_320x480_ST7796
 
 Input correct WiFi(2.4GHz) SSID and password.
 
 .. image:: ../_static/imgs/9_WIFI_Web_Server/Chapter09_01.png
     :align: center
 
-Click **“Upload”** to upload the code to Freenove ESP32 Display.
+Click **"Upload"** to upload the code to Freenove ESP32 Display.
 
 .. image:: ../_static/imgs/9_WIFI_Web_Server/Chapter09_02.png
     :align: center

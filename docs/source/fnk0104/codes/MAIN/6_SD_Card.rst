@@ -124,7 +124,7 @@ Connect Freenove ESP32-S3 to the computer using the USB cable.
 Sketch
 =====================================
 
-Next, we download the code to Freenove_ESP32_S3_Display to test Serial. Open **“Sketch_06.1_SD_Test.ino”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_06.1_SD_Test.ino”**.
+Next, we download the code to Freenove_ESP32_S3_Display to test Serial. Open **"Sketch_06.1_SD_Test.ino"** folder under **"Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches"** and double-click **"Sketch_06.1_SD_Test.ino"**.
 
 Sketch_06.1_SD_Test
 -------------------------------------
@@ -152,7 +152,7 @@ Define SD card pins. In this example, we read and write the SD card via SPI.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
     :linenos:
     :language: C
-    :lines: 9-14
+    :lines: 9-27
     :dedent:
 
 Set the baud rate to 115200. 
@@ -160,7 +160,7 @@ Set the baud rate to 115200.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
     :linenos:
     :language: C
-    :lines: 18-18
+    :lines: 30-30
     :dedent:
 
 Initialize the SD card
@@ -168,7 +168,7 @@ Initialize the SD card
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
     :linenos:
     :language: C
-    :lines: 22-22
+    :lines: 34-34
     :dedent:
 
 List all files under the root directory.
@@ -176,23 +176,23 @@ List all files under the root directory.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
     :linenos:
     :language: C
-    :lines: 25-26
+    :lines: 37-38
     :dedent:
 
-Create a directory named “mydir” and list all files under the root directory.
+Create a directory named "mydir" and list all files under the root directory.
 
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
     :linenos:
     :language: C
-    :lines: 29-30
+    :lines: 41-43
     :dedent:
 
-Delete the “mydir” directory and list all files under the root directory.
+Delete the "mydir" directory and list all files under the root directory.
 
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
     :linenos:
     :language: C
-    :lines: 34-35
+    :lines: 46-47
     :dedent:
 
 Write "Hello" in the hello.txt file, append "World!" to it, then read and print the file contents.
@@ -200,7 +200,7 @@ Write "Hello" in the hello.txt file, append "World!" to it, then read and print 
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
     :linenos:
     :language: C
-    :lines: 38-49
+    :lines: 50-61
     :dedent:
 
 Rename foo.txt to hello.txt and read the file.
@@ -208,15 +208,25 @@ Rename foo.txt to hello.txt and read the file.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_06.1_SDMMC_Test/Sketch_06.1_SDMMC_Test.ino
     :linenos:
     :language: C
-    :lines: 51-54
+    :lines: 63-66
     :dedent:
+
+Before compiling and uploading the code, please be sure to confirm the hardware model you are using. Based on your device, please modify the macro definition (#define) at the top of the code: remove the comment symbols (//) in front of the corresponding model, and ensure that the other models remain commented out. The default setting is the 2.8-inch model.
+
+.. code-block:: c
+    :linenos:
+    :dedent:
+
+    #define FNK0104AB_2P8_240x320_ILI9341
+    //#define FNK0104N_3P5_320x480_ST77922
+    //#define FNK0104S_4P0_320x480_ST7796
 
 Enable the "USB CDC On Boot" feature.
 
 .. image:: ../_static/imgs/6_SD_Card/Chapter06_15.png
     :align: center
 
-Click **“Upload”** to upload the code to Freenove_ESP32_S3_Display.
+Click **"Upload"** to upload the code to Freenove_ESP32_S3_Display.
 
 .. image:: ../_static/imgs/6_SD_Card/Chapter06_16.png
     :align: center

@@ -64,7 +64,7 @@ Select **ESP32-audioI2S_v3.0.13.zip**
 .. image:: ../_static/imgs/7_Music/Chapter07_07.png
     :align: center
 
-Next, we download the code to Freenove_ESP32_S3_Display to test. Open **“Sketch_07.1_Music”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_07.1_Music.ino”**.
+Next, we download the code to Freenove_ESP32_S3_Display to test. Open **"Sketch_07.1_Music"** folder under **"Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches"** and double-click **"Sketch_07.1_Music.ino"**.
 
 Sketch_07.1_Music
 -------------------------------------
@@ -84,7 +84,7 @@ Include necessary header files.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
-    :lines: 1-9
+    :lines: 7-15
     :dedent:
 
 Define the pins.
@@ -92,7 +92,7 @@ Define the pins.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
-    :lines: 11-28
+    :lines: 17-59
     :dedent:
 
 Declare an I2S object
@@ -100,7 +100,7 @@ Declare an I2S object
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
-    :lines: 30-31
+    :lines: 61-62
     :dedent:
 
 Set the baud rate to 115200
@@ -108,7 +108,7 @@ Set the baud rate to 115200
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
-    :lines: 46-46
+    :lines: 77-77
     :dedent:
 
 SD card init
@@ -116,7 +116,7 @@ SD card init
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
-    :lines: 48-62
+    :lines: 79-87
     :dedent:
 
 Read audio data and play it.
@@ -124,7 +124,7 @@ Read audio data and play it.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
-    :lines: 63-68
+    :lines: 94-99
     :dedent:
 
 play music
@@ -132,8 +132,18 @@ play music
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.1_Music/Sketch_07.1_Music.ino
     :linenos:
     :language: C
-    :lines: 71-71
+    :lines: 102-102
     :dedent:
+
+Before compiling and uploading the code, please be sure to confirm the hardware model you are using. Based on your device, please modify the macro definition (#define) at the top of the code: remove the comment symbols (//) in front of the corresponding model, and ensure that the other models remain commented out. The default setting is the 2.8-inch model.
+
+.. code-block:: c
+    :linenos:
+    :dedent:
+
+    #define FNK0104AB_2P8_240x320_ILI9341
+    //#define FNK0104N_3P5_320x480_ST77922
+    //#define FNK0104S_4P0_320x480_ST7796
 
 :combo:`red font-bolder:This product does not include SD card, and SD card reader, please buy them by yourself. For more information, please refer to` :ref:`SD card <fnk0104/codes/main/preface:sd card>` :combo:`red font-bolder:sections.`
 
@@ -149,7 +159,7 @@ It is necessary to change the settings in Arduino IDE before clicking the Upload
 .. image:: ../_static/imgs/7_Music/Chapter07_09.png
     :align: center
 
-Click **“Upload”** to upload the code to Freenove ESP32-S3 Display.
+Click **"Upload"** to upload the code to Freenove ESP32-S3 Display.
 
 .. image:: ../_static/imgs/7_Music/Chapter07_10.png
     :align: center
@@ -232,7 +242,7 @@ Include necessary header files.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
     :linenos:
     :language: C
-    :lines: 1-8
+    :lines: 7-14
     :dedent:
 
 Define the pins.
@@ -240,7 +250,7 @@ Define the pins.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
     :linenos:
     :language: C
-    :lines: 1-8
+    :lines: 16-58
     :dedent:
 
 Declare an I2S object
@@ -248,7 +258,7 @@ Declare an I2S object
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
     :linenos:
     :language: C
-    :lines: 29-29
+    :lines: 60-60
     :dedent:
 
 Set the baud rate to 115200
@@ -256,7 +266,7 @@ Set the baud rate to 115200
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
     :linenos:
     :language: C
-    :lines: 45-45
+    :lines: 68-68
     :dedent:
 
 Initialize the audio device.
@@ -264,7 +274,7 @@ Initialize the audio device.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
     :linenos:
     :language: C
-    :lines: 50-55
+    :lines: 81-86
     :dedent:
 
 Implement audio recording and playback functionality
@@ -272,5 +282,15 @@ Implement audio recording and playback functionality
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_07.2_Echo/Sketch_07.2_Echo.ino
     :linenos:
     :language: C
-    :lines: 60-75
+    :lines: 91-106
     :dedent:
+
+Before compiling and uploading the code, please be sure to confirm the hardware model you are using. Based on your device, please modify the macro definition (#define) at the top of the code: remove the comment symbols (//) in front of the corresponding model, and ensure that the other models remain commented out. The default setting is the 2.8-inch model.
+
+.. code-block:: c
+    :linenos:
+    :dedent:
+
+    #define FNK0104AB_2P8_240x320_ILI9341
+    //#define FNK0104N_3P5_320x480_ST77922
+    //#define FNK0104S_4P0_320x480_ST7796

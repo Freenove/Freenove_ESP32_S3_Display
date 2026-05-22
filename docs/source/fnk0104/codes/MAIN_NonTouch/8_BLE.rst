@@ -49,7 +49,7 @@ Connect Freenove ESP32-S3 to the computer using the USB cable.
 Sketch
 =================================
 
-Next, we download the code to Freenove_ESP32_S3_Display to test. Open **“Sketch_08.1_BLE_USART”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_08.1_BLE_USART.ino”**.
+Next, we download the code to Freenove_ESP32_S3_Display to test. Open **"Sketch_08.1_BLE_USART"** folder under **"Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches"** and double-click **"Sketch_08.1_BLE_USART.ino"**.
 
 Sketch_08.1_BLE_USART
 ---------------------------------
@@ -135,7 +135,7 @@ https://apps.apple.com/us/app/lightblue/id557428110
 .. image:: ../_static/imgs/8_BLE/Chapter08_02.png
     :align: center
 
-Click **“Upload”** to upload the code to Freenove ESP32-S3 Display.
+Click **"Upload"** to upload the code to Freenove ESP32-S3 Display.
 
 .. image:: ../_static/imgs/8_BLE/Chapter08_03.png
     :align: center
@@ -163,7 +163,7 @@ click the top right corner to change the string type.
 .. image:: ../_static/imgs/8_BLE/Chapter08_07.png
     :align: center
 
-Select UTF-8 String, and click “Save”.
+Select UTF-8 String, and click "Save".
 
 .. image:: ../_static/imgs/8_BLE/Chapter08_08.png
     :align: center
@@ -196,12 +196,12 @@ Click the top right corner to change the string type.
 .. image:: ../_static/imgs/8_BLE/Chapter08_13.png
     :align: center
 
-Select UTF-8 String and click “Save”.
+Select UTF-8 String and click "Save".
 
 .. image:: ../_static/imgs/8_BLE/Chapter08_14.png
     :align: center
 
-Click “Write new value” 
+Click "Write new value" 
 
 .. image:: ../_static/imgs/8_BLE/Chapter08_15.png
     :align: center
@@ -245,7 +245,7 @@ Connect Freenove ESP32-S3 to the computer using the USB cable.
 Sketch
 ==============================
 
-Next, we download the code to Freenove_ESP32_S3_Display to test. Open **“Sketch_08.2_BLE_RGB”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_08.2_BLE_RGB.ino”**.
+Next, we download the code to Freenove_ESP32_S3_Display to test. Open **"Sketch_08.2_BLE_RGB"** folder under **"Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches"** and double-click **"Sketch_08.2_BLE_RGB.ino"**.
 Sketch_08.2_BLE_RGB
 ------------------------------
 
@@ -280,7 +280,7 @@ Define pins for the RGB LED.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
     :linenos:
     :language: C
-    :lines: 24-27
+    :lines: 24-33
     :dedent:
 
 The MyServerCallbacks class handles device connection and disconnection events and updates the deviceConnected status.
@@ -288,7 +288,7 @@ The MyServerCallbacks class handles device connection and disconnection events a
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
     :linenos:
     :language: C
-    :lines: 60-67
+    :lines: 66-73
     :dedent:
 
 The MyCallbacks class handles the receiving data and save them to the rxload string.
@@ -296,7 +296,7 @@ The MyCallbacks class handles the receiving data and save them to the rxload str
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
     :linenos:
     :language: C
-    :lines: 69-76
+    :lines: 75-85
     :dedent:
 
 Set the baud rate to 115200
@@ -304,7 +304,7 @@ Set the baud rate to 115200
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
     :linenos:
     :language: C
-    :lines: 97-97
+    :lines: 103-103
     :dedent:
 
 Initialize RGB LED setting, initialize the BLE device, create services, and set up characteristics.
@@ -312,7 +312,7 @@ Initialize RGB LED setting, initialize the BLE device, create services, and set 
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
     :linenos:
     :language: C
-    :lines: 98-100
+    :lines: 104-106
     :dedent:
 
 The Loop function checks the sending command every 100 milliseconds.
@@ -320,25 +320,35 @@ The Loop function checks the sending command every 100 milliseconds.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_08.2_BLE_RGB/Sketch_08.2_BLE_RGB.ino
     :linenos:
     :language: C
-    :lines: 103-131
+    :lines: 109-137
     :dedent:
+
+Before compiling and uploading the code, please be sure to confirm the hardware model you are using. Based on your device, please modify the macro definition (#define) at the top of the code: remove the comment symbols (//) in front of the corresponding model, and ensure that the other models remain commented out. The default setting is the 2.8-inch model.
+
+.. code-block:: c
+    :linenos:
+    :dedent:
+
+    #define FNK0104AB_2P8_240x320_ILI9341
+    //#define FNK0104N_3P5_320x480_ST77922
+    //#define FNK0104S_4P0_320x480_ST7796
 
 Enable the "USB CDC On Boot" feature. 
 
 .. image:: ../_static/imgs/8_BLE/Chapter08_18.png
     :align: center
 
-Click **“Upload”** to upload the code to Freenove ESP32-S3 Display.
+Click **"Upload"** to upload the code to Freenove ESP32-S3 Display.
 
 .. image:: ../_static/imgs/8_BLE/Chapter08_19.png
     :align: center
 
-Click “Write new value”
+Click "Write new value"
 
 .. image:: ../_static/imgs/8_BLE/Chapter08_20.png
     :align: center
 
-Enter the messages to send. Here we take “red_on” as an example.
+Enter the messages to send. Here we take "red_on" as an example.
 
 .. image:: ../_static/imgs/8_BLE/Chapter08_21.png
     :align: center

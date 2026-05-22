@@ -42,7 +42,7 @@ Connect Freenove ESP32-S3 Display to the computer with USB cable.
 Sketch
 ====================================
 
-Open **“Sketch_10.1_TFT_Rainbow.ino”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_10.1_TFT_Rainbow.ino”**.
+Open **"Sketch_10.1_TFT_Rainbow.ino"** folder under **"Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches"** and double-click **"Sketch_10.1_TFT_Rainbow.ino"**.
 
 Install Libraries
 ------------------------------------
@@ -56,6 +56,43 @@ Install **TFT_eSPI_v2.5.43.zip** and **TFT_eSPI_Setups_v1.2.zip**
 
 .. image:: ../_static/imgs/10_TFT_Display/Chapter10_01.png
     :align: center
+
+Click **File** -> **Preferences...**
+
+.. image:: ../_static/imgs/10_TFT_Display/Chapter10_23.png
+    :align: center
+
+Linux and Mac users can use the ``cd`` command on Terminal to enter the sketchbook location, and Windows users can copy and paste it in the file explorer.
+
+.. image:: ../_static/imgs/10_TFT_Display/Chapter10_24.png
+    :align: center
+
+Double click **libraries**
+
+.. image:: ../_static/imgs/10_TFT_Display/Chapter10_25.png
+    :align: center
+
+Double click **TFT_eSPI**
+
+.. image:: ../_static/imgs/10_TFT_Display/Chapter10_26.png
+    :align: center
+
+Open the **User_Setup_Select.h** file
+
+.. image:: ../_static/imgs/10_TFT_Display/Chapter10_27.png
+    :align: center
+
+Remove the "//" comment markers from the macro definition line **corresponding to your Freenove ESP32 Display model**.
+
+.. image:: ../_static/imgs/10_TFT_Display/Chapter10_28.png
+    :align: center
+
+Here we take the 2.8-inch display as an example, modifying it as shown below:
+
+.. image:: ../_static/imgs/10_TFT_Display/Chapter10_29.png
+    :align: center
+
+:combo:`red font-bolder:Important Note: Only one macro definition should be uncommented.`
 
 Sketch_10.1_TFT_Rainbow
 ------------------------------------
@@ -75,31 +112,7 @@ Include the necessary header file.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.1_TFT_Rainbow/Sketch_10.1_TFT_Rainbow.ino
     :linenos:
     :language: C
-    :lines: 7-7
-    :dedent:
-
-Define TFT display object.
-
-.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.1_TFT_Rainbow/Sketch_10.1_TFT_Rainbow.ino
-    :linenos:
-    :language: C
-    :lines: 9-9
-    :dedent:
-
-Initialize the TFT display.
-
-.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.1_TFT_Rainbow/Sketch_10.1_TFT_Rainbow.ino
-    :linenos:
-    :language: C
-    :lines: 19-20
-    :dedent:
-
-Change the color of the screen in the sequence of red -> green -> blue -> black -> white.
-
-.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.1_TFT_Rainbow/Sketch_10.1_TFT_Rainbow.ino
-    :linenos:
-    :language: C
-    :lines: 22-31
+    :lines: 7-8
     :dedent:
 
 Implement the rainbow animation effect.	
@@ -107,7 +120,7 @@ Implement the rainbow animation effect.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.1_TFT_Rainbow/Sketch_10.1_TFT_Rainbow.ino
     :linenos:
     :language: C
-    :lines: 38-85
+    :lines: 85-132
     :dedent:
 
 Text display
@@ -115,10 +128,10 @@ Text display
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.1_TFT_Rainbow/Sketch_10.1_TFT_Rainbow.ino
     :linenos:
     :language: C
-    :lines: 86-93
+    :lines: 133-140
     :dedent:
 
-Click **“Upload”** to upload the code to Freenove_ESP32_S3_Display.
+Click **"Upload"** to upload the code to Freenove_ESP32_S3_Display.
 
 .. image:: ../_static/imgs/10_TFT_Display/Chapter10_01.png
     :align: center
@@ -175,7 +188,7 @@ Install TJpg_Decoder_v1.1.0.zip
 .. image:: ../_static/imgs/10_TFT_Display/Chapter10_04.png
     :align: center
 
-Open **“Sketch_10.2_Flash_Jpg_DMA”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_10.2_Flash_Jpg_DMA.ino”**.
+Open **"Sketch_10.2_Flash_Jpg_DMA"** folder under **"Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches"** and double-click **"Sketch_10.2_Flash_Jpg_DMA.ino"**.
 
 Sketch_10.2_Flash_Jpg_DMA
 ------------------------------------
@@ -195,15 +208,7 @@ Include necessary header files
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.2_Flash_Jpg_DMA/Sketch_10.2_Flash_Jpg_DMA.ino
     :linenos:
     :language: C
-    :lines: 5-7
-    :dedent:
-
-Create TFT object instance.
-
-.. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.2_Flash_Jpg_DMA/Sketch_10.2_Flash_Jpg_DMA.ino
-    :linenos:
-    :language: C
-    :lines: 9-9
+    :lines: 10-13
     :dedent:
 
 JPEG decoding callback function
@@ -211,7 +216,7 @@ JPEG decoding callback function
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.2_Flash_Jpg_DMA/Sketch_10.2_Flash_Jpg_DMA.ino
     :linenos:
     :language: C
-    :lines: 12-16
+    :lines: 23-31
     :dedent:
 
 Get JPG size.
@@ -219,7 +224,7 @@ Get JPG size.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.2_Flash_Jpg_DMA/Sketch_10.2_Flash_Jpg_DMA.ino
     :linenos:
     :language: C
-    :lines: 34-34
+    :lines: 54-54
     :dedent:
 
 Draw images on the TFT screen.
@@ -227,10 +232,10 @@ Draw images on the TFT screen.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_10.2_Flash_Jpg_DMA/Sketch_10.2_Flash_Jpg_DMA.ino
     :linenos:
     :language: C
-    :lines: 41-43
+    :lines: 61-63
     :dedent:
 
-Click “Upload” to upload the code to Freenove ESP32 Display
+Click "Upload" to upload the code to Freenove ESP32 Display
 
 .. image:: ../_static/imgs/10_TFT_Display/Chapter10_05.png
     :align: center
@@ -250,7 +255,7 @@ First, open **Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches\\Sketch_1
 .. image:: ../_static/imgs/10_TFT_Display/Chapter10_07.png
     :align: center
 
-Click “Add File”
+Click "Add File"
 
 .. image:: ../_static/imgs/10_TFT_Display/Chapter10_08.png
     :align: center
@@ -265,7 +270,7 @@ The image files from your folder will now appear in the **Pending File List**.
 .. image:: ../_static/imgs/10_TFT_Display/Chapter10_10.png
     :align: center
 
-Click “Select…” to change the save location.
+Click "Select…" to change the save location.
 
 .. image:: ../_static/imgs/10_TFT_Display/Chapter10_11.png
     :align: center

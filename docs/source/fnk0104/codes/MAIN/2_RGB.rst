@@ -42,7 +42,7 @@ Connect Freenove ESP32-S3 Display to the computer with USB cable.
 Sketch
 ====================================
 
-Open **“Sketch_02.1_LedPixel”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click “Sketch_02.1_LedPixel.ino”.
+Open **"Sketch_02.1_LedPixel"** folder under **"Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches"** and double-click "Sketch_02.1_LedPixel.ino".
 
 Install the needed libraries.
 ------------------------------------
@@ -77,7 +77,7 @@ Define the pins for the RGB LED.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_02.1_LedPixel/Sketch_02.1_LedPixel.ino
     :linenos:
     :language: C
-    :lines: 9-11
+    :lines: 8-18
     :dedent:
 
 Initialize the LED, set the brightness to 10
@@ -85,7 +85,7 @@ Initialize the LED, set the brightness to 10
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_02.1_LedPixel/Sketch_02.1_LedPixel.ino
     :linenos:
     :language: C
-    :lines: 19-20
+    :lines: 27-28
     :dedent:
 
 Cycle through five different colors.
@@ -93,10 +93,20 @@ Cycle through five different colors.
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_02.1_LedPixel/Sketch_02.1_LedPixel.ino
     :linenos:
     :language: C
-    :lines: 23-30
+    :lines: 31-38
     :dedent:
 
-Click “Upload” to upload the code to Freenove_ESP32_S3_Display.
+Before compiling and uploading the code, please be sure to confirm the hardware model you are using. Based on your device, please modify the macro definition (#define) at the top of the code: remove the comment symbols (//) in front of the corresponding model, and ensure that the other models remain commented out. The default setting is the 2.8-inch model.
+
+.. code-block:: c
+    :linenos:
+    :dedent:
+
+    #define FNK0104AB_2P8_240x320_ILI9341
+    //#define FNK0104N_3P5_320x480_ST77922
+    //#define FNK0104S_4P0_320x480_ST7796
+
+Click "**Upload**" to upload the code to Freenove_ESP32_S3_Display.
 
 .. image:: ../_static/imgs/2_RGB/Chapter02_03.png
     :align: center
@@ -113,7 +123,7 @@ Reference
 
     A constructor to create a ws2812 object.
     
-    Before each use of the constructor, please add **“#include "Freenove_WS2812_Lib_for_ESP32.h”**
+    Before each use of the constructor, please add **"#include "Freenove_WS2812_Lib_for_ESP32.h"**
     
     **Parameters**
     
@@ -174,7 +184,7 @@ Connect Freenove ESP32-S3 Display to the computer with USB cable.
 Sketch
 ====================================
 
-Open **“Sketch_02.2_Rainbow”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_02.2_Rainbow”**.
+Open **"Sketch_02.2_Rainbow"** folder under **"Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches"** and double-click **"Sketch_02.2_Rainbow"**.
 
 Sketch_02.2_Rainbow
 ------------------------------------
@@ -189,15 +199,25 @@ The following is the program code:
 Code Explanation
 -------------------------------------
 
-In the loop(), two “for” loops are used, the internal “for” loop(for-j) is used to set the color of each LED, and the external “for” loop(for-i) is used to change the color, in which the self-increment value in i+=2 can be changed to change the color step distance. Changing the delay parameter changes the speed of the color change. ``strip.Wheel((i * 256 / LEDS_COUNT + j) & 255)`` will take color from the color model at equal intervals starting from i.
+In the loop(), two "for" loops are used, the internal "for" loop(for-j) is used to set the color of each LED, and the external "for" loop(for-i) is used to change the color, in which the self-increment value in i+=2 can be changed to change the color step distance. Changing the delay parameter changes the speed of the color change. ``strip.Wheel((i * 256 / LEDS_COUNT + j) & 255)`` will take color from the color model at equal intervals starting from i.
 
 .. literalinclude:: /freenove_Kit/Tutorial_With_Touch/Sketches/Sketch_02.2_Rainbow/Sketch_02.2_Rainbow.ino
     :linenos:
     :language: C
-    :lines: 20-26
+    :lines: 28-34
     :dedent:
 
-This code achieves the function of printing data on serial monitor. Click “Upload” to upload the code to Freenove_ESP32_S3_Display.
+Before compiling and uploading the code, please be sure to confirm the hardware model you are using. Based on your device, please modify the macro definition (#define) at the top of the code: remove the comment symbols (//) in front of the corresponding model, and ensure that the other models remain commented out. The default setting is the 2.8-inch model.
+
+.. code-block:: c
+    :linenos:
+    :dedent:
+
+    #define FNK0104AB_2P8_240x320_ILI9341
+    //#define FNK0104N_3P5_320x480_ST77922
+    //#define FNK0104S_4P0_320x480_ST7796
+
+This code achieves the function of printing data on serial monitor. Click "Upload" to upload the code to Freenove_ESP32_S3_Display.
 
 .. image:: ../_static/imgs/2_RGB/Chapter02_06.png
     :align: center

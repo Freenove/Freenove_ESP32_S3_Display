@@ -75,7 +75,7 @@ Connect Freenove ESP32-S3 Display to the computer with USB cable.
 Sketch
 ====================================
 
-Open **“Sketch_03.1_Button_RGB”** folder under **“Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches”** and double-click **“Sketch_03.1_Button_RGB.ino”**.
+Open **"Sketch_03.1_Button_RGB"** folder under **"Freenove_ESP32_S3_Display\\Tutorial_With_Touch\\Sketches"** and double-click **"Sketch_03.1_Button_RGB.ino"**.
 
 Sketch_03.1_Button_RGB
 ------------------------------------
@@ -114,7 +114,7 @@ Control the color of the RGB LED through the button.
     :lines: 60-70
     :dedent:
 
-Click “Upload” to upload the code to Freenove ESP32-S3 Display.
+Click "Upload" to upload the code to Freenove ESP32-S3 Display.
 
 .. image:: ../_static/imgs/3_Button/Chapter03_02.png
     :align: center
