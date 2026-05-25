@@ -1,5 +1,5 @@
 ##############################################################################
-Chapter 16 Lvgl RGB
+Chapter 16 LVGL RGB
 ##############################################################################
 
 Project 16.1 LVGL RGB
@@ -89,10 +89,10 @@ LVGL task processor.
 
 Click **“Upload”** to upload the code to Freenove ESP32 Display. Set the baud rate to 115200.
 
-.. image:: ../_static/imgs/16_LVGL_RGB/Chapter16_00.png
+.. image:: ../_static/imgs/16_Lvgl_RGB/Chapter16_00.png
     :align: center
 
 Drag to adjust the value of the red (R), green (G), and blue (B) color, and you will see the color of the LED change.
 
-.. image:: ../_static/imgs/16_LVGL_RGB/Chapter16_01.png
+.. image:: ../_static/imgs/16_Lvgl_RGB/Chapter16_01.png
     :align: center
