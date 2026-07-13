@@ -9,8 +9,8 @@ static uint16_t chronograph_timer_minutes = 0;
 static uint16_t chronograph_timer_hours = 0;
 static bool chronograph_timer_state= false;
 
-static uint16_t timer_last_millis=0;
-static uint16_t timer_current_millis=0;
+static uint32_t timer_last_millis=0;
+static uint32_t timer_current_millis=0;
 
 static void chronograph_imgbtn_home_event_handler(lv_event_t *e)
 {
