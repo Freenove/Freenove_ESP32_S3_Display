@@ -69,7 +69,9 @@ Click **“Upload”** to upload the code to Freenove ESP32 Display, set the bau
 .. image:: ../_static/imgs/11_TFT_Touch/Chapter11_03.png
     :align: center
 
-When the touch screen is pressed, the serial monitor will output the coordinates of the touch point(s) in real time. TD1 corresponds to the first touch point and will always be displayed. If a second touch point is detected simultaneously, its coordinates will be output via TD2. The specific format of the output can be seen in the image below.
+When touching the screen, the serial monitor will print coordinates in real-time, as shown in the image below:
+
+:combo:`red font-bolder:Please Note: Only the 3.5-inch Freenove ESP32-S3 Display supports 5-point multi-touch; other models support only single-point touch.`
 
 .. image:: ../_static/imgs/11_TFT_Touch/Chapter11_06.png
     :align: center
