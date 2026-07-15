@@ -55,15 +55,17 @@ void setup() {
 void loop() {
     #ifdef FNK0104N_3P5_320x480_ST77922
       if (touch_st77922.Get_Touch()) {
-          uint16_t x = touch_st77922.touch.x[0];
-          uint16_t y = touch_st77922.touch.y[0];
-          
-          char tempString[128];
-          sprintf(tempString, "ST77922 Touch: X: %4d | Y: %4d\r\n", x, y);
-          
-          Serial.print(tempString);
+          Serial.print("ST77922 Touch: ");
+          for (int i = 0; i < touch_st77922.max_points; i++) {
+              if (touch_st77922.touch.x[i] > 0 || touch_st77922.touch.y[i] > 0) {
+                  Serial.printf("[P%d: %4d, %4d] ", i+1, touch_st77922.touch.x[i], touch_st77922.touch.y[i]);
+              }
+              touch_st77922.touch.x[i] = 0;
+              touch_st77922.touch.y[i] = 0;
+          }
+          Serial.println();
+          delay(50);
       }
-      delay(50);
     #else
       tp = ft6336u.scan();
       char tempString[128];
