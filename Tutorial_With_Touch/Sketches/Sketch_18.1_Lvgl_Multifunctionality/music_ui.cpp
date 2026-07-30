@@ -18,178 +18,120 @@
 #endif
 
 lvgl_music_ui guider_music_ui;//music ui structure 
-int music_button_state = 0;   //UI Button status
+int music_button_state = 0;   //UI Button status: 1=playing, 0=paused/stopped
 int music_index_num = 1;      //index number of the music
 
 Audio audio;
 int music_task_flag = 0;       //music thread running flag
 TaskHandle_t musicTaskHandle;  //music thread task handle
 
+// Keep button icon in sync with actual playback state
+static void music_sync_play_button_ui(bool playing) {
+  music_button_state = playing ? 1 : 0;
+  if (lv_obj_is_valid(guider_music_ui.music_imgbtn_play)) {
+    lv_img_set_src(guider_music_ui.music_imgbtn_play,
+                   playing ? &img_playing : &img_pause);
+  }
+}
+
 //Click the logo icon, callback function: goes to the main ui interface
 static void music_imgbtn_home_event_handler(lv_event_t *e) {
-  lv_event_code_t code = lv_event_get_code(e);
-  switch (code) {
-    case LV_EVENT_CLICKED:
-      {
-        Serial.println("Clicked the logo button.");
-      }
-      break;
-    case LV_EVENT_RELEASED:
-      {
-        stop_music_task();//Close the thread when exiting the musci ui interface
-        if (!lv_obj_is_valid(guider_main_ui.main))
-          setup_scr_main(&guider_main_ui);
-        lv_disp_t *d = lv_obj_get_disp(lv_scr_act());
-        if (d->prev_scr == NULL && d->scr_to_load == NULL)
-          lv_scr_load(guider_main_ui.main);
-        //After exiting the interface, delete the interface to ensure that the next time you enter the initial interface
-        lv_obj_del(guider_music_ui.music);
-      }
-      break;
-    default:
-      break;
-  }
+  if (lv_event_get_code(e) != LV_EVENT_CLICKED)
+    return;
+  stop_music_task();//Close the thread when exiting the musci ui interface
+  if (!lv_obj_is_valid(guider_main_ui.main))
+    setup_scr_main(&guider_main_ui);
+  lv_disp_t *d = lv_obj_get_disp(lv_scr_act());
+  if (d->prev_scr == NULL && d->scr_to_load == NULL)
+    lv_scr_load(guider_main_ui.main);
+  //After exiting the interface, delete the interface to ensure that the next time you enter the initial interface
+  lv_obj_del(guider_music_ui.music);
 }
 
 //Click the left icon, callback function: play the last song
 static void music_imgbtn_left_event_handler(lv_event_t *e) {
-  lv_event_code_t code = lv_event_get_code(e);
-  switch (code) {
-    case LV_EVENT_CLICKED:
-      {
-        Serial.println("Clicked the left button.");
-      }
-      break;
-    case LV_EVENT_RELEASED:
-      {
-        Serial.println("Play the last song.");
-        music_index_num--;
-        if (music_index_num < 0)
-          music_index_num = read_file_num(MUSIC_FOLDER)-1;
-        stop_music_task();
-        lv_img_set_src(guider_music_ui.music_imgbtn_play, &img_pause);
-        music_button_state = 0;
-        String music_name = get_file_name_by_index(MUSIC_FOLDER, music_index_num);
-        music_set_label_text(music_name.c_str());
-        if(music_name!=""){
-          char buf_music_path[255] = {MUSIC_FOLDER};
-          strcat(buf_music_path, "/");
-          strcat(buf_music_path, music_name.c_str());
-          Serial.println(buf_music_path);
-          music_load_mp3(buf_music_path);
-          start_music_task();
-          lv_img_set_src(guider_music_ui.music_imgbtn_play, &img_playing);
-          music_button_state = 1;
-        }
-      }
-      break;
-    default:
-      break;
+  if (lv_event_get_code(e) != LV_EVENT_CLICKED)
+    return;
+  Serial.println("Play the last song.");
+  music_index_num--;
+  if (music_index_num < 0)
+    music_index_num = read_file_num(MUSIC_FOLDER) - 1;
+  stop_music_task();
+  music_sync_play_button_ui(false);
+  String music_name = get_file_name_by_index(MUSIC_FOLDER, music_index_num);
+  music_set_label_text(music_name.c_str());
+  if (music_name != "") {
+    char buf_music_path[255] = {MUSIC_FOLDER};
+    strcat(buf_music_path, "/");
+    strcat(buf_music_path, music_name.c_str());
+    Serial.println(buf_music_path);
+    music_load_mp3(buf_music_path);
+    start_music_task();
+    music_sync_play_button_ui(true);
   }
 }
 
 //Click the right icon, callback function: play the next song
 static void music_imgbtn_right_event_handler(lv_event_t *e) {
-  lv_event_code_t code = lv_event_get_code(e);
-  switch (code) {
-    case LV_EVENT_CLICKED:
-      {
-        Serial.println("Clicked the right button.");
-      }
-      break;
-    case LV_EVENT_RELEASED:
-      {
-        Serial.println("Play the next song.");
-        music_index_num++;
-        if (music_index_num >= read_file_num(MUSIC_FOLDER))
-          music_index_num = 0;
-
-        stop_music_task();
-        lv_img_set_src(guider_music_ui.music_imgbtn_play, &img_pause);
-        music_button_state = 0;
-        String music_name = get_file_name_by_index(MUSIC_FOLDER, music_index_num);
-        music_set_label_text(music_name.c_str());
-        if(music_name!="")
-        {
-          char buf_music_path[255] = {MUSIC_FOLDER};
-          strcat(buf_music_path, "/");
-          strcat(buf_music_path, music_name.c_str());
-          Serial.println(buf_music_path);
-          music_load_mp3(buf_music_path);
-          start_music_task();
-          lv_img_set_src(guider_music_ui.music_imgbtn_play, &img_playing);
-          music_button_state = 1;
-        }
-      }
-      break;
-    default:
-      break;
+  if (lv_event_get_code(e) != LV_EVENT_CLICKED)
+    return;
+  Serial.println("Play the next song.");
+  music_index_num++;
+  if (music_index_num >= read_file_num(MUSIC_FOLDER))
+    music_index_num = 0;
+  stop_music_task();
+  music_sync_play_button_ui(false);
+  String music_name = get_file_name_by_index(MUSIC_FOLDER, music_index_num);
+  music_set_label_text(music_name.c_str());
+  if (music_name != "") {
+    char buf_music_path[255] = {MUSIC_FOLDER};
+    strcat(buf_music_path, "/");
+    strcat(buf_music_path, music_name.c_str());
+    Serial.println(buf_music_path);
+    music_load_mp3(buf_music_path);
+    start_music_task();
+    music_sync_play_button_ui(true);
   }
 }
 
 //Click the play icon, callback function: play or pause the music
 static void music_imgbtn_play_event_handler(lv_event_t *e) {
-  lv_event_code_t code = lv_event_get_code(e);
-  switch (code) {
-    case LV_EVENT_CLICKED:
-      {
-        Serial.println("Clicked the play button.");
-      }
-      break;
-    case LV_EVENT_RELEASED:
-      {
-        music_button_state = !music_button_state;
-        if (music_button_state == 1) 
-          lv_img_set_src(guider_music_ui.music_imgbtn_play, &img_playing);
-        else 
-          lv_img_set_src(guider_music_ui.music_imgbtn_play, &img_pause);
+  if (lv_event_get_code(e) != LV_EVENT_CLICKED)
+    return;
+  Serial.println("Clicked the play button.");
 
-        //Gets whether a music task currently exists
-        int is_task_running = music_task_is_running();
-        if (is_task_running == 1) {  //If so, pause or play it
-          music_pause_resume();
-        } else {                     
-          /*If there is no music thread currently, load the music name first, and then create the audio thread*/
-          String music_name = get_file_name_by_index(MUSIC_FOLDER, music_index_num);
-          music_set_label_text(music_name.c_str());
-          if(music_name!="")
-          {
-            char buf_music_path[255] = {MUSIC_FOLDER};
-            strcat(buf_music_path, "/");
-            strcat(buf_music_path, music_name.c_str());
-            Serial.println(buf_music_path);
-            music_load_mp3(buf_music_path);
-            start_music_task();
-          }
-        }
-      }
-      break;
-    default:
-      break;
+  if (music_task_is_running() == 1) {
+    bool want_playing = (music_button_state == 0);
+    if (music_is_running() != want_playing) {
+      music_pause_resume();
+    }
+    music_sync_play_button_ui(want_playing);
+  } else {
+    String music_name = get_file_name_by_index(MUSIC_FOLDER, music_index_num);
+    music_set_label_text(music_name.c_str());
+    if (music_name != "") {
+      char buf_music_path[255] = {MUSIC_FOLDER};
+      strcat(buf_music_path, "/");
+      strcat(buf_music_path, music_name.c_str());
+      Serial.println(buf_music_path);
+      music_load_mp3(buf_music_path);
+      start_music_task();
+      music_sync_play_button_ui(true);
+    } else {
+      music_sync_play_button_ui(false);
+    }
   }
 }
 
 //Click the stop icon, callback function: stop the music
 static void music_imgbtn_stop_event_handler(lv_event_t *e) {
-  lv_event_code_t code = lv_event_get_code(e);
-  switch (code) {
-    case LV_EVENT_CLICKED:
-      {
-        Serial.println("Clicked the stop button.");
-      }
-      break;
-    case LV_EVENT_RELEASED:
-      {
-        lv_img_set_src(guider_music_ui.music_imgbtn_play, &img_pause);
-        stop_music_task();
-        lv_bar_set_value(guider_music_ui.music_bar_time, 0, LV_ANIM_OFF);
-        music_button_state = 0;
-        Serial.println("The music has stop.");
-      }
-      break;
-    default:
-      break;
-  }
+  if (lv_event_get_code(e) != LV_EVENT_CLICKED)
+    return;
+  Serial.println("Clicked the stop button.");
+  stop_music_task();
+  lv_bar_set_value(guider_music_ui.music_bar_time, 0, LV_ANIM_OFF);
+  music_sync_play_button_ui(false);
+  Serial.println("The music has stop.");
 }
 
 static void music_slider_change_event_handler(lv_event_t * e){
@@ -351,27 +293,34 @@ void music_set_label_text(const char *text){
 void loopTask_music(void *pvParameters) {
   Serial.println("loopTask_music start...");
   int temp = 0;
+  uint32_t last_ui_update = 0;
   while (music_task_flag == 1) {
     music_loop();
-    int t1 = music_get_total_playing_time();//Gets how long the music player has been playing
-    int t2 = music_get_file_duration();     //Gets the playing time of the music file
-    int t3 = music_read_play_position();    //Gets the current playing time of the music
-    if(temp==1){
-      int t4 = map(t3, 0, t2, 0, 100);
-      if(t4<=100)
-        lv_bar_set_value(guider_music_ui.music_bar_time, t4, LV_ANIM_OFF);
-      //Serial.printf("t1: %d\t t2: %d\t t3: %d\t t4: %d\r\n", t1, t2, t3, t4);
-    }    
-    if ((t1 < t2) && (t2 > 0) && (temp == 0)) { //The music starts to play
-      lv_bar_set_value(guider_music_ui.music_bar_time, 0, LV_ANIM_OFF);
-      temp = 1;
-    } else if ((t2 == 0) && (temp == 1)) {      //The music stop to play
-      temp = 0;
-      music_task_flag = 0;
-      lv_img_set_src(guider_music_ui.music_imgbtn_play, &img_pause);
-      music_button_state = 0;
-      break;
+    uint32_t now = millis();
+    if (now - last_ui_update >= 200) {
+      last_ui_update = now;
+      int t1 = music_get_total_playing_time(); // how long the player has been playing
+      int t2 = music_get_file_duration();      // file duration
+      int t3 = music_read_play_position();     // current play position
+      if (temp == 1) {
+        if (t2 > 0) {
+          int t4 = map(t3, 0, t2, 0, 100);
+          if (t4 <= 100)
+            lv_bar_set_value(guider_music_ui.music_bar_time, t4, LV_ANIM_OFF);
+        }
+      }
+      if ((t1 < t2) && (t2 > 0) && (temp == 0)) { // music started
+        lv_bar_set_value(guider_music_ui.music_bar_time, 0, LV_ANIM_OFF);
+        temp = 1;
+      } else if (temp == 1 && music_button_state == 1 && !music_is_running()) {
+        temp = 0;
+        music_task_flag = 0;
+        music_sync_play_button_ui(false);
+        break;
+      }
     }
+
+    vTaskDelay(1);
   }
   music_stop();
   Serial.println("loopTask_music stop...");
@@ -382,7 +331,7 @@ void loopTask_music(void *pvParameters) {
 void start_music_task(void) {
   if (music_task_flag == 0) {
     music_task_flag = 1;
-    xTaskCreate(loopTask_music, "loopTask_music", 10240, NULL, 1, &musicTaskHandle);
+    xTaskCreatePinnedToCore(loopTask_music, "loopTask_music", 10240, NULL, 1, &musicTaskHandle, 1);
   } else {
     Serial.println("loopTask_music is running...");
   }
